@@ -1,0 +1,46 @@
+# 游戏 ROM：版权归发行方所有，且已放在 Release 发行版里，不入库
+game.nds
+*.nds
+
+# 从 ROM 提取的产物：可用 ai-tas/tools/nds_extract.py 现场重建
+extracted/
+validation/datasheet.bin
+
+# 运行时截图（验证过程产物，非必要）
+/tmp/
+shots/
+*.log
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 临时探索/调试脚本（非交付物）
+diag*.py
+inspect_rec.py
+dump_level.py
+nav_shot.py
+start_desmume.sh
+find_level.py
+verify_level3.py
+# 本会话的诊断脚本（非交付物，勿入库）
+_*.py
+
+# 统一动作序列仓库的锁/临时文件（plan_store.save 用，勿入库）
+validation/plans.json.lock
+validation/plans.json.tmp
+
+# TAS 运行期诊断截图（只有 l*_fill_complete.png / 认定证据 才是交付证据，其余勿入库）
+validation/**/_bwait.png
+validation/**/_seikaiwait.png
+validation/**/_titlechk.png
+validation/**/enter_*.png
+validation/**/judge_*.png
+validation/**/nav_select.png
+validation/**/l*_clear_popup.png
+validation/**/l*_settle_*.png
+validation/**/rec*_listchk.png
+validation/**/rec_nav_*.png
+validation/**/recover_chk*.png
+validation/**/imap_*.png
+validation/**/warm_check.png

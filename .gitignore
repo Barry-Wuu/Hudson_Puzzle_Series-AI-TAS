@@ -1,0 +1,9 @@
+# 根目录保护：防误提交 ROM / 缓存（全量忽略规则见子目录内 .gitignore）
+*.nds
+game.nds
+extracted/
+__pycache__/
+*.pyc
+shots/
+/tmp/
+*.log

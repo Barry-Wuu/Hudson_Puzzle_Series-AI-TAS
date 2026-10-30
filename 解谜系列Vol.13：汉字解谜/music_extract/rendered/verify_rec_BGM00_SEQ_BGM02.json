@@ -1,0 +1,17 @@
+{
+  "recording": "rec_BGM00",
+  "seq": "SEQ_BGM02",
+  "rec_sec": 63.07,
+  "rend_sec": 90.0,
+  "pitch_compensation_semitones": -6.0,
+  "melody_similarity_compensated": 0.8335,
+  "best_rotation_bins": 0,
+  "best_rotation_sim": 0.8335,
+  "speed_scale": 1.0,
+  "onset_peak_corr": 0.028,
+  "conclusion": {
+    "melody_correlated": true,
+    "tempo_consistent": true
+  },
+  "note": "旧结果：10-20 用未裁剪的原始录音（含开头1.315s菜单音效）+ 已证无效的 chroma 指标算出，仅作粗筛"
+}

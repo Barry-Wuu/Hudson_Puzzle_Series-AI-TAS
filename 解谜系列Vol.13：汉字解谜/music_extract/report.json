@@ -1,0 +1,50 @@
+[
+ {
+  "name": "SEQ_BGM00",
+  "tracks": 6,
+  "tempo": 120,
+  "sec": 859
+ },
+ {
+  "name": "SEQ_BGM01",
+  "tracks": 10,
+  "tempo": 120,
+  "sec": 1430
+ },
+ {
+  "name": "SEQ_BGM02",
+  "tracks": 10,
+  "tempo": 114,
+  "sec": 802
+ },
+ {
+  "name": "SEQ_BGM03",
+  "tracks": 0,
+  "tempo": 120,
+  "sec": 0
+ },
+ {
+  "name": "SEQ_BGM04",
+  "tracks": 13,
+  "tempo": 108,
+  "sec": 1134
+ },
+ {
+  "name": "SEQ_BGM05",
+  "tracks": 0,
+  "tempo": 120,
+  "sec": 0
+ },
+ {
+  "name": "SEQ_BGM06",
+  "tracks": 9,
+  "tempo": 96,
+  "sec": 1254
+ },
+ {
+  "name": "SEQ_BGM07",
+  "tracks": 7,
+  "tempo": 120,
+  "sec": 952
+ }
+]
