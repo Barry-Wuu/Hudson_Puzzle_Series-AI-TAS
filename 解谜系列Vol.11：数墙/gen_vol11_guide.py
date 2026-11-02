@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""生成《解谜系列Vol.11：数墙》全关卡攻略 Markdown 表格版（2026-10-19）。
+"""生成《解谜系列Vol.11：数墙》全关卡答案 Markdown 表格版（2026-10-19）。
 
 格式（用户指定）：
 - 用 Markdown 表格展示每关答案盘面；
@@ -17,7 +17,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, '..', '_vol11', 'puzzles.json')
 # 攻略产物与脚本同目录（仓库《解谜系列Vol.11：数墙/》）
-DST = os.path.join(HERE, '攻略.md')
+DST = os.path.join(HERE, '答案.md')
 
 DIFFS = ['入門', 'やさしい', 'ふつう', 'むずかしい']
 SUBTITLES = {
@@ -64,7 +64,7 @@ def render_table(p):
 def main():
     data = json.load(open(SRC, encoding='utf-8'))
     out = []
-    out.append('# 《解谜系列Vol.11：数墙》全关卡攻略（官方答案盘面）')
+    out.append('# 《解谜系列Vol.11：数墙》全关卡答案（官方答案盘面）')
     out.append('')
     out.append('> 📌 **阅读提示**：本文件用 **Markdown 表格**展示每关答案。若在网页/App 的预览中看到')
     out.append('> 表格列错位、或 `█` 与数字不等宽，属**渲染器问题**而非文件问题。请切换右上角「**源码模式** / **Raw Data**」')

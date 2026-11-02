@@ -11,7 +11,7 @@
 | `ds.py` | DeSmuME 操作公用层：抓屏 / 按键 / **按压式触摸**（mousemove→40ms→mousedown→60ms→mouseup）/ 单进程批量触摸 / 光标框检测 |
 | `state2.py` | 页面状态检测 v3：实测 RGB 签名 + 通用「单元格掩码」（兼容已通关变绿） |
 | `play_common.py` | 入門 6×6 盘面公用层：几何 + 扫描 |
-| `guide.py` | 照抄攻略：从 `攻略.md` 解析每关官方答案黑格坐标（去求解器） |
+| `guide.py` | 照抄攻略：从 `答案.md` 解析每关官方答案黑格坐标（去求解器） |
 | `extract_nurikabe.py` | 题库提取器：arm9 → `validation/puzzles.json`（300 题 + 规则自检） |
 
 ## B. 现役 · 跑批（纯通关，不录制）

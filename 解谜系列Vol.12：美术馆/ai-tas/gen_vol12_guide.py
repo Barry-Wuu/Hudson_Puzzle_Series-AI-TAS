@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""生成《解谜系列Vol.12：美術館 / AKARI》全关卡攻略 Markdown。
+"""生成《解谜系列Vol.12：美術館 / AKARI》全关卡答案 Markdown。
 
 答案来自 extract_akari.py 产物 validation/puzzles.json（300 题 AKARI 规则自检 300/300 零失败）。
 
-渲染约定：
-- 黑墙(无号)        = █
-- 带号黑墙(相邻灯数) = 数字 0~4
-- 白格有灯(答案)    = ●
-- 白格无灯          = 全角空格 　
+渲染约定（与根目录 gen_vol12_guide.py 的紧凑矩阵版同图例）：
+- 黑墙(无号)        = ⬛️
+- 带号黑墙(相邻灯数) = 0️⃣ ~ 4️⃣
+- 白格有灯(答案)    = 💡
+- 白格无灯          = ⬜️
 每个谜题一张等宽表格，行列与题目一致。
 """
 import json
@@ -16,7 +16,9 @@ import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, '..', 'validation', 'puzzles.json')
-DST = os.path.join(HERE, '攻略.md')
+DST = os.path.join(HERE, '答案.md')
+
+NUM = ['0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣']
 
 DIFFS = ['入門', 'やさしい', 'ふつう', 'むずかしい']
 SUBTITLES = {
@@ -28,23 +30,20 @@ SUBTITLES = {
 
 
 def cell_char(puz, idx):
-    """单格字符。puz 含 given/sol/numbered/bulbs。"""
-    w = puz['w']
-    c, r = idx % w, idx // w
-    bulbs = set(tuple(b) for b in puz['bulbs'])
-    numbered = set((nc, nr, n) for (nc, nr, n) in puz['numbered'])
-    if (c, r) in bulbs:
-        return '●'
-    # 白格无灯
-    # 查是否为带号墙
-    if (c, r, 0) in numbered:
-        for (nc, nr, n) in numbered:
-            if (nc, nr) == (c, r):
-                return str(n)
-    # 无号墙：given 该格 = 0x58
-    if puz['given'][idx] == 0x58:
-        return '█'
-    return '　'
+    """单格字符，直接读 sol（与根目录紧凑矩阵版同源，避免 numbered 字段的错位）。
+
+    sol 编码（实测）：45=白格、35=无号墙、64=灯泡、0..4=带号墙（数字即该值）。
+    """
+    v = puz['sol'][idx]
+    if v == 45:
+        return '⬜️'
+    if v == 35:
+        return '⬛️'
+    if v == 64:
+        return '💡'
+    if 0 <= v <= 4:
+        return NUM[v]
+    raise ValueError('unknown cell code %r' % (v,))
 
 
 def render_table(puz):
@@ -61,13 +60,13 @@ def render_table(puz):
 def main():
     data = json.load(open(SRC, encoding='utf-8'))
     out = []
-    out.append('# 《解谜系列Vol.12：美術館 / AKARI（点灯）》全关卡攻略（官方解答）')
+    out.append('# 《解谜系列Vol.12：美術館 / AKARI（点灯）》全关卡答案（官方解答）')
     out.append('')
     out.append('> 📌 **阅读提示**：本文件用 **Markdown 表格**展示每关解答。若在网页/App 预览中看到')
     out.append('> 表格列错位，属**渲染器问题**而非文件问题，请切换「源码模式 / Raw Data」或用纯文本编辑器打开。')
     out.append('>')
-    out.append('> 图例：**`█`** = 黑墙（无号）；**数字 0~4** = 带号黑墙（该墙上下左右相邻的灯数）；')
-    out.append('> **`●`** = 应放置的灯（答案）；**全角空格 `　`** = 普通白格（不放灯）。')
+    out.append('> 图例：**`⬛️`** = 黑墙（无号）；**`0️⃣`~`4️⃣`** = 带号黑墙（该墙上下左右相邻的灯数）；')
+    out.append('> **`💡`** = 应放置的灯（答案）；**`⬜️`** = 普通白格（不放灯）。')
     out.append('>')
     out.append('> 题目顺序依仓库 `validation/` 目录：入門 → やさしい → ふつう → むずかしい。')
     out.append('')
