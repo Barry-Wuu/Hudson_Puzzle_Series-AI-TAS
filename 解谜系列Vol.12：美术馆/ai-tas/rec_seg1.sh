@@ -11,7 +11,7 @@
 set -u
 export DISPLAY=:99
 export PULSE_SERVER=unix:/tmp/pulse_native
-AITAS="/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol. 12：美术馆/ai-tas"
+AITAS="/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol.12：美术馆/ai-tas"
 OUT="${1:-/workspace/美术馆_入門实況_seg1.mp4}"
 LO="${2:-2}"          # 起始关（默认跳过 Q1）
 HI="${3:-20}"         # 结束关

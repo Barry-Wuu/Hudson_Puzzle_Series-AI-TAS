@@ -23,7 +23,7 @@ from play_akari_seg3 import (VR_BY_SIZE, VCW, escape_to_select, goto_level,
                              has_start_overlay)
 
 PUZZLES = json.load(open(
-    "/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol. 12：美术馆/validation/puzzles.json"))["ふつう"]
+    "/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol.12：美术馆/validation/puzzles.json"))["ふつう"]
 PZ = {p["rec"]: p for p in PUZZLES}
 
 

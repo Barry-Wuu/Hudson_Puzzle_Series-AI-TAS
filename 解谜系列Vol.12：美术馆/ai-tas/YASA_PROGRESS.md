@@ -26,7 +26,7 @@
 
 ```
 # 录制单段（自动含抓取+两阶段编码+精剪由 trim 脚本另跑）
-cd "/workspace/hudson_tas/解谜系列Vol. 12：美术馆/ai-tas"
+cd "/workspace/hudson_tas/解谜系列Vol.12：美术馆/ai-tas"
 DISPLAY=:99 PER_JOB_TIMEOUT=1500 bash rec_yasa_all.sh <LO> <HI>
 # 精剪： python3.11 trim_v12_limiter.py <in.mp4> <out_clean.mp4>
 ```

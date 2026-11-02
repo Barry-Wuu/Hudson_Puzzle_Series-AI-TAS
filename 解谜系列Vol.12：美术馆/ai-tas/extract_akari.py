@@ -18,7 +18,7 @@ import json
 import os
 import sys
 
-ROM = sys.argv[1] if len(sys.argv) > 1 else '/root/.codebuddy/artifact/vol12/解谜系列Vol. 12：美术馆.nds'
+ROM = sys.argv[1] if len(sys.argv) > 1 else '/root/.codebuddy/artifact/vol12/解谜系列Vol.12：美术馆.nds'
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'validation', 'puzzles.json')
 BASE = 0x02000000
 AKARI_TABLE_OFF = 0xA9D30

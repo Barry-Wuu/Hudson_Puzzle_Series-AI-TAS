@@ -8,7 +8,7 @@ export DISPLAY=:99
 #   录到的全是静音（Vol.11 rec_seg1_v2.sh 有此行，vol12_env.sh 漏了）。
 export PULSE_SERVER=unix:/tmp/pulse_native
 ART=/root/.codebuddy/artifact/vol12
-AITAS="/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol. 12：美术馆/ai-tas"
+AITAS="/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol.12：美术馆/ai-tas"
 SOUND=${1:-off}   # off=静音校准, on=收音录制
 log(){ echo "[vol12env $(date +%H:%M:%S)] $*"; }
 

@@ -45,7 +45,7 @@
 ## 四、下次继续的最短路径
 
 ```bash
-cd "/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol. 12：美术馆/ai-tas"
+cd "/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol.12：美术馆/ai-tas"
 # 1) 验证导航
 python3 -c "import sys;sys.path.insert(0,'.');import play_akari_seg3 as P;print(P.goto_level(91))"
 # 2) 单关验证

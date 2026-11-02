@@ -1,6 +1,6 @@
 #!/bin/bash
 # seg3 limiter-ON 重录编排器：6 分块串行，成功即删裸流（控磁盘），核对每块 ok 数
-cd "/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol. 12：美术馆/ai-tas"
+cd "/workspace/Hudson_Puzzle_Series-AI-TAS/解谜系列Vol.12：美术馆/ai-tas"
 log(){ echo "[rt-all $(date +%H:%M:%S)] $*"; }
 
 CHUNKS=(

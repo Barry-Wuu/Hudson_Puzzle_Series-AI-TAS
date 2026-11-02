@@ -11,7 +11,7 @@
 #
 # 用法: nohup bash rec_muzu_all.sh > /tmp/muzu_all.log 2>&1 &
 set -u
-cd "/workspace/hudson_tas/解谜系列Vol. 12：美术馆/ai-tas"
+cd "/workspace/hudson_tas/解谜系列Vol.12：美术馆/ai-tas"
 log(){ echo "[muzu-orch $(date +%H:%M:%S)] $*"; }
 
 CHUNKS=(

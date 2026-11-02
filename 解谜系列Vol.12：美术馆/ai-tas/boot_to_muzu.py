@@ -19,7 +19,7 @@
 import sys
 import time
 
-sys.path.insert(0, "/workspace/hudson_tas/解谜系列Vol. 12：美术馆/ai-tas")
+sys.path.insert(0, "/workspace/hudson_tas/解谜系列Vol.12：美术馆/ai-tas")
 import ds
 import play_akari_muzu as P
 
