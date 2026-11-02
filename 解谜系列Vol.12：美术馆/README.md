@@ -30,7 +30,7 @@
 | `ai-tas/` | 求解 / 规划 / 录制全管线（`play_yasashii.py`、`play_akari_muzu.py`、`rec_*_limiter.sh`、`trim_*`、`MUZU_RUN.md`、`YASA_PROGRESS.md`…） |
 | `validation/` | 逐关通关证据截图 + `puzzles.json`（四模式官方解答） |
 | `saves/` | 实机存档 `vol12.dsv` |
-| `答案.md` | 全 300 关官方解答（每关一个代码块包裹的紧凑字符矩阵，手机端也能等宽对齐；` ⃣`=墙（空键帽：空格+组合键帽） / `0️⃣`~`4️⃣`=数字墙 / `⬜️`=白格 / `💡`=灯；由 `gen_vol12_guide.py` 生成） |
+| `答案.md` | 全 300 关官方解答（每关一个代码块包裹的紧凑字符矩阵，手机端也能等宽对齐；`🟦`=墙（蓝色方块） / `0️⃣`~`4️⃣`=数字墙 / `⬜️`=白格 / `💡`=灯；由 `gen_vol12_guide.py` 生成） |
 | `gen_vol12_guide.py` | 答案生成脚本（读 `validation/puzzles.json`，产出 `答案.md`） |
 
 ## 取证约定（validation/）
