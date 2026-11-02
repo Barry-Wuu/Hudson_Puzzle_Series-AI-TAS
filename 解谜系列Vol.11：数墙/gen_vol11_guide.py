@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""生成《解谜系列Vol.11：数墙》全关卡答案 Markdown 表格版（2026-10-19）。
+"""生成《解谜系列Vol.11：数墙》全关卡答案（紧凑字符矩阵版）。
 
-格式（用户指定）：
-- 用 Markdown 表格展示每关答案盘面；
+格式：
+- 每关一个紧凑字符矩阵，一行即盘面一行，用 ``` 代码块包裹（手机/网页预览下等宽对齐）；
 - 墙 = █（全角实心方块）；
 - 线索数字 = 带圈数字 ①〜㊿（1..50，单字符，保证每列等宽）；
-- 空岛格（无线索的白格）= 全角空格 　；
-- 每关一个表格，行列与题目尺寸一致，答案已含官方墙位置（wall=1）。
+- 空岛格（无线索的白格）= □；
+- 每关一个矩阵，行列与题目尺寸一致，答案已含官方墙位置（wall=1）。
 
 数据源：validation/puzzles.json（extract_nurikabe.py 产物，300 题全部 ok）。
 """
@@ -15,7 +15,7 @@ import json
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, '..', '_vol11', 'puzzles.json')
+SRC = os.path.join(HERE, 'validation', 'puzzles.json')
 # 攻略产物与脚本同目录（仓库《解谜系列Vol.11：数墙/》）
 DST = os.path.join(HERE, '答案.md')
 
@@ -40,24 +40,22 @@ def circled(n):
 
 
 def cell_text(clue, wall):
-    """单格内容。墙=█；空岛=全角空格；线索=带圈数字。"""
+    """单格内容。墙=█；空岛=□；线索=带圈数字。"""
     if wall == 1:
         return '█'
     if clue >= 1:
         return circled(clue)
-    return '　'
+    return '□'
 
 
 def render_table(p):
-    """渲染一关为 Markdown 表格。返回多行字符串。"""
+    """渲染一关为紧凑矩阵 + 代码块围栏（函数名沿用旧称）。"""
     w, h = p['w'], p['h']
     clue, wall = p['clue'], p['wall']
-    header = '| ' + ' | '.join('' for _ in range(w)) + ' |'
-    sep = '| ' + ' | '.join('---' for _ in range(w)) + ' |'
-    lines = [header, sep]
+    lines = ['```']
     for r in range(h):
-        cells = [cell_text(clue[r * w + c], wall[r * w + c]) for c in range(w)]
-        lines.append('| ' + ' | '.join(cells) + ' |')
+        lines.append(''.join(cell_text(clue[r * w + c], wall[r * w + c]) for c in range(w)))
+    lines.append('```')
     return '\n'.join(lines)
 
 
@@ -66,9 +64,8 @@ def main():
     out = []
     out.append('# 《解谜系列Vol.11：数墙》全关卡答案（官方答案盘面）')
     out.append('')
-    out.append('> 📌 **阅读提示**：本文件用 **Markdown 表格**展示每关答案。若在网页/App 的预览中看到')
-    out.append('> 表格列错位、或 `█` 与数字不等宽，属**渲染器问题**而非文件问题。请切换右上角「**源码模式** / **Raw Data**」')
-    out.append('> 查看，或用记事本、VS Code 等纯文本/代码编辑器打开，格式即为正确效果。')
+    out.append('> 📌 **阅读提示**：每关盘面都放在**代码块**里，网页与手机端预览都会按等宽字体渲染，')
+    out.append('> 行列对齐、无需切换「源码模式」。')
     out.append('>')
     out.append('> 图例：**`█`** = 墙（黑色格子，官方答案中涂黑的位置）；**带圈数字 ①〜㊿** = 线索数字')
     out.append('> （该数字表示此白色连通块（岛）应包含的格子数）；**全角空格 `　`** = 无线索的白格。')
@@ -84,7 +81,6 @@ def main():
         puzzles = data[diff]
         for p in puzzles:
             out.append(f'### 第{p["rec"]:02d}問 rec{p["rec"]}（{p["w"]}×{p["h"]}）')
-            out.append('')
             out.append(render_table(p))
             out.append('')
 

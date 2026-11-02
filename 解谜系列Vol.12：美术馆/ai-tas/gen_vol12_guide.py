@@ -4,12 +4,12 @@
 
 答案来自 extract_akari.py 产物 validation/puzzles.json（300 题 AKARI 规则自检 300/300 零失败）。
 
-渲染约定（与根目录 gen_vol12_guide.py 的紧凑矩阵版同图例）：
+渲染约定（与根目录 gen_vol12_guide.py 的紧凑矩阵版完全一致）：
 - 黑墙(无号)        = ⬛️
 - 带号黑墙(相邻灯数) = 0️⃣ ~ 4️⃣
 - 白格有灯(答案)    = 💡
 - 白格无灯          = ⬜️
-每个谜题一张等宽表格，行列与题目一致。
+每关一个紧凑矩阵，并用 ``` 代码块包裹（前后各一行），手机/网页预览下保持等宽对齐。
 """
 import json
 import os
@@ -47,13 +47,12 @@ def cell_char(puz, idx):
 
 
 def render_table(puz):
+    """紧凑矩阵 + 代码块围栏（函数名沿用旧称）。"""
     w, h = puz['w'], puz['h']
-    header = '| ' + ' | '.join('' for _ in range(w)) + ' |'
-    sep = '| ' + ' | '.join('---' for _ in range(w)) + ' |'
-    lines = [header, sep]
+    lines = ['```']
     for r in range(h):
-        cells = [cell_char(puz, r * w + c) for c in range(w)]
-        lines.append('| ' + ' | '.join(cells) + ' |')
+        lines.append(''.join(cell_char(puz, r * w + c) for c in range(w)))
+    lines.append('```')
     return '\n'.join(lines)
 
 
@@ -62,8 +61,8 @@ def main():
     out = []
     out.append('# 《解谜系列Vol.12：美術館 / AKARI（点灯）》全关卡答案（官方解答）')
     out.append('')
-    out.append('> 📌 **阅读提示**：本文件用 **Markdown 表格**展示每关解答。若在网页/App 预览中看到')
-    out.append('> 表格列错位，属**渲染器问题**而非文件问题，请切换「源码模式 / Raw Data」或用纯文本编辑器打开。')
+    out.append('> 📌 **阅读提示**：每关盘面都放在**代码块**里，网页与手机端预览都会按等宽字体渲染，')
+    out.append('> 行列对齐、无需切换「源码模式」。')
     out.append('>')
     out.append('> 图例：**`⬛️`** = 黑墙（无号）；**`0️⃣`~`4️⃣`** = 带号黑墙（该墙上下左右相邻的灯数）；')
     out.append('> **`💡`** = 应放置的灯（答案）；**`⬜️`** = 普通白格（不放灯）。')
@@ -77,7 +76,6 @@ def main():
         out.append('')
         for p in data[diff]:
             out.append('### 第%02d問（%d×%d）' % (p['rec'], p['w'], p['h']))
-            out.append('')
             out.append(render_table(p))
             out.append('')
     text = '\n'.join(out).rstrip() + '\n'

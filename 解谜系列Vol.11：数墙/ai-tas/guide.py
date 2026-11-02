@@ -3,6 +3,7 @@
 """照抄攻略：从《答案.md》（官方答案盘面）解析每关黑格坐标，去除求解器。
 
 答案.md 由 validation/puzzles.json 生成，盘面字符约定：
+  每关盘面置于 ``` 代码块中（解析时跳过围栏行）
   █ (U+2588) = 墙（要涂黑的格子）
   □ (U+25A1) / 全角空格 　 / 带圈数字  = 白格（不涂）
 每关一个矩阵，行列与题目尺寸一致，r 自上而下、c 自左而右（0-based）。
@@ -37,7 +38,9 @@ def _parse_guide_md():
         for m in _REC_TITLE.finditer(body):
             rec = int(m.group(2))
             h = int(m.group(4))
-            mat = m.group(5).rstrip("\n").split("\n")
+            # 跳过代码块围栏（```）与空行，剩余即盘面各行
+            mat = [ln for ln in m.group(5).rstrip("\n").split("\n")
+                   if ln.strip() and ln.strip() != "```"]
             blacks = set()
             for r, line in enumerate(mat):
                 for c, ch in enumerate(line):
