@@ -43,11 +43,14 @@ SND_FLAG=""
 #   x11grab 按墙钟 30fps 抓屏 ⇒ 成片游戏时间以 ~3-6 倍速流逝 = 快进。
 #   （seg1/seg2 当年靠手动起 limiter-ON 实例侥幸避开；seg3 崩溃重启走了本脚本中招。）
 if [ "$SOUND" = "on" ]; then
+  # ★2026-11-03 修：--spu-mode=1 (Synchronous) 是 desmume 流式 BGM 卡顿的标准开关；
+  #   默认 0(Dual Synch/Asynch) 在 CPU 争抢下会让音乐出现断点。limiter 仍 ON（不加
+  #   --disable-limiter），保录制不快进。
   SDL_VIDEODRIVER=x11 SDL_VIDEO_WINDOW_POS=384,192 SDL_AUDIODRIVER=alsa \
-    setsid desmume-cli --cpu-mode=1 --num-cores=1 vol12.nds >/tmp/desmume_vol12.log 2>&1 &
+    setsid desmume-cli --cpu-mode=1 --num-cores=1 --spu-mode=1 vol12.nds >/tmp/desmume_vol12.log 2>&1 &
 else
   SDL_VIDEODRIVER=x11 SDL_VIDEO_WINDOW_POS=384,192 \
-    setsid desmume-cli --cpu-mode=1 --num-cores=1 --disable-limiter --disable-sound vol12.nds >/tmp/desmume_vol12.log 2>&1 &
+    setsid desmume-cli --cpu-mode=1 --num-cores=1 --spu-mode=1 --disable-limiter --disable-sound vol12.nds >/tmp/desmume_vol12.log 2>&1 &
 fi
 DPID=$!
 for i in $(seq 1 20); do
