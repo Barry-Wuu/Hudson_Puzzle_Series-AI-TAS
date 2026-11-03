@@ -64,12 +64,21 @@ def record_level(idx):
     ds.click_touch(145, 179, wait=0.8)      # リトライ
     time.sleep(0.7)
     ds.click_touch(95, 148, wait=0.6)       # はい（复位计时）
-    time.sleep(3.0)                          # 等 START 淡出
+    time.sleep(3.5)                          # 等 START 完全淡出(略加长, 防首点被 START 吃掉)
 
-    for (r, c) in mask_cells(idx):           # 逐格可靠点击
+    # —— 修「开头误触」: 入场可能误落一格(本应为空却变成 #/P)。
+    # 先复位成全空, 再点答案, 保证一遍即干净、结算前不再出现额外矫正。
+    board, _ = R.read_board()
+    for r in range(6):
+        for c in range(6):
+            if board[r][c] != '.':
+                for _ in range(R.taps_needed(board[r][c], '.')):
+                    R.click_cell(r, c)
+
+    for (r, c) in mask_cells(idx):           # 逐格可靠点击(此时盘面已干净)
         R.click_cell(r, c)
     time.sleep(0.6)
-    R.solve(idx, log=lambda *a: None)        # 读盘纠错 + 结算识别
+    R.solve(idx, log=lambda *a: None)        # 应为 board==mask 直接返回, 不再有可见矫正
     time.sleep(2.5)                          # 等结算稳定
 
     p.terminate()                            # 停在结算画面，存档动作不入镜
