@@ -61,13 +61,11 @@ def record_level(idx):
     tx, ty = level_touch(idx)
     ds.click_touch(tx, ty, wait=0.8)        # 选关
     ds.key('x', wait=1.7, hold=0.12)        # A 进入
-    ds.key('Return', wait=0.7, hold=0.12)   # 选项
-    ds.click_touch(145, 179, wait=0.8)      # リトライ
-    time.sleep(0.7)
-    ds.click_touch(95, 148, wait=0.6)       # はい（复位计时）
-    time.sleep(3.5)                          # 等 START 完全淡出(略加长, 防首点被 START 吃掉)
+    ds.key('Return', wait=0.7, hold=0.12)   # START：开始游戏（START 提示消失）
+    time.sleep(3.5)                          # 等棋盘完全显现（原来这里有 2 下误触，已移除）
 
     # —— 稳健填法(修「开头误触」): 以入场读盘为基准, 把每个格直接设成答案掩码。
+    # 入场不再有任何误触, 盘面应全空, 于是每格只需 1 次点击即到位。
     # 多余格(#/P→.) 与缺格(.→#) 一次到位, 再 solve() 兜底(正常 board==mask 零迭代)。
     # 这样无论入场有无误触, 一遍即干净, 结算前不再出现可见的额外矫正。
     board, _ = R.read_board()
@@ -75,17 +73,23 @@ def record_level(idx):
     for r in range(6):
         for c in range(6):
             for _ in range(R.taps_needed(board[r][c], mask[r][c])):
-                R.click_cell(r, c)
-    # 校验补齐: 再读一次, 把连续快点漏掉的格补上(通常 0~2 格)
-    time.sleep(0.6)
-    b2, _ = R.read_board()
-    for r in range(6):
-        for c in range(6):
-            if b2[r][c] != mask[r][c]:
-                for _ in range(R.taps_needed(b2[r][c], mask[r][c])):
-                    R.click_cell(r, c)
-    time.sleep(0.6)
-    R.solve(idx, log=lambda *a: None)        # 正常情况下 board==mask 直接返回
+                R.click_cell(r, c, post=0.22)   # 放慢间隔, 避免连点被 DS 触摸采样漏掉
+    # 校验: 填对最后一格会立刻触发通关演出, 画面持续变化, 此时读盘不可信。
+    # 所以先等演出走完进入结算(cleared=True) —— 这本身就证明填色被游戏认可。
+    # 若仍未结算(说明真有漏点), 此时画面已稳定, 读盘可靠, 才补「缺失的黑格」。
+    time.sleep(2.5)
+    b2, cl2 = R.read_board()
+    if not cl2:
+        time.sleep(2.0)
+        b2, cl2 = R.read_board()
+    if not cl2:
+        for r in range(6):
+            for c in range(6):
+                if b2[r][c] != '#' and mask[r][c] == '#':
+                    for _ in range(R.taps_needed(b2[r][c], mask[r][c])):
+                        R.click_cell(r, c, post=0.22)
+        time.sleep(1.0)
+    R.solve(idx, log=lambda *a: None)        # 兜底(已通关则立即返回)
     time.sleep(2.5)                          # 等结算稳定
 
     p.terminate()                            # 停在结算画面，存档动作不入镜
