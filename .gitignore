@@ -7,3 +7,10 @@ __pycache__/
 shots/
 /tmp/
 *.log
+
+# 媒体产物不入库
+*.mp4
+*.mkv
+*.avi
+*.png
+*.jpg

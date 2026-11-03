@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import unicodedata
 """把 /tmp/vol10_all.json 渲染成 Vol.10 数壹 答案.md（①=未涂，❶=涂黑）。"""
 import json
 
@@ -16,6 +17,26 @@ def filled(n):
     if n <= 10:
         return chr(0x2776 + n - 1)
     return chr(0x24EA + (n - 10))
+
+
+def dwidth(s):
+    """显示宽度：全角/宽字符按 2 计。"""
+    return sum(2 if unicodedata.east_asian_width(c) in 'WF' else 1 for c in s)
+
+
+def pad(s, width, gap=3):
+    return s + ' ' * max(0, width - dwidth(s) + gap)
+
+
+def compact(recs):
+    """每关压成一行：关号 + 用 | 切开的各行，一屏看完。"""
+    out = []
+    for rec in recs:
+        w, h, sol = rec['w'], rec['h'], rec['M']
+        rows = [''.join((filled if sol[r][c] else circled)(rec['G'][r][c])
+                        for c in range(w)) for r in range(h)]
+        out.append(f"{rec['idx']:03d} " + '|'.join(rows))
+    return out
 
 
 def main():
@@ -41,6 +62,15 @@ def main():
         recs = by[diff]
         L.append(f'## {DIFF[diff]}（{CNT[diff]} 关）')
         L.append('')
+        if diff == 0:
+            L.append('> 🗺️ **速览**：入門 20 关压成 20 行，一屏看完。每行 = 一关，`|` 切开即为自上而下的 6 行，每组 6 格即一行。')
+            L.append('')
+            L.append('```')
+            L.extend(compact(recs))
+            L.append('```')
+            L.append('')
+            L.append('> 下面是逐关单列版，供手机上放大查看。')
+            L.append('')
         for rec in recs:
             w, h, sol = rec['w'], rec['h'], rec['M']
             L.append(f"### 第{rec['idx']:03d}問（{w}×{h}）")
