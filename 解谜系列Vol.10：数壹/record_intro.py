@@ -33,6 +33,7 @@ def ffmpeg_proc(path):
         'ffmpeg', '-y', '-loglevel', 'error',
         '-thread_queue_size', '512',
         '-f', 'x11grab', '-video_size', '512x768', '-framerate', '30',
+        '-draw_mouse', '0',            # 不把鼠标指针画进画面
         '-i', f':99+{WIN_X},{WIN_Y}',
         '-thread_queue_size', '512',
         '-f', 'pulse', '-i', 'rec.monitor',
