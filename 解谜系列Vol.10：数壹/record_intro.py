@@ -66,19 +66,25 @@ def record_level(idx):
     ds.click_touch(95, 148, wait=0.6)       # はい（复位计时）
     time.sleep(3.5)                          # 等 START 完全淡出(略加长, 防首点被 START 吃掉)
 
-    # —— 修「开头误触」: 入场可能误落一格(本应为空却变成 #/P)。
-    # 先复位成全空, 再点答案, 保证一遍即干净、结算前不再出现额外矫正。
+    # —— 稳健填法(修「开头误触」): 以入场读盘为基准, 把每个格直接设成答案掩码。
+    # 多余格(#/P→.) 与缺格(.→#) 一次到位, 再 solve() 兜底(正常 board==mask 零迭代)。
+    # 这样无论入场有无误触, 一遍即干净, 结算前不再出现可见的额外矫正。
     board, _ = R.read_board()
+    mask = R.load_mask(idx)
     for r in range(6):
         for c in range(6):
-            if board[r][c] != '.':
-                for _ in range(R.taps_needed(board[r][c], '.')):
-                    R.click_cell(r, c)
-
-    for (r, c) in mask_cells(idx):           # 逐格可靠点击(此时盘面已干净)
-        R.click_cell(r, c)
+            for _ in range(R.taps_needed(board[r][c], mask[r][c])):
+                R.click_cell(r, c)
+    # 校验补齐: 再读一次, 把连续快点漏掉的格补上(通常 0~2 格)
     time.sleep(0.6)
-    R.solve(idx, log=lambda *a: None)        # 应为 board==mask 直接返回, 不再有可见矫正
+    b2, _ = R.read_board()
+    for r in range(6):
+        for c in range(6):
+            if b2[r][c] != mask[r][c]:
+                for _ in range(R.taps_needed(b2[r][c], mask[r][c])):
+                    R.click_cell(r, c)
+    time.sleep(0.6)
+    R.solve(idx, log=lambda *a: None)        # 正常情况下 board==mask 直接返回
     time.sleep(2.5)                          # 等结算稳定
 
     p.terminate()                            # 停在结算画面，存档动作不入镜
