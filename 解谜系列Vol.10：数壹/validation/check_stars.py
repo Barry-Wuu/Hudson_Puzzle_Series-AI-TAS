@@ -10,7 +10,7 @@ import numpy as np
 from PIL import Image
 
 FULL = {            # 难度目录 -> (满星数, 首关, 末关)
-    'mode1_tutorial': (3, 2, 20),
+    'mode1_tutorial': (3, 1, 20),
     'mode2_easy':     (4, 1, 100),
     'mode3_medium':   (5, 1, 100),
     'mode4_hard':     (6, 1, 80),
