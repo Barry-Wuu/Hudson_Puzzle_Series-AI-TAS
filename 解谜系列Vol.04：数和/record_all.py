@@ -74,14 +74,20 @@ def grid_of(level):
     else:                       # 8×8 档 (head[2]==4 等)
         n = 8
         disk = body[-64:]
-        # 实机标定（入門011 单格命中实验）：
-        #   r1c3 触屏 (85,40) 正确填入；r7c4 用旧公式 (108,175) 却落在盘面外的
-        #   底部菜单条上——格子没被选中，数字反而覆盖到上一个仍选中的格，
-        #   这正是 8×8 档整盘填数始终不 CLEAR 的根因。
-        #   两点拟合：y(r1)=40、y(r7)=166 → 格宽 21、起点 8.5（取整 9）。
-        #   上半部分与旧公式差 1~2px，下半部分整体上移 4~10px，全部落回盘面内。
-        def cell_xy(r, c):
-            return int(9 + 21 * (c + .5)), int(9 + 21 * (r + .5))
+        # ★ 用户线索「滚动屏幕靠按下屏的黄色箭头」→ 8×8 档是 7×7 滚动视口。
+        # 实机（入門011）标定：
+        #   * 上屏是完整 8×8 全盘，红框标出下屏当前 7×7 视口位置；
+        #     上屏全局格心 = (64+24*(c+.5), 24*(r+.5))，可用于逐格视觉核对。
+        #   * 下屏视口格宽 24px；视口 (dr,dc) 显示全局 r=dr..dr+6, c=dc..dc+6，
+        #     屏幕格 (vr,vc) ↔ 全局 (r,c)=(dr+vr, dc+vc)；四边橙黄箭头 ◀▶▲▼
+        #     每点一次滚动 1 格，到边界后无效。
+        #   * 屏幕格心（触屏）= (8+24*(vc+.5), 10+24*(vr+.5))。
+        #   * ROM 答案盘 body[-64:] 经斜线提示段和验证完全正确（011: 7=2+1+4、
+        #     10=4+1+3+2、6=2+1+3、6=3+2+1 …）。
+        #   * 入門011~020 全部答案格都落在 r1..7 × c1..7，因此滚到 (1,1) 一个
+        #     视口即可看全，映射 (r,c)→(vr,vc)=(r-1,c-1)，见 fill_8x8()。
+        def cell_xy(r, c):          # 全局格 → 视口(0,0) 时的屏幕格心（仅作占位）
+            return int(8 + 24 * (c + .5)), int(10 + 24 * (r + .5))
     return n, disk, cell_xy
 
 
@@ -118,7 +124,13 @@ def board_match(im, n, disk):
     if n == 6:
         x0, y0, cw, ch = 13, 212, 25, 25.5        # 全图坐标(下屏起点 y=192)
     else:
-        x0, y0, cw, ch = 7, 199, 22.5, 22.5
+        # ★ 改采【上屏完整 8×8 全盘】：格宽 24px、起点 (64,0)，
+        #   上屏全盘格心 = (64+24*(c+.5), 24*(r+.5))，与视口滚动无关。
+        #   实测 011/016 白格模式 64/64 完全吻合。
+        #   旧的下屏「8×8 / 22.5px」与真实 7×7 视口系统性错位，吻合率随
+        #   白格模式波动（015 仅 23/43、017 32/45），导致 ensure_board
+        #   误判「盘面未就绪」而整关失败。
+        x0, y0, cw, ch = 64, 0, 24, 24
     ok = judged = white = 0
     for r in range(n):
         for c in range(n):
@@ -251,23 +263,42 @@ def _orange_low(im):
     return c
 
 
+def _sel_red(im):
+    """下屏关号按钮行(y≈255..305)的红色像素数。
+
+    已通关关号按钮会整片变红，通关数越多红色像素越多（013 通关后实测 864）；
+    答题盘面 / 结算页 / 空白盘面均 ≤7。这是选关层对任意通关数都成立的特征。
+    """
+    cnt = 0
+    for y in range(255, 306, 2):
+        for x in range(10, 250, 2):
+            r, g, b = im.getpixel((x, y))
+            if r > 170 and g < 130 and b < 130:
+                cnt += 1
+    return cnt
+
+
 def on_select_screen():
-    """判定选关层：上屏深蓝背景 + 1-20 关号按钮的深蓝数字笔画。
+    """判定选关层：上屏深蓝背景 + 1-20 关号按钮行。
 
     实测区分度（60+ 张各界面截图统计）：
-      * 选关层：blue≈0.54~0.57，20 值中 19~20 落在 [20,90]，>100 的有 0 个；
-        当前光标所在关号会变红/带「クリア済」标记，该按钮笔画值掉到 0~22，
-        故不能要求 20/20 全在区间内（旧判据在通关后误判失败的原因）。
-      * オプション菜单：blue≈0.05（上屏是白底 KAKURO logo），但按钮位恰有 18 个落在区间；
-      * 结算/演出/答题盘面：blue 低或 >100 的极端值成片出现。
-    旧版「数白像素 / 数游程」同样会被盘面数字键盘或缩略盘白格误判。
+      * 选关层：blue_top≈0.54~0.57、blue_bottom≈0.63；
+      * オプション菜单：blue_top≈0.05（上屏白底 KAKURO logo）；
+      * 结算/演出/答题盘面：blue_top≈0.04~0.06。
+
+    深蓝数字笔画判据（20 个按钮 ≥18 落在 [20,90]）只适用于「几乎没通关」时：
+    已通关关号按钮变红后测不到深蓝笔画，013 通关后 1~13 全红，inrange 掉到 17
+    仍不满足 ≥18，导致 ensure_select 误判、按 A 反而误进关、014~017 连锁失败。
+    故新增第二条通路：双深蓝 + 按钮行红色成片 → 同样是选关层。
     """
     im = ds.shot()
     if _blue_top(im) < 0.45:
         return False
     vals = [_pen(im, x, y) for y in (264, 292) for x in SELC_COLS]
-    return (sum(1 for v in vals if 20 <= v <= 90) >= 18
-            and sum(1 for v in vals if v > 100) <= 1)
+    if (sum(1 for v in vals if 20 <= v <= 90) >= 18
+            and sum(1 for v in vals if v > 100) <= 1):
+        return True
+    return _blue_bottom(im) > 0.4 and _sel_red(im) > 100
 
 
 def is_cleared():
@@ -360,6 +391,100 @@ def answer_cells(n, disk):
             for r in range(n) for c in range(n) if disk[r * n + c]]
 
 
+# ---- 8×8 档：7×7 视口 + 四边橙黄箭头滚动（用户 2026-11-06 线索） ----
+# 箭头触屏坐标（全图=触屏 x, 全图 y-192=触屏 y）：
+#   ▶(174,90) ◀(10,90) ▼(90,174) ▲(90,10)
+V8_ARROW = {'R': (174, 90), 'L': (10, 90), 'D': (90, 174), 'U': (90, 10)}
+V8_X0, V8_Y0, V8_CW = 8, 10, 24      # 屏幕格心(触屏) = (X0+CW*(vc+.5), Y0+CW*(vr+.5))
+
+
+def _v8_arrow_px(im, name):
+    """四边箭头区域的橙黄像素数：存在 ~20，不存在 0。用于闭环校验视口状态。"""
+    a = __import__('numpy').array(im.convert('RGB'))
+    box = {'R': (165, 185, 265, 300), 'L': (0, 20, 265, 300),
+           'D': (75, 105, 355, 378), 'U': (75, 105, 192, 215)}[name]
+    x0, x1, y0, y1 = box
+    seg = a[y0:y1, x0:x1]
+    r, g, b = seg[:, :, 0], seg[:, :, 1], seg[:, :, 2]
+    return int(((r > 205) & (g > 110) & (g < 215) & (b < 120)).sum())
+
+
+def _v8_state(im):
+    """读箭头判视口 (dr,dc)：R/D 在 → dc=0/dr=0；L/U 在 → dc=1/dr=1。"""
+    return (1 if _v8_arrow_px(im, 'U') > 8 else 0,
+            1 if _v8_arrow_px(im, 'L') > 8 else 0)
+
+
+def _v8_scroll(target, tag):
+    """把视口滚到 (dr,dc)=target，用箭头闭环推进，最多 6 步。返回是否到达。"""
+    for _ in range(6):
+        im = ds.shot()
+        cur = _v8_state(im)
+        if cur == target:
+            return True
+        dr, dc = cur
+        tdr, tdc = target
+        # 先纵向再横向；点箭头后要求对应反向箭头出现，否则重试
+        if dr != tdr:
+            name = 'D' if tdr > dr else 'U'
+            ds.click_touch(*V8_ARROW[name], wait=0.7)
+        elif dc != tdc:
+            name = 'R' if tdc > dc else 'L'
+            ds.click_touch(*V8_ARROW[name], wait=0.7)
+    ok = _v8_state(ds.shot()) == target
+    if not ok:
+        print('  [%s] !! 视口滚动未到 %s' % (tag, target), flush=True)
+    return ok
+
+
+def _v8_view_missing(items):
+    """读当前视口，返回 items=[(vr,vc,v)...] 中【未填】的格（只检查传入的归属格）。"""
+    import numpy as np
+    a = np.array(ds.shot().convert('RGB'))
+    missing = []
+    for vr, vc, v in items:
+        x = int(V8_X0 + V8_CW * (vc + .5))
+        y = 192 + int(V8_Y0 + V8_CW * (vr + .5))     # 触屏 → 全图
+        s = a[y - 7:y + 8, x - 7:x + 8]
+        R, G, B = s[:, :, 0], s[:, :, 1], s[:, :, 2]
+        pen = int(((R < 120) & (G < 140) & (B < 190) & (B >= R)).sum())
+        if pen < 8:
+            missing.append((vr, vc, v))
+    return missing
+
+
+def fill_8x8(disk, tag):
+    """8×8 档：把视口滚到右下 (1,1)，【单视口一次填完】所有答案格。
+
+    ★ 决定性结论（实机逐格验证，入門011 30 格 100% 核对通过）：
+      * 入門011~020 全部答案格都落在全局 r1..7 × c1..7 的 7×7 区域内
+        （r0 / c0 全是斜线提示格）。因此【一个 (1,1) 视口即可看全 30~36 格】，
+        根本不需要在 4 个视口间来回滚动。
+      * 旧版「4 视口分配 + 滚动状态机」在反复滚动中把数字填到错格，
+        且 _v8_view_missing 的 pen<8 判据会把斜线提示格误判成已填，
+        于是「空格 0」是假象、盘面实际有错值 → 永不 CLEAR。
+      * 全局格 (r,c) → 屏幕格 (vr,vc)=(r-1,c-1)，
+        格心(触屏) = (V8_X0+V8_CW*(vc+.5), V8_Y0+V8_CW*(vr+.5))。
+        上屏全盘格心 = (64+24*(c+.5), 24*(r+.5))，可用于逐格视觉核对。
+      * ROM 答案盘 body[-64:] 经斜线提示段和验证完全正确
+        (011: 7=2+1+4, 10=4+1+3+2, 6=2+1+3, 6=3+2+1, ...)。
+      * 30 格全部填对后游戏会【延迟数秒自动 CLEAR】，按 A 只推进结算演出，
+        不需要 CHECK / 決定 之类的额外提交动作。
+    """
+    cells = answer_cells(8, disk)
+    if not _v8_scroll((1, 1), tag):
+        return False
+    print('  [%s] 视口(1,1) 就绪，单视口一次填 %d 格' % (tag, len(cells)), flush=True)
+    for r, c, v in cells:
+        vr, vc = r - 1, c - 1
+        tx = int(V8_X0 + V8_CW * (vc + .5))
+        ty = int(V8_Y0 + V8_CW * (vr + .5))
+        nx, ny = num_xy(v)
+        ds.click_touch(tx, ty, wait=TAP_CELL)
+        ds.click_touch(nx, ny, wait=TAP_NUM)
+    return True
+
+
 def record_one(k):
     """录 1-based 入門关号 k。返回 (ok, 说明)。"""
     level = k - 1
@@ -381,23 +506,32 @@ def record_one(k):
     if not ensure_board(n, disk, cell_xy, tag):
         return False, '盘面未就绪(教学/演出未跳过或复位失败)'
 
-    # 3) 录制：整盘按序填 → 等结算页 →（必要时）再整盘重填一轮 → A 決定 → 等结算页
+    # 3) 录制：填数 → 等结算页 →（必要时）再重填一轮 → A 決定 → 等结算页
     #
-    # 放弃「读盘找漏格再补点」：实测补点点击会因为选中态/演出把数字填到别的格，
-    # 反而制造答案错误（004/006/008/009 因此没 CLEAR，002/010 靠首轮填满才通关）。
-    # 改为整盘重填一轮（同格同数字覆盖，不会改错），并以下屏深蓝占比判定结算页，
-    # 不再依赖 filled_state() 的笔画读数。
+    # 6×6 档：整盘按序填（同格同数字重填覆盖，不会改错），填满自动 CLEAR。
+    # 8×8 档：把 7×7 视口滚到 (1,1) 看全所有答案格，单视口一次填完，
+    #         见 fill_8x8()。旧版在 4 个视口间来回滚动会填错格，已废弃。
     p = ffmpeg_proc(out)
     time.sleep(FFMPEG_WARM)
     time.sleep(LEAD_IN)
+    # 8×8 单视口一次填完；正常第 1 轮即结算，第 2 轮仅在未结算时兜底重填
+    # （同格同值覆盖，不会改错；此时视口仍在 (1,1)，_v8_scroll 会立即返回）
     for rnd in range(2):
-        for r, c, v in cells:
-            x, y = cell_xy(r, c)
-            nx, ny = num_xy(v)
-            ds.click_touch(x, y, wait=TAP_CELL)
-            ds.click_touch(nx, ny, wait=TAP_NUM)
-        print('  [%s] 第%d轮整盘填数完成 (%d 格)' % (tag, rnd + 1, len(cells)), flush=True)
-        for _ in range(12):           # CLEAR 演出 + 结算页切换可达 4~5s，最多等 6s
+        if n == 8:
+            fill_8x8(disk, tag)
+            what = '8×8 单视口(1,1)一次填数'
+        else:
+            for r, c, v in cells:
+                x, y = cell_xy(r, c)
+                nx, ny = num_xy(v)
+                ds.click_touch(x, y, wait=TAP_CELL)
+                ds.click_touch(nx, ny, wait=TAP_NUM)
+            what = '整盘按序填数'
+        print('  [%s] 第%d轮%s完成 (%d 格)' % (tag, rnd + 1, what, len(cells)), flush=True)
+        # 8×8 填满正确答案后游戏【延迟数秒才自动 CLEAR】（实机：填完 1s 时
+        # blue_bottom 仍 0.061，数秒后自行跳到 0.677 结算页），故 8×8 最多等
+        # 14s；6×6 档沿用 6s。等待期间不按 A，避免误触盘面。
+        for _ in range(28 if n == 8 else 12):
             if in_result_screen():
                 break
             time.sleep(0.5)
