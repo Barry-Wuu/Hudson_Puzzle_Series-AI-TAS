@@ -48,18 +48,52 @@ PULSE_SERVER = 'unix:/tmp/runtime-root/pulse/native'
 SELC_COLS = [26, 50, 75, 100, 124, 149, 173, 198, 222, 247]
 SELC_ROWY = {0: 75, 1: 99}
 
-# ffmpeg 启动等待 / 开头留白 / 点击间隔 / CLEAR 等待
-# 实测：0.15/0.18 + 0.4s 留白会漏点（入場演出未结束触摸被吞，2 格漏填不 CLEAR）。
-# 回调到与 Vol.10 后作一致的 0.22/0.25，留白 1.2s 等演出走完；并加「读盘补点」兜底。
+# ffmpeg 启动等待 / 开头留白 / 点击间隔 / 结算停留
+# 旧版 ds.click_touch 每次固定 0.2(mousemove后)+0.18(按住)+wait≈0.66s，
+# 每格两次点击 ≈1.34s，30 格光填数就 40s。用户问「剂量还能更快吗」→
+# 改 fast_tap()：单条 xdotool 命令完成 移动→短按(0.06s)→抬起，间隔 TAP_GAP。
+# 实测极限（011 实机 30 格，2026-11-07，能自动 CLEAR 即证明全命中）：
+#   gap=0.08 每格 0.370s / 11.1s 全命中；gap=0.05 每格 0.305s / 9.1s 全命中；
+#   gap=0.04 每格 0.204s、gap=0.02 每格 0.144s 均漏填不 CLEAR（触摸被吞）。
+# ★ 但 6×6 档对 0.05 更敏感（002 实测漏 3 格、补点后仍触发整盘重填，
+#   反而比 0.08 慢——多等一轮 14s + 重填）。故【两档统一取 0.08】为稳定值：
+#   8×8 实测 30/30、6×6 实测 16/16 且填完 4.7s 自动 CLEAR。
+# 入场演出由 LEAD_IN=1.2s 挡住（早期 0.15/0.18 漏点的真因是留白太短，不是点击太快）。
 FFMPEG_WARM = 0.6
 LEAD_IN = 1.2
-TAP_CELL = 0.28
+TAP_CELL = 0.28          # 选关/箭头等非填数点击沿用 ds.click_touch
 TAP_NUM = 0.30
+TAP_GAP = 0.08           # ★ 填数点击间隔（fast_tap），双档验证的稳定值
+RESULT_HOLD = 5.0        # ★ 结算页出现后再录 5s，覆盖星星点亮 + 分数滚动 + 定格
 CLEAR_WAIT = 3.5
 FILL_ROUNDS = 4          # 最多补点轮数
 
 with open(DATA, encoding='utf-8') as fp:
     REPORT = json.load(fp)
+
+
+_GEOM = None
+
+
+def fast_tap(tx, ty, gap=TAP_GAP):
+    """填数专用快速点击：单条 xdotool 完成 移动 → 短按 → 抬起。
+
+    ds.click_touch 每次固定 sleep(0.2)+sleep(0.18)+wait ≈ 0.66s；
+    这里把指针移动后的等待压到 0.04s、按住压到 0.06s（≈3~4 帧，足够
+    DeSmuME 采样触摸），点击后只再等 gap。实测 gap=0.08 时每格 0.370s、
+    30 格(8×8)/16 格(6×6) 全部命中并自动 CLEAR；gap<=0.04 会漏填。
+    窗口几何固定，只取一次。
+    """
+    global _GEOM
+    if _GEOM is None:
+        _GEOM = ds.geom()
+    g = _GEOM
+    sx = g['x'] + int(tx * g['w'] / 256)
+    sy = g['y'] + g['h'] // 2 + int(ty * (g['h'] // 2) / 192)
+    subprocess.run(['xdotool', 'mousemove', str(sx), str(sy), 'sleep', '0.04',
+                    'mousedown', '1', 'sleep', '0.06', 'mouseup', '1'],
+                   env=ds.ENV)
+    time.sleep(gap)
 
 
 def grid_of(level):
@@ -480,8 +514,8 @@ def fill_8x8(disk, tag):
         tx = int(V8_X0 + V8_CW * (vc + .5))
         ty = int(V8_Y0 + V8_CW * (vr + .5))
         nx, ny = num_xy(v)
-        ds.click_touch(tx, ty, wait=TAP_CELL)
-        ds.click_touch(nx, ny, wait=TAP_NUM)
+        fast_tap(tx, ty)
+        fast_tap(nx, ny)
     return True
 
 
@@ -495,16 +529,28 @@ def record_one(k):
     print('\n=== 入門%s (lv%d, %d×%d, %d 格) ===' % (tag, level, n, n, len(cells)), flush=True)
 
     # 1) 选关层点关号 → A 进入
-    if not ensure_select(tag):
-        return False, '未处于选关层'
-    sx, sy = sel_xy(k)
-    ds.click_touch(sx, sy, wait=0.8)
-    ds.key('x', wait=1.0)              # A 进入（教学/START 由 ensure_board 处理）
-    time.sleep(1.6)
-
-    # 2) 就绪自检（含教学跳过 / 解答中残留复位）
-    if not ensure_board(n, disk, cell_xy, tag):
-        return False, '盘面未就绪(教学/演出未跳过或复位失败)'
+    #    ★ 通关后回选关层时存档/解锁演出可能残留，单次点关号偶发被吞 →
+    #      按 A 就进了【当前光标所在的前一关】（2026-11-07 批量 004/006/008
+    #      实测都进成第 3/5/7 問，即上一关；017 也曾进成 015）。
+    #      故：进关前多等 0.5s、点关号连点 2 次（同一按钮幂等，只移光标
+    #      不进关）、并对「盘面不符」做进关重试（回选关层重新进）。
+    board_ok = False
+    for enter_try in range(3):
+        if not ensure_select(tag):
+            return False, '未处于选关层'
+        time.sleep(0.5)                     # 存档/解锁演出余波
+        sx, sy = sel_xy(k)
+        ds.click_touch(sx, sy, wait=0.5)
+        ds.click_touch(sx, sy, wait=0.8)   # 连点 2 次，防单次被吞
+        ds.key('x', wait=1.0)              # A 进入（教学/START 由 ensure_board 处理）
+        time.sleep(1.6)
+        if ensure_board(n, disk, cell_xy, tag):
+            board_ok = True
+            break
+        print('  [%s] 第%d次进关盘面不符 → 回选关层重试' %
+              (tag, enter_try + 1), flush=True)
+    if not board_ok:
+        return False, '盘面未就绪(多次进关重试仍失败)'
 
     # 3) 录制：填数 → 等结算页 →（必要时）再重填一轮 → A 決定 → 等结算页
     #
@@ -524,14 +570,27 @@ def record_one(k):
             for r, c, v in cells:
                 x, y = cell_xy(r, c)
                 nx, ny = num_xy(v)
-                ds.click_touch(x, y, wait=TAP_CELL)
-                ds.click_touch(nx, ny, wait=TAP_NUM)
+                fast_tap(x, y)
+                fast_tap(nx, ny)
             what = '整盘按序填数'
+            # ★ 6×6 精确补点：快速点击偶发漏格时只补空格（filled_state 在
+            #   6×6 白格宽 25px 分隔清晰、判据可靠，实测 16/16 无误报），
+            #   比整盘重填 16 格更快，且视频里不会出现「整盘重填一遍」。
+            missing, filled = filled_state(n, disk, cell_xy)
+            if missing:
+                print('  [%s] 第%d轮读盘空格 %d → 精确补点 %s' %
+                      (tag, rnd + 1, len(missing), missing), flush=True)
+                for r, c, v in missing:
+                    x, y = cell_xy(r, c)
+                    nx, ny = num_xy(v)
+                    fast_tap(x, y)
+                    fast_tap(nx, ny)
         print('  [%s] 第%d轮%s完成 (%d 格)' % (tag, rnd + 1, what, len(cells)), flush=True)
-        # 8×8 填满正确答案后游戏【延迟数秒才自动 CLEAR】（实机：填完 1s 时
-        # blue_bottom 仍 0.061，数秒后自行跳到 0.677 结算页），故 8×8 最多等
-        # 14s；6×6 档沿用 6s。等待期间不按 A，避免误触盘面。
-        for _ in range(28 if n == 8 else 12):
+        # ★ 两档统一 14s 等待窗口：填满正确答案后游戏【延迟数秒才自动 CLEAR】。
+        #   实机时间线（填完起算）：2.1s CLEAR 大字 → 4.2s 转场 → 4.7s 结算页
+        #   （8×8 约 4.5s）。旧版 6×6 只等 12×0.5=6s 且每轮叠加抓屏开销，
+        #   正好卡在边界偶发超时，误触发整盘重填第 2 轮。等待期间不按 A。
+        for _ in range(28):
             if in_result_screen():
                 break
             time.sleep(0.5)
@@ -547,7 +606,15 @@ def record_one(k):
             cleared = True
             break
         time.sleep(0.5)
-    time.sleep(1.5)                   # 让结算页在视频里停留，避免末尾被截断
+    # ★ 结算演出完整收录（用户 2026-11-07 反馈「星星结算没录完」）：
+    # 实机时间线（填完最后一格起算，8×8 011）：
+    #   0~1.4s 盘面 → 1.6~3.9s CLEAR 橙色大字演出 → 4.1s 暗场转场
+    #   → 4.5s 蓝色结算页渐显（in_result_screen 此刻就返回 True）
+    #   → 【4 星制，第 3/4 颗延迟点亮】：结算页刚出现只有 2~3 颗金 +
+    #     1~2 颗灰，约 2~3s 后第 4 颗才变金，约 7s 起 4 星全金定格。
+    # 旧版只 sleep(1.5) 就 terminate，恰好切在第 4 颗星还是灰色时。改为
+    # 结算页出现后再录 RESULT_HOLD=5s，覆盖「2/4 → 4/4」点亮全过程 + 定格。
+    time.sleep(RESULT_HOLD)
     ds.save(ds.shot(), '/tmp/v4_end_%s.png' % tag)     # 结算证据截图
     if not cleared:
         print('  [%s] !! 未进入结算页（答案可能有误）' % tag, flush=True)
