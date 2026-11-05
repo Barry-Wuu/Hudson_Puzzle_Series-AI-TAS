@@ -12,5 +12,11 @@ shots/
 *.mp4
 *.mkv
 *.avi
+*.mov
+*.webm
+*.flv
+*.wmv
+*.mpg
+*.mpeg
 *.png
 *.jpg

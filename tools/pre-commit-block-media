@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+# pre-commit 钩子：自动拦截视频与超大文件，防止它们进入仓库历史。
+# 安装： bash tools/install-hooks.sh   或   cp tools/pre-commit-block-media .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+#
+# 为什么需要它：
+#   .gitignore 只能挡“普通 git add”，但 `git add -f` 能绕过；且 .gitignore 管不了文件大小。
+#   钩子直接检查【暂存区】，任何试图提交的视频/超大文件都会被拒绝，从源头杜绝历史膨胀。
+#
+# 设计原则：
+#   - 视频扩展名：硬性拒绝（用户要求“仓库里不应该出现视频”）。
+#   - 超大文件：超过 SIZE_LIMIT 一律拒绝（默认 50MiB），兜住任何意外的大二进制。
+#   - 体积小的工作素材（如 Vol.13 的 mp3/ogg，单个 ~1.7MiB）不受影响，正常入库。
+
+set -euo pipefail
+
+# ---- 可配置项 ----
+# 视频扩展名（小写，逗号分隔，仅作展示；匹配在下方不区分大小写）
+VIDEO_EXTS="mp4 mkv avi mov webm flv wmv mpg mpeg"
+# 超大文件阈值（字节）：默认 50 MiB
+SIZE_LIMIT=$((50 * 1024 * 1024))
+
+# ---- 取暂存区文件 ----
+# AC MR（新增/修改/重命名/拷贝），排除已删除
+mapfile -t STAGED < <(git diff --cached --name-only --diff-filter=ACMR)
+
+[ "${#STAGED[@]}" -eq 0 ] && exit 0
+
+VIOLATIONS=()
+SIZE_VIOLATIONS=()
+
+for f in "${STAGED[@]}"; do
+  # 扩展名（转小写）
+  ext="${f##*.}"
+  ext_lower="$(printf '%s' "$ext" | tr '[:upper:]' '[:lower:]')"
+
+  # 视频：硬性拒绝
+  for v in $VIDEO_EXTS; do
+    if [ "$ext_lower" = "$v" ]; then
+      VIOLATIONS+=("$f")
+      break
+    fi
+  done
+
+  # 超大文件：用暂存区 blob 大小判断（不依赖工作区，重命名也准）
+  if [ -n "$(git rev-parse --verify ":$f" 2>/dev/null)" ]; then
+    blob_sz=$(git cat-file -s ":$f" 2>/dev/null || echo 0)
+    if [ "${blob_sz:-0}" -gt "$SIZE_LIMIT" ]; then
+      SIZE_VIOLATIONS+=("$f  ($(( blob_sz / 1024 / 1024 )) MiB)")
+    fi
+  fi
+done
+
+if [ "${#VIOLATIONS[@]}" -gt 0 ] || [ "${#SIZE_VIOLATIONS[@]}" -gt 0 ]; then
+  echo "❌ pre-commit 拦截：检测到不应入库的文件" >&2
+  if [ "${#VIOLATIONS[@]}" -gt 0 ]; then
+    echo "" >&2
+    echo "  视频文件（仓库里不应出现）：" >&2
+    for v in "${VIOLATIONS[@]}"; do echo "    - $v" >&2; done
+  fi
+  if [ "${#SIZE_VIOLATIONS[@]}" -gt 0 ]; then
+    echo "" >&2
+    echo "  超大文件（> $(( SIZE_LIMIT / 1024 / 1024 )) MiB，请用 Git LFS / 外部存储）：" >&2
+    for s in "${SIZE_VIOLATIONS[@]}"; do echo "    - $s" >&2; done
+  fi
+  echo "" >&2
+  echo "  如需豁免，请先把这些文件加入 .gitignore，或用外部存储（COS/LFS），不要直接提交。" >&2
+  exit 1
+fi
+
+exit 0
