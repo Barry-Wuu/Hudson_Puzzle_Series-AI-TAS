@@ -13,6 +13,21 @@
 | `record_intro.py` | 批量录播入門关：2× 交互 + 256×384 输出，带声/限幅/无光标 |
 | `record_lib.py` | 可靠逐格点击 `click_cell` + 三态读盘 + 纠错/结算识别 |
 
+## 仓库布局
+
+| 路径 | 内容 |
+|---|---|
+| `README.md` | 本文件：ROM 结构、复现、操作标定、录播规格 |
+| `答案.md` | 全 300 关官方答案盘面（代码块内逐格对齐） |
+| `extract_vol10_answers.py` | ROM 解析 → `/tmp/vol10_all.json`（300 关 + 三规则自检） |
+| `gen_vol10_guide.py` | `/tmp/vol10_all.json` → `答案.md` |
+| `tas_fill.py` | 读 `vol10_all.json` 的掩码，实机自动涂黑 |
+| `record_intro.py` / `record_lib.py` | 入門 002–020 批量录播（2× 交互 + 256×384 输出） |
+| `saves/vol10.dsv` | 最终存档：ふつう 100/100 + むずかしい 80/80 |
+| `validation/` | 四难度逐关通关截图（306 张，16 位量化）+ `puzzles.json` + `quant16.py` + `check_stars.py` + 本目录 `README.md` |
+
+> 数据同源不同格式：`/tmp/vol10_all.json` 是脚本中间产物（不入库，ROM 本体也被 `.gitignore` 排除）；提交进库的题目数据集是 `validation/puzzles.json`（300 条，字段 `diff/idx/w/h/G/M`）。两者都来自 ROM 关卡表，互可对照。
+
 ## 关卡规模（实测）
 
 | 难度 | 关数 | 盘面尺寸 | 关卡表地址（ARM9 文件偏移） |
@@ -101,7 +116,7 @@ python3 gen_vol10_guide.py         # → 答案.md
 
 稳定点击用 `record_lib.click_cell()`：`mousemove → 0.12s → mousedown → 0.09s → mouseup → 0.14s`，每格一次独立调用；随后 `solve()` 读盘比对，把偏差格按三态循环补齐。实测 19 关全部一次跑通，`TIME` 8–17s，★★～★★★。
 
-成品在 `/workspace/Vol.10_入門录播/`（`Vol.10_数壹_入門0XX_256x384.mp4`，19 个），仓库只存脚本、不入库视频（`.gitignore` 已排除 `*.mp4`）。
+成品在 `/workspace/Vol.10_入門录播/`：`Vol.10_数壹_入門001_256x384.mp4`（001 归档，含 BGM）＋ `Vol.10_数壹_入門0XX_256x384.mp4`（002–020，19 个），**合计 20 个**；仓库只存脚本、不入库视频（`.gitignore` 已排除 `*.mp4`）。
 
 ## 与实机的关系
 
