@@ -151,19 +151,23 @@ def fill_view(todo, r0, c0, disk, tag, filled):
 
 
 def sweep(cells, disk, tag):
-    """纵向单向扫描 + 横向扫描，动态填满所有答案格。返回 filled 集合。"""
+    """蛇形扫描：纵向单向 ▼ 推进，横向左右往返，省掉每步「把窗口移回最左侧」。
+
+    偶数纵向步从左(c0=0)向右扫到 c0>=5，奇数步从右(c0>=5)向左扫到 c0==0；
+    切到下一纵向步时只按一次 ▼，横向直接从上一终点按反方向继续，不再 to_c0(0)。
+    视口位置仍由 origin() 实读，故不依赖 ▼/▶ 步长的精确值。
+    """
     filled = set()
-    print('  [%s] 回顶 + 横向归零' % tag, flush=True)
+    print('  [%s] 回顶 + 横向归零（仅开始一次）' % tag, flush=True)
     to_c0(0)
     to_top(disk)
+    direction = 1                      # 1: ▶ 向右；-1: ◀ 向左
     for vstep in range(24):
         q = origin(ds.shot(), disk)
         if q is None:
             time.sleep(0.3)
             continue
-        (r0, c0), off, o, rate = q
-        # 横向归零
-        to_c0(0)
+        (r0, c0), off = q[0], q[1]
         for hstep in range(10):
             q2 = origin(ds.shot(), disk)
             if q2 is None:
@@ -174,19 +178,25 @@ def sweep(cells, disk, tag):
                     if r0 <= r <= r0 + 6 and c0 <= c <= c0 + 6
                     and (r, c) not in filled]
             if todo:
-                print('  [%s] 视口(%2d,%d) off=%d 待填 %d 格 (累计 %d/%d)' %
-                      (tag, r0, c0, off, len(todo), len(filled), len(cells)), flush=True)
+                print('  [%s] 视口(%2d,%d)%s off=%d 待填 %d 格 (累计 %d/%d)' %
+                      (tag, r0, c0, '→' if direction > 0 else '←', off,
+                       len(todo), len(filled), len(cells)), flush=True)
                 fill_view(todo, r0, c0, disk, tag, filled)
-            if c0 >= 5:
+            if (direction > 0 and c0 >= 5) or (direction < 0 and c0 == 0):
                 break
-            arrow('R')
+            arrow('R' if direction > 0 else 'L')
         q3 = origin(ds.shot(), disk)
         r_now = q3[0][0] if q3 else r0
-        print('  [%s] 纵向第%d步 r0=%d 累计 %d/%d' %
-              (tag, vstep, r_now, len(filled), len(cells)), flush=True)
+        print('  [%s] 纵向第%d步 r0=%d 方向%s 累计 %d/%d' %
+              (tag, vstep, r_now, '→' if direction > 0 else '←',
+               len(filled), len(cells)), flush=True)
         if len(filled) >= len(cells) or r_now >= 13:
             break
+        # 只按一次 ▼：步长 2~4 行不固定，但相邻视口间隔始终 <=7，覆盖连续。
+        # 曾试过闭环按到阈值行，结果一次跳 4 行导致 r0 0→8，第 7 行漏填
+        # （137/144、未 CLEAR），已回退，勿再改。
         arrow('D')
+        direction = -direction
     return filled
 
 
@@ -245,9 +255,19 @@ def record(k):
 
     elapsed = time.time() - t_vid0
     hold = max(HOLD_MIN, min(HOLD_MAX, TARGET_TOTAL - elapsed))
-    print('  [%s] 已录 %.2fs → 定格 %.2fs' % (tag, elapsed, hold), flush=True)
-    time.sleep(hold)
-    ds.save(ds.shot(), '/tmp/fu11x19_end_%s.png' % tag)
+    print('  [%s] 已录 %.2fs → 定格上限 %.2fs' % (tag, elapsed, hold), flush=True)
+    # 11×19 结算页只停留约 2~3 s 就自动进「セーブ中…」蓝色存档画面；
+    # 傻等 hold=5 s 会把末尾录成存档画面而非 ★★★★★ 结算页。这里只在仍处于
+    # 结算页时定格，一旦跳离立即收尾，保证最后一帧是结算页。
+    t_hold = time.time()
+    last_result = None
+    while time.time() - t_hold < hold:
+        if not R.in_result_screen():
+            break
+        last_result = ds.shot()
+        time.sleep(0.2)
+    if last_result is not None:
+        ds.save(last_result, '/tmp/fu11x19_end_%s.png' % tag)
     p.terminate()
     try:
         err = p.communicate(timeout=8)[1]
