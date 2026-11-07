@@ -1,0 +1,7 @@
+# 仓库根 .gitignore 全禁 *.png（防误提交调试截图）
+# 本目录是逐关通关证据，必须入库，故在此放行
+!*.png
+!mode1_tutorial/*.png
+!mode2_easy/*.png
+!mode3_medium/*.png
+!mode4_hard/*.png

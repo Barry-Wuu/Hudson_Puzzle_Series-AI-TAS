@@ -1,0 +1,4094 @@
+{
+ "files": [
+  {
+   "mode": "mode1_tutorial",
+   "n": 1,
+   "src": "intro001_source.png",
+   "src_kind": "实机原生截图",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 16767
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 2,
+   "src": "Vol.4_数和_入門002_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 107394
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 3,
+   "src": "Vol.4_数和_入門003_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 100211
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 4,
+   "src": "Vol.4_数和_入門004_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 103786
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 5,
+   "src": "Vol.4_数和_入門005_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 108651
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 6,
+   "src": "Vol.4_数和_入門006_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 98220
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 7,
+   "src": "Vol.4_数和_入門007_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 104835
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 8,
+   "src": "Vol.4_数和_入門008_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 103304
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 9,
+   "src": "Vol.4_数和_入門009_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 109092
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 10,
+   "src": "Vol.4_数和_入門010_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 97909
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 11,
+   "src": "Vol.4_数和_入門011_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 119772
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 12,
+   "src": "Vol.4_数和_入門012_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 123870
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 13,
+   "src": "Vol.4_数和_入門013_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 123385
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 14,
+   "src": "Vol.4_数和_入門014_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 124931
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 15,
+   "src": "Vol.4_数和_入門015_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 128655
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 16,
+   "src": "Vol.4_数和_入門016_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 115434
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 17,
+   "src": "Vol.4_数和_入門017_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 129472
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 18,
+   "src": "Vol.4_数和_入門018_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 122524
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 19,
+   "src": "Vol.4_数和_入門019_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 121418
+  },
+  {
+   "mode": "mode1_tutorial",
+   "n": 20,
+   "src": "Vol.4_数和_入門020_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 125251
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 1,
+   "src": "Vol.4_数和_やさしい001_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126496
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 2,
+   "src": "Vol.4_数和_やさしい002_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126795
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 3,
+   "src": "Vol.4_数和_やさしい003_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126654
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 4,
+   "src": "Vol.4_数和_やさしい004_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126279
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 5,
+   "src": "Vol.4_数和_やさしい005_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 127579
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 6,
+   "src": "Vol.4_数和_やさしい006_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126309
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 7,
+   "src": "Vol.4_数和_やさしい007_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 127463
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 8,
+   "src": "Vol.4_数和_やさしい008_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 127901
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 9,
+   "src": "Vol.4_数和_やさしい009_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 130194
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 10,
+   "src": "Vol.4_数和_やさしい010_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 127327
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 11,
+   "src": "Vol.4_数和_やさしい011_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 115772
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 12,
+   "src": "Vol.4_数和_やさしい012_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126065
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 13,
+   "src": "Vol.4_数和_やさしい013_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 123603
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 14,
+   "src": "Vol.4_数和_やさしい014_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 124987
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 15,
+   "src": "Vol.4_数和_やさしい015_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 129044
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 16,
+   "src": "Vol.4_数和_やさしい016_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126758
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 17,
+   "src": "Vol.4_数和_やさしい017_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126479
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 18,
+   "src": "Vol.4_数和_やさしい018_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 127758
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 19,
+   "src": "Vol.4_数和_やさしい019_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 122221
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 20,
+   "src": "Vol.4_数和_やさしい020_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 127528
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 21,
+   "src": "Vol.4_数和_やさしい021_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 130437
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 22,
+   "src": "Vol.4_数和_やさしい022_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 129505
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 23,
+   "src": "Vol.4_数和_やさしい023_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 128821
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 24,
+   "src": "Vol.4_数和_やさしい024_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 128916
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 25,
+   "src": "Vol.4_数和_やさしい025_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 128646
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 26,
+   "src": "Vol.4_数和_やさしい026_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 130219
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 27,
+   "src": "Vol.4_数和_やさしい027_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 128221
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 28,
+   "src": "Vol.4_数和_やさしい028_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 126688
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 29,
+   "src": "Vol.4_数和_やさしい029_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 129049
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 30,
+   "src": "Vol.4_数和_やさしい030_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 128841
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 31,
+   "src": "Vol.4_数和_やさしい11x11_031_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 141843
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 32,
+   "src": "Vol.4_数和_やさしい11x11_032_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 142472
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 33,
+   "src": "Vol.4_数和_やさしい11x11_033_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 137745
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 34,
+   "src": "Vol.4_数和_やさしい11x11_034_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 135387
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 35,
+   "src": "Vol.4_数和_やさしい11x11_035_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138665
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 36,
+   "src": "Vol.4_数和_やさしい11x11_036_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 137544
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 37,
+   "src": "Vol.4_数和_やさしい11x11_037_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 140882
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 38,
+   "src": "Vol.4_数和_やさしい11x11_038_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 144467
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 39,
+   "src": "Vol.4_数和_やさしい11x11_039_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 145565
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 40,
+   "src": "Vol.4_数和_やさしい11x11_040_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 142664
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 41,
+   "src": "Vol.4_数和_やさしい11x11_041_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 133587
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 42,
+   "src": "Vol.4_数和_やさしい11x11_042_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 145181
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 43,
+   "src": "Vol.4_数和_やさしい11x11_043_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 144218
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 44,
+   "src": "Vol.4_数和_やさしい11x11_044_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138879
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 45,
+   "src": "Vol.4_数和_やさしい11x11_045_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 145065
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 46,
+   "src": "Vol.4_数和_やさしい11x11_046_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138153
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 47,
+   "src": "Vol.4_数和_やさしい11x11_047_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 140443
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 48,
+   "src": "Vol.4_数和_やさしい11x11_048_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 143806
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 49,
+   "src": "Vol.4_数和_やさしい11x11_049_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 145260
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 50,
+   "src": "Vol.4_数和_やさしい11x11_050_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 132809
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 51,
+   "src": "Vol.4_数和_やさしい11x11_051_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 137954
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 52,
+   "src": "Vol.4_数和_やさしい11x11_052_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 145455
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 53,
+   "src": "Vol.4_数和_やさしい11x11_053_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 145700
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 54,
+   "src": "Vol.4_数和_やさしい11x11_054_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 144377
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 55,
+   "src": "Vol.4_数和_やさしい11x11_055_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138427
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 56,
+   "src": "Vol.4_数和_やさしい11x11_056_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 132251
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 57,
+   "src": "Vol.4_数和_やさしい11x11_057_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 134815
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 58,
+   "src": "Vol.4_数和_やさしい11x11_058_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 142135
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 59,
+   "src": "Vol.4_数和_やさしい11x11_059_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 141334
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 60,
+   "src": "Vol.4_数和_やさしい11x11_060_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 140767
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 61,
+   "src": "Vol.4_数和_やさしい11x11_061_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138101
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 62,
+   "src": "Vol.4_数和_やさしい11x11_062_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 146123
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 63,
+   "src": "Vol.4_数和_やさしい11x11_063_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138070
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 64,
+   "src": "Vol.4_数和_やさしい11x11_064_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138230
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 65,
+   "src": "Vol.4_数和_やさしい11x11_065_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 145839
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 66,
+   "src": "Vol.4_数和_やさしい11x11_066_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 144965
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 67,
+   "src": "Vol.4_数和_やさしい11x11_067_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 136801
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 68,
+   "src": "Vol.4_数和_やさしい11x11_068_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 144757
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 69,
+   "src": "Vol.4_数和_やさしい11x11_069_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 148225
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 70,
+   "src": "Vol.4_数和_やさしい11x11_070_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 143015
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 71,
+   "src": "Vol.4_数和_やさしい11x11_071_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 146275
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 72,
+   "src": "Vol.4_数和_やさしい11x11_072_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138322
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 73,
+   "src": "Vol.4_数和_やさしい11x11_073_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 143031
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 74,
+   "src": "Vol.4_数和_やさしい11x11_074_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 131442
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 75,
+   "src": "Vol.4_数和_やさしい11x11_075_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 136058
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 76,
+   "src": "Vol.4_数和_やさしい11x11_076_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 132233
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 77,
+   "src": "Vol.4_数和_やさしい11x11_077_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 143628
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 78,
+   "src": "Vol.4_数和_やさしい11x11_078_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 137637
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 79,
+   "src": "Vol.4_数和_やさしい11x11_079_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 133792
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 80,
+   "src": "Vol.4_数和_やさしい11x11_080_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 142147
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 81,
+   "src": "Vol.4_数和_やさしい11x11_081_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 143620
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 82,
+   "src": "Vol.4_数和_やさしい11x11_082_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 143842
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 83,
+   "src": "Vol.4_数和_やさしい11x11_083_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 146286
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 84,
+   "src": "Vol.4_数和_やさしい11x11_084_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 142518
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 85,
+   "src": "Vol.4_数和_やさしい11x11_085_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 146013
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 86,
+   "src": "Vol.4_数和_やさしい11x11_086_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 143642
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 87,
+   "src": "Vol.4_数和_やさしい11x11_087_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 147778
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 88,
+   "src": "Vol.4_数和_やさしい11x11_088_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 139301
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 89,
+   "src": "Vol.4_数和_やさしい11x11_089_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 132495
+  },
+  {
+   "mode": "mode2_easy",
+   "n": 90,
+   "src": "Vol.4_数和_やさしい11x11_090_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 4,
+   "need": 4,
+   "bytes": 138187
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 1,
+   "src": "Vol.4_数和_ふつう11x11_001_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 147299
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 2,
+   "src": "Vol.4_数和_ふつう11x11_002_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 146260
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 3,
+   "src": "Vol.4_数和_ふつう11x11_003_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144450
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 4,
+   "src": "Vol.4_数和_ふつう11x11_004_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 138342
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 5,
+   "src": "Vol.4_数和_ふつう11x11_005_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141498
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 6,
+   "src": "Vol.4_数和_ふつう11x11_006_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143157
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 7,
+   "src": "Vol.4_数和_ふつう11x11_007_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 138555
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 8,
+   "src": "Vol.4_数和_ふつう11x11_008_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142626
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 9,
+   "src": "Vol.4_数和_ふつう11x11_009_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145615
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 10,
+   "src": "Vol.4_数和_ふつう11x11_010_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 136641
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 11,
+   "src": "Vol.4_数和_ふつう11x11_011_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141672
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 12,
+   "src": "Vol.4_数和_ふつう11x11_012_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143147
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 13,
+   "src": "Vol.4_数和_ふつう11x11_013_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141509
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 14,
+   "src": "Vol.4_数和_ふつう11x11_014_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 138147
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 15,
+   "src": "Vol.4_数和_ふつう11x11_015_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 135826
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 16,
+   "src": "Vol.4_数和_ふつう11x11_016_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 139364
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 17,
+   "src": "Vol.4_数和_ふつう11x11_017_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 135324
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 18,
+   "src": "Vol.4_数和_ふつう11x11_018_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137873
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 19,
+   "src": "Vol.4_数和_ふつう11x11_019_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 146674
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 20,
+   "src": "Vol.4_数和_ふつう11x11_020_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 148082
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 21,
+   "src": "Vol.4_数和_ふつう11x11_021_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143231
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 22,
+   "src": "Vol.4_数和_ふつう11x11_022_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137003
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 23,
+   "src": "Vol.4_数和_ふつう11x11_023_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 139223
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 24,
+   "src": "Vol.4_数和_ふつう11x11_024_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 140026
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 25,
+   "src": "Vol.4_数和_ふつう11x11_025_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143229
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 26,
+   "src": "Vol.4_数和_ふつう11x11_026_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144105
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 27,
+   "src": "Vol.4_数和_ふつう11x11_027_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137713
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 28,
+   "src": "Vol.4_数和_ふつう11x11_028_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145535
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 29,
+   "src": "Vol.4_数和_ふつう11x11_029_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141214
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 30,
+   "src": "Vol.4_数和_ふつう11x11_030_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143416
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 31,
+   "src": "Vol.4_数和_ふつう11x11_031_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145887
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 32,
+   "src": "Vol.4_数和_ふつう11x11_032_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143339
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 33,
+   "src": "Vol.4_数和_ふつう11x11_033_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141816
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 34,
+   "src": "Vol.4_数和_ふつう11x11_034_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143420
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 35,
+   "src": "Vol.4_数和_ふつう11x11_035_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143185
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 36,
+   "src": "Vol.4_数和_ふつう11x11_036_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 147405
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 37,
+   "src": "Vol.4_数和_ふつう11x11_037_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 147497
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 38,
+   "src": "Vol.4_数和_ふつう11x11_038_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144197
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 39,
+   "src": "Vol.4_数和_ふつう11x11_039_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144404
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 40,
+   "src": "Vol.4_数和_ふつう11x11_040_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 147126
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 41,
+   "src": "Vol.4_数和_ふつう11x11_041_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145112
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 42,
+   "src": "Vol.4_数和_ふつう11x11_042_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137024
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 43,
+   "src": "Vol.4_数和_ふつう11x11_043_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137138
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 44,
+   "src": "Vol.4_数和_ふつう11x11_044_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 139884
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 45,
+   "src": "Vol.4_数和_ふつう11x11_045_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 135083
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 46,
+   "src": "Vol.4_数和_ふつう11x11_046_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142820
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 47,
+   "src": "Vol.4_数和_ふつう11x11_047_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 139315
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 48,
+   "src": "Vol.4_数和_ふつう11x11_048_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141415
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 49,
+   "src": "Vol.4_数和_ふつう11x11_049_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143719
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 50,
+   "src": "Vol.4_数和_ふつう11x11_050_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143248
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 51,
+   "src": "Vol.4_数和_ふつう11x11_051_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 135248
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 52,
+   "src": "Vol.4_数和_ふつう11x11_052_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144489
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 53,
+   "src": "Vol.4_数和_ふつう11x11_053_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142421
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 54,
+   "src": "Vol.4_数和_ふつう11x11_054_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141622
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 55,
+   "src": "Vol.4_数和_ふつう11x11_055_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 146181
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 56,
+   "src": "Vol.4_数和_ふつう11x11_056_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 147531
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 57,
+   "src": "Vol.4_数和_ふつう11x11_057_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 146361
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 58,
+   "src": "Vol.4_数和_ふつう11x11_058_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142087
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 59,
+   "src": "Vol.4_数和_ふつう11x11_059_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 146725
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 60,
+   "src": "Vol.4_数和_ふつう11x11_060_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142317
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 61,
+   "src": "Vol.4_数和_ふつう11x19_061_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142351
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 62,
+   "src": "Vol.4_数和_ふつう11x19_062_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 140972
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 63,
+   "src": "Vol.4_数和_ふつう11x19_063_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144085
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 64,
+   "src": "Vol.4_数和_ふつう11x19_064_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 135120
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 65,
+   "src": "Vol.4_数和_ふつう11x19_065_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 135773
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 66,
+   "src": "Vol.4_数和_ふつう11x19_066_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144696
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 67,
+   "src": "Vol.4_数和_ふつう11x19_067_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144629
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 68,
+   "src": "Vol.4_数和_ふつう11x19_068_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137399
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 69,
+   "src": "Vol.4_数和_ふつう11x19_069_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141391
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 70,
+   "src": "Vol.4_数和_ふつう11x19_070_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141471
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 71,
+   "src": "Vol.4_数和_ふつう11x19_071_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145536
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 72,
+   "src": "Vol.4_数和_ふつう11x19_072_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 139895
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 73,
+   "src": "Vol.4_数和_ふつう11x19_073_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142560
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 74,
+   "src": "Vol.4_数和_ふつう11x19_074_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143884
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 75,
+   "src": "Vol.4_数和_ふつう11x19_075_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143362
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 76,
+   "src": "Vol.4_数和_ふつう11x19_076_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144320
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 77,
+   "src": "Vol.4_数和_ふつう11x19_077_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145222
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 78,
+   "src": "Vol.4_数和_ふつう11x19_078_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144272
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 79,
+   "src": "Vol.4_数和_ふつう11x19_079_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145556
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 80,
+   "src": "Vol.4_数和_ふつう11x19_080_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142138
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 81,
+   "src": "Vol.4_数和_ふつう11x19_081_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144024
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 82,
+   "src": "Vol.4_数和_ふつう11x19_082_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137408
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 83,
+   "src": "Vol.4_数和_ふつう11x19_083_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142089
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 84,
+   "src": "Vol.4_数和_ふつう11x19_084_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144371
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 85,
+   "src": "Vol.4_数和_ふつう11x19_085_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 144227
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 86,
+   "src": "Vol.4_数和_ふつう11x19_086_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 132232
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 87,
+   "src": "Vol.4_数和_ふつう11x19_087_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143753
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 88,
+   "src": "Vol.4_数和_ふつう11x19_088_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145627
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 89,
+   "src": "Vol.4_数和_ふつう11x19_089_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143165
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 90,
+   "src": "Vol.4_数和_ふつう11x19_090_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143537
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 91,
+   "src": "Vol.4_数和_ふつう11x19_091_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 138996
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 92,
+   "src": "Vol.4_数和_ふつう11x19_092_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142102
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 93,
+   "src": "Vol.4_数和_ふつう11x19_093_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142740
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 94,
+   "src": "Vol.4_数和_ふつう11x19_094_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137025
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 95,
+   "src": "Vol.4_数和_ふつう11x19_095_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141470
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 96,
+   "src": "Vol.4_数和_ふつう11x19_096_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145217
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 97,
+   "src": "Vol.4_数和_ふつう11x19_097_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 132092
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 98,
+   "src": "Vol.4_数和_ふつう11x19_098_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 135545
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 99,
+   "src": "Vol.4_数和_ふつう11x19_099_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137613
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 100,
+   "src": "Vol.4_数和_ふつう11x19_100_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145849
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 101,
+   "src": "Vol.4_数和_ふつう11x19_101_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 136473
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 102,
+   "src": "Vol.4_数和_ふつう11x19_102_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142172
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 103,
+   "src": "Vol.4_数和_ふつう11x19_103_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141863
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 104,
+   "src": "Vol.4_数和_ふつう11x19_104_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 135723
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 105,
+   "src": "Vol.4_数和_ふつう11x19_105_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141513
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 106,
+   "src": "Vol.4_数和_ふつう11x19_106_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 139738
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 107,
+   "src": "Vol.4_数和_ふつう11x19_107_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141124
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 108,
+   "src": "Vol.4_数和_ふつう11x19_108_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143520
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 109,
+   "src": "Vol.4_数和_ふつう11x19_109_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145718
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 110,
+   "src": "Vol.4_数和_ふつう11x19_110_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141135
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 111,
+   "src": "Vol.4_数和_ふつう11x19_111_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 142938
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 112,
+   "src": "Vol.4_数和_ふつう11x19_112_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 138595
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 113,
+   "src": "Vol.4_数和_ふつう11x19_113_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 137662
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 114,
+   "src": "Vol.4_数和_ふつう11x19_114_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145617
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 115,
+   "src": "Vol.4_数和_ふつう11x19_115_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 143227
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 116,
+   "src": "Vol.4_数和_ふつう11x19_116_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 136105
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 117,
+   "src": "Vol.4_数和_ふつう11x19_117_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 145485
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 118,
+   "src": "Vol.4_数和_ふつう11x19_118_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 141918
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 119,
+   "src": "Vol.4_数和_ふつう11x19_119_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 139846
+  },
+  {
+   "mode": "mode3_medium",
+   "n": 120,
+   "src": "Vol.4_数和_ふつう11x19_120_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 5,
+   "need": 5,
+   "bytes": 140266
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 1,
+   "src": "Vol.4_数和_むずかしい11x19_001_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 140585
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 2,
+   "src": "Vol.4_数和_むずかしい11x19_002_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 144065
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 3,
+   "src": "Vol.4_数和_むずかしい11x19_003_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 147692
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 4,
+   "src": "Vol.4_数和_むずかしい11x19_004_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 145157
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 5,
+   "src": "Vol.4_数和_むずかしい11x19_005_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 148771
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 6,
+   "src": "Vol.4_数和_むずかしい11x19_006_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 145905
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 7,
+   "src": "Vol.4_数和_むずかしい11x19_007_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 146011
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 8,
+   "src": "Vol.4_数和_むずかしい11x19_008_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 146093
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 9,
+   "src": "Vol.4_数和_むずかしい11x19_009_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 144649
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 10,
+   "src": "Vol.4_数和_むずかしい11x19_010_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 146054
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 11,
+   "src": "Vol.4_数和_むずかしい11x19_011_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 150151
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 12,
+   "src": "Vol.4_数和_むずかしい11x19_012_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 147488
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 13,
+   "src": "Vol.4_数和_むずかしい11x19_013_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 137996
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 14,
+   "src": "Vol.4_数和_むずかしい11x19_014_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 142673
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 15,
+   "src": "Vol.4_数和_むずかしい11x19_015_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 149267
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 16,
+   "src": "Vol.4_数和_むずかしい11x19_016_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 145247
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 17,
+   "src": "Vol.4_数和_むずかしい11x19_017_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 146423
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 18,
+   "src": "Vol.4_数和_むずかしい11x19_018_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 141031
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 19,
+   "src": "Vol.4_数和_むずかしい11x19_019_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 137403
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 20,
+   "src": "Vol.4_数和_むずかしい11x19_020_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 144703
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 21,
+   "src": "Vol.4_数和_むずかしい13x21_021_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 152847
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 22,
+   "src": "Vol.4_数和_むずかしい13x21_022_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153612
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 23,
+   "src": "Vol.4_数和_むずかしい13x21_023_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155076
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 24,
+   "src": "Vol.4_数和_むずかしい13x21_024_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 157701
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 25,
+   "src": "Vol.4_数和_むずかしい13x21_025_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 154446
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 26,
+   "src": "Vol.4_数和_むずかしい13x21_026_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 152250
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 27,
+   "src": "Vol.4_数和_むずかしい13x21_027_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155938
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 28,
+   "src": "Vol.4_数和_むずかしい13x21_028_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 154633
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 29,
+   "src": "Vol.4_数和_むずかしい13x21_029_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155407
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 30,
+   "src": "Vol.4_数和_むずかしい13x21_030_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 152768
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 31,
+   "src": "Vol.4_数和_むずかしい13x21_031_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 158072
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 32,
+   "src": "Vol.4_数和_むずかしい13x21_032_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 152585
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 33,
+   "src": "Vol.4_数和_むずかしい13x21_033_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 149879
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 34,
+   "src": "Vol.4_数和_むずかしい13x21_034_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 152360
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 35,
+   "src": "Vol.4_数和_むずかしい13x21_035_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153088
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 36,
+   "src": "Vol.4_数和_むずかしい13x21_036_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153429
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 37,
+   "src": "Vol.4_数和_むずかしい13x21_037_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155277
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 38,
+   "src": "Vol.4_数和_むずかしい13x21_038_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 144088
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 39,
+   "src": "Vol.4_数和_むずかしい13x21_039_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153895
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 40,
+   "src": "Vol.4_数和_むずかしい13x21_040_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 150540
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 41,
+   "src": "Vol.4_数和_むずかしい13x21_041_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 159497
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 42,
+   "src": "Vol.4_数和_むずかしい13x21_042_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 152672
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 43,
+   "src": "Vol.4_数和_むずかしい13x21_043_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 147002
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 44,
+   "src": "Vol.4_数和_むずかしい13x21_044_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 146865
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 45,
+   "src": "Vol.4_数和_むずかしい13x21_045_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 154982
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 46,
+   "src": "Vol.4_数和_むずかしい13x21_046_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153206
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 47,
+   "src": "Vol.4_数和_むずかしい13x21_047_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 154820
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 48,
+   "src": "Vol.4_数和_むずかしい13x21_048_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153377
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 49,
+   "src": "Vol.4_数和_むずかしい13x21_049_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153515
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 50,
+   "src": "Vol.4_数和_むずかしい13x21_050_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155567
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 51,
+   "src": "Vol.4_数和_むずかしい13x21_051_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 154060
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 52,
+   "src": "Vol.4_数和_むずかしい13x21_052_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 159511
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 53,
+   "src": "Vol.4_数和_むずかしい13x21_053_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 148424
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 54,
+   "src": "Vol.4_数和_むずかしい13x21_054_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155253
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 55,
+   "src": "Vol.4_数和_むずかしい13x21_055_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 150652
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 56,
+   "src": "Vol.4_数和_むずかしい13x21_056_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 156882
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 57,
+   "src": "Vol.4_数和_むずかしい13x21_057_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 154340
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 58,
+   "src": "Vol.4_数和_むずかしい13x21_058_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155954
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 59,
+   "src": "Vol.4_数和_むずかしい13x21_059_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 151280
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 60,
+   "src": "Vol.4_数和_むずかしい13x21_060_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 157680
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 61,
+   "src": "Vol.4_数和_むずかしい13x21_061_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 156768
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 62,
+   "src": "Vol.4_数和_むずかしい13x21_062_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153722
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 63,
+   "src": "Vol.4_数和_むずかしい13x21_063_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 154186
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 64,
+   "src": "Vol.4_数和_むずかしい13x21_064_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 149602
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 65,
+   "src": "Vol.4_数和_むずかしい13x21_065_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 151382
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 66,
+   "src": "Vol.4_数和_むずかしい13x21_066_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 144385
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 67,
+   "src": "Vol.4_数和_むずかしい13x21_067_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153897
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 68,
+   "src": "Vol.4_数和_むずかしい13x21_068_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155932
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 69,
+   "src": "Vol.4_数和_むずかしい13x21_069_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 156718
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 70,
+   "src": "Vol.4_数和_むずかしい13x21_070_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 156343
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 71,
+   "src": "Vol.4_数和_むずかしい13x21_071_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 155780
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 72,
+   "src": "Vol.4_数和_むずかしい13x21_072_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153340
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 73,
+   "src": "Vol.4_数和_むずかしい13x21_073_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 151698
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 74,
+   "src": "Vol.4_数和_むずかしい13x21_074_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 157165
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 75,
+   "src": "Vol.4_数和_むずかしい13x21_075_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153797
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 76,
+   "src": "Vol.4_数和_むずかしい13x21_076_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 156257
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 77,
+   "src": "Vol.4_数和_むずかしい13x21_077_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 147870
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 78,
+   "src": "Vol.4_数和_むずかしい13x21_078_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 153431
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 79,
+   "src": "Vol.4_数和_むずかしい13x21_079_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 146403
+  },
+  {
+   "mode": "mode4_hard",
+   "n": 80,
+   "src": "Vol.4_数和_むずかしい13x21_080_256x384.mp4",
+   "src_kind": "mp4末帧",
+   "size": [
+    256,
+    384
+   ],
+   "stars": 6,
+   "need": 6,
+   "bytes": 154746
+  }
+ ],
+ "bad": [],
+ "missing": [],
+ "specs": [
+  {
+   "mode": "mode1_tutorial",
+   "full_stars": 4,
+   "lo": 1,
+   "hi": 20,
+   "masu": "5×5 / 7×7",
+   "src_dir": "/workspace/Vol.4_入門录播"
+  },
+  {
+   "mode": "mode2_easy",
+   "full_stars": 4,
+   "lo": 1,
+   "hi": 30,
+   "masu": "9×9",
+   "src_dir": "/workspace/Vol.4_やさしい录播"
+  },
+  {
+   "mode": "mode2_easy",
+   "full_stars": 4,
+   "lo": 31,
+   "hi": 90,
+   "masu": "11×11",
+   "src_dir": "/workspace/Vol.4_やさしい11x11录播"
+  },
+  {
+   "mode": "mode3_medium",
+   "full_stars": 5,
+   "lo": 1,
+   "hi": 60,
+   "masu": "11×11",
+   "src_dir": "/workspace/Vol.4_ふつう11x11录播"
+  },
+  {
+   "mode": "mode3_medium",
+   "full_stars": 5,
+   "lo": 61,
+   "hi": 120,
+   "masu": "11×19",
+   "src_dir": "/workspace/Vol.4_ふつう11x19录播"
+  },
+  {
+   "mode": "mode4_hard",
+   "full_stars": 6,
+   "lo": 1,
+   "hi": 20,
+   "masu": "11×19",
+   "src_dir": "/workspace/Vol.4_むずかしい11x19录播"
+  },
+  {
+   "mode": "mode4_hard",
+   "full_stars": 6,
+   "lo": 21,
+   "hi": 80,
+   "masu": "13×21",
+   "src_dir": "/workspace/Vol.4_むずかしい13x21录播"
+  }
+ ]
+}
