@@ -13,17 +13,22 @@
   c_view = round((x0-31)/16)、r_view = round(y0/16)。
 * 下屏视口与前两档完全相同（7×7、格距 24、左上 (8,10)、Y.safe_xy 直接复用），
   但键盘改为竖排且整体左移上移：数字键 x=202/223/244、触屏 y=59/83/107。
-* 滚动规律（实测，步长非线性！）：
-  ▼ r0 = 0→4→11→13→15（到底 15 = 22-7）；▲ 返程 15→12→10→8→5→3→0。
-  ▶ c0 = 0→5→7（到底 7 = 14-7）；◀ 返程 7→5→3→0。
-  ▼/▲ 实测步长 4/7/2/2 与 3/2/2/3/2/3，根本不是固定值，故一律闭环实读，
-  绝不按步长推演（11×19 曾因按步长推演漏行导致未 CLEAR，教训见 12.14.7）。
-  覆盖全盘只需 r0 ∈ {0,4,11,13,15} × c0 ∈ {0,5,7}：
-  行 0-6/4-10/11-17/13-19/15-21、列 0-6/5-11/7-13，并集正好是全部 22×14 格。
+* 滚动规律（12.17 重测后改写，旧结论「步长非线性」是采样假象）：
+  下屏 ▼/▲/◀/▶ 是【按住期间连续滚动】，滚多远由按住时长决定，慢速段约
+  13 格/秒、含 ~0.10s 启动延迟（短按 0.05~0.10s→1 格、0.22s→4 格、
+  0.40s→5 格、横向 0.50s→7 格）。旧版一律 ds.click_touch(wait=.7) 固定
+  按住 0.18s → 每次只滚 2 格，于是 22 行盘面要推 15 个视口才覆盖完。
+  速率会随模拟器实时帧率漂移（同一 0.38s 实测过 5 格与 11 格），故不写死
+  映射表，改「预测-实测-修正」闭环（见 Scroller）。
+* 最少窗口：答案行 1..21、答案列 1..13。7 行窗口若从 r=1 起每 7 行一个，
+  1-7 / 8-14 / 15-21 恰好铺满（这是「起点对齐 1 而非 0」的关键，起点取 0
+  则三屏只够 0..20，末行 21 掉队）；横向 0-6 / 7-13 两屏铺满 14 列。
+  合起来 3×2=6 个窗口、蛇形 5 次滚动，即几何下界。
 """
 import base64
 import io
 import os
+import subprocess
 import sys
 import time
 import json
@@ -197,6 +202,9 @@ def load_disk(lv):
     return disk
 
 
+_LAST_OFF = [0]     # view_off 最近一次成功的偏移（锚点不足时兜底）
+
+
 def view_off(im, disk, off_min=0):
     """上屏 12×12 视图对应的全局起始行 offset（0..8）。返回 (off, rate)。
 
@@ -227,7 +235,12 @@ def view_off(im, disk, off_min=0):
                     ok += 1
         if best is None or ok > best[0]:
             best = (ok, off, jd)
-    return best[1], best[0] / max(1, best[2])
+    if best is None or best[2] < 5:
+        # 亮格快被填光时锚点不足，off 退化成 off_min 会把视口判错；沿用上次
+        # 成功值。进关（盘面全空）时锚点有一两百个，走不到这里。
+        return _LAST_OFF[0], 1.0
+    _LAST_OFF[0] = best[1]
+    return best[1], best[0] / best[2]
 
 
 def red_frame(im):
@@ -320,35 +333,89 @@ def real_result(im):
             and not save_screen(im))
 
 
-def arrow(name):
-    ds.click_touch(*R.V8_ARROW[name], wait=0.7)
-    time.sleep(0.15)
+# ---------- 视口滚动：按住时长控制 + 自适应速率闭环 ----------
+# === 12.17：用户指出「滚动次数太多」后重测得到的关键事实 ===
+# 方向键不是离散的一次一格，而是【按住期间连续滚动】；旧版固定按住 0.18s
+# 只能滚 2 格，于是 22 行盘面推了 15 个视口（r0∈{0,4,11,13,15}×c0∈{0,5,7}）。
+# 速率随模拟器实时帧率漂移（同 0.38s 一次测到 5 格、另一次 11 格），写死映射
+# 表必翻车，故做成「预测 → 实测 → 修正」，同一次运行内速率稳定后基本一次到位。
+RATE0 = 13.0        # 慢速段初始估计（格/秒）
+BASE0 = 0.10        # 启动延迟（秒）：短于它只滚 1 格
+HOLD_MAX = 0.46     # 单次按压上限：超过 ~0.5s 滚动会二次加速（实测 0.56s
+                    # 滚了 12 格），冲过头再倒回来在视频里很难看，宁可欠一点
+                    # 同向再补一次短按。
 
 
-def c0_now():
-    o = F.red_origin_11(ds.shot())
-    return o[1] if o else None
+class Scroller:
+    def __init__(self):
+        self.rate = RATE0
+        self.base = BASE0
+        self.n = 0                       # 累计按压次数（用于日志/优化评估）
+
+    def hold_for(self, delta):
+        """目标滚 delta 格需要的按住时长。delta<=1 用最短按。"""
+        if delta <= 1:
+            return 0.10
+        return max(0.12, min(HOLD_MAX, self.base + (delta - 1) / self.rate))
+
+    def press(self, name, hold, wait=0.42):
+        """按住方向键 hold 秒（ds.click_touch 固定 0.18s，这里要可控）。"""
+        x, y = R.V8_ARROW[name]
+        g = ds.geom()
+        sx = g['x'] + int(x * g['w'] / 256)
+        sy = g['y'] + g['h'] // 2 + int(y * (g['h'] / 2) / 192)
+        subprocess.run(['xdotool', 'mousemove', str(sx), str(sy)], env=ds.ENV)
+        time.sleep(0.04)
+        subprocess.run(['xdotool', 'mousedown', '1'], env=ds.ENV)
+        time.sleep(hold)
+        subprocess.run(['xdotool', 'mouseup', '1'], env=ds.ENV)
+        time.sleep(wait)
+
+    def sync(self, hold, moved, at_edge):
+        """用一次实测样本修正速率估计（饱和到边界/零位移的样本丢弃）。"""
+        if at_edge or moved <= 0:
+            return
+        eff = hold - self.base
+        if eff < 0.05:
+            return
+        obs = moved / eff
+        obs = min(28.0, max(6.0, obs))
+        self.rate = 0.65 * self.rate + 0.35 * obs
+
+    def to(self, tr, tc, disk, tag='', tries=10):
+        """闭环滚到视口起点 (tr,tc)，返回最终实读 (r0,c0)。"""
+        last = (None, None)
+        for _ in range(tries):
+            q = origin(ds.shot(), disk)
+            if q is None:
+                time.sleep(0.25)
+                continue
+            r0, c0 = q[0]
+            last = (r0, c0)
+            if (r0, c0) == (tr, tc):
+                return last
+            dr, dc = tr - r0, tc - c0
+            if abs(dr) >= abs(dc) and dr != 0:      # 幅度大的轴优先
+                name, delta = ('D' if dr > 0 else 'U'), abs(dr)
+            else:
+                name, delta = ('R' if dc > 0 else 'L'), abs(dc)
+            hold = self.hold_for(delta)
+            self.press(name, hold)
+            self.n += 1
+            q2 = origin(ds.shot(), disk)
+            after = q2[0] if q2 else last
+            moved = (abs(after[0] - r0) if name in 'DU' else abs(after[1] - c0))
+            at_edge = (after[0] in (0, ROWS - 7) if name in 'DU'
+                       else after[1] in (0, COLS - 7))
+            self.sync(hold, moved, at_edge)
+            print('    [%s] %s%d hold=%.2f → (%d,%d)' %
+                  (tag, name, delta, hold, after[0], after[1]), flush=True)
+            last = after
+        print('  [%s] !! 滚动未到 (%d,%d)，停在 %s' % (tag, tr, tc, last), flush=True)
+        return last
 
 
-def to_c0(target):
-    for _ in range(14):
-        c = c0_now()
-        if c is None:
-            time.sleep(0.3)
-            continue
-        if c == target:
-            return True
-        arrow('R' if target > c else 'L')
-    return False
-
-
-def to_top(disk):
-    for _ in range(16):
-        q = origin(ds.shot(), disk)
-        if q and q[0][0] == 0:
-            return True
-        arrow('U')
-    return False
+SC = Scroller()
 
 
 # 13×21 档右下键盘（竖排、比 11×19 左移上移）：实测数字笔画中心
@@ -450,48 +517,92 @@ def _win_dist(r0, c0, r, c):
             + max(0, c - c0 - 6) + max(0, c0 - c))
 
 
+WIN = 7
+
+
+def plan_windows():
+    """用最少 7×7 窗口覆盖全盘：行 {1,8,15} × 列 {0,7}，蛇形 5 次滚动。
+
+    答案盘 22 行 × 14 列，首行/首列是提示行列（全 0），答案格落在
+    r=1..21 / c=1..13。纵向从 r=1 起每 7 行取一个起点：1-7 / 8-14 / 15-21
+    正好吃下 21 行（起点取 0 则三屏只到 20 行，末行 21 掉队 —— 这就是旧版
+    不得不加第 4 个行窗口的原因）；横向 0-6 / 7-13 两屏吃下 14 列。
+    3×2=6 个窗口、5 次滚动，已是几何下界（ceil(21/7)=3、ceil(14/7)=2）。
+    """
+    starts_r, r = [], 1
+    while r < ROWS:
+        starts_r.append(min(r, ROWS - WIN))
+        r += WIN
+    starts_c = list(range(0, COLS, WIN))
+    order = []
+    for i, r0 in enumerate(starts_r):
+        cs = starts_c if i % 2 == 0 else list(reversed(starts_c))
+        for c0 in cs:
+            order.append((r0, c0))
+    return order
+
+
+def window_cells(remain, r0, c0):
+    return [t for t in remain
+            if r0 <= t[0] <= r0 + WIN - 1 and c0 <= t[1] <= c0 + WIN - 1]
+
+
 def sweep(cells, disk, tag, filled0=None):
-    """贪心窗口扫描：能填就全填，填不到就朝「最近的未填格」推一格。
+    """按 6 窗口蛇形扫描：一次滚动到一屏，填满再走下一屏。
 
-    === 为什么不能用 11×19 的固定步长蛇形 / 预设 r0 序列 ===
-    本档 ▼ 实测步长是 4/7/2/2（0→4→12→14→15），▶ 是 5/2（0→5→7），
-    都不是固定值；第一次实现按「预设 r0 = 0/4/11/13/15」推，结果 ▼ 从 4 直接
-    跳到 12，把第 11 行整行漏掉（192/196，游戏不 CLEAR）。故改为完全闭环：
-    每步都实读 (r0,c0)，只做「按最近的未填格方向推一格」，绝不推算落点。
-    单步跨过目标也没关系 —— 下一步方向判反就会推回来（实测 4→12→10 收敛）。
+    === 为什么整体换掉旧贪心（12.17）===
+    旧版每步只读 (r0,c0) 再朝最近未填格推【一格】，而一格按压 0.18s 只滚
+    2 格，于是 15 个视口、二十余次按压，视频里视口碎步乱挪。新版先算出
+    6 个能铺满全盘的窗口起点，逐个用 Scroller 一次按住滚到位（欠 1 格就补
+    一次短按），滚完仍按【实读】位置填格 —— 即使微调没完全对上，也只会
+    少填几格交给兜底，不会填错格。
 
-    filled0：补漏轮的初始已填集合，只补真正缺的格，不重扫全盘。
+    filled0：补漏轮的初始已填集合，只补真正缺的格。
     """
     filled = set(filled0) if filled0 else set()
     remain = [(r, c, v) for r, c, v in cells if (r, c) not in filled]
-    print('  [%s] 贪心扫描开始，待填 %d/%d' % (tag, len(remain), len(cells)), flush=True)
+    n0 = SC.n
+    print('  [%s] 窗口扫描开始，待填 %d/%d' % (tag, len(remain), len(cells)), flush=True)
+    plan = plan_windows()
+    for i, (tr, tc) in enumerate(plan):
+        if not remain:
+            break
+        if not window_cells(remain, tr, tc):
+            continue
+        r0, c0 = SC.to(tr, tc, disk, tag)
+        todo = window_cells(remain, r0, c0)
+        if not todo:
+            print('  [%s] 窗口(%d,%d) 实到(%d,%d) 内无待填格，跳过' %
+                  (tag, tr, tc, r0, c0), flush=True)
+            continue
+        print('  [%s] 窗口 %d/%d (%d,%d)→(%d,%d) 待填 %2d 格 (累计 %d/%d)' %
+              (tag, i + 1, len(plan), tr, tc, r0, c0, len(todo),
+               len(filled), len(cells)), flush=True)
+        fill_view(todo, r0, c0, disk, tag, filled)
+        remain = [t for t in remain if (t[0], t[1]) not in filled]
+
+    # 兜底：极少数情况（滚动被吞/窗口内实读偏差）会剩几格，按距离一次滚到
+    # 该格所在窗口再填，不做逐格碎步（碎步正是本轮要消灭的东西）。
     guard = 0
     while remain:
         guard += 1
-        if guard > 300:
-            raise RuntimeError('扫描迭代超限(300)，疑似盘面/视口异常')
+        if guard > 60:
+            raise RuntimeError('兜底扫描迭代超限(60)，疑似盘面/视口异常')
         q = origin(ds.shot(), disk)
         if q is None:
             time.sleep(0.3)
             continue
-        (r0, c0), off = q[0], q[1]
-        todo = [t for t in remain if r0 <= t[0] <= r0 + 6 and c0 <= t[1] <= c0 + 6]
+        (r0, c0) = q[0]
+        todo = window_cells(remain, r0, c0)
         if todo:
-            print('  [%s] 视口(%2d,%2d) off=%d 待填 %2d 格 (累计 %d/%d)' %
-                  (tag, r0, c0, off, len(todo), len(filled), len(cells)), flush=True)
             fill_view(todo, r0, c0, disk, tag, filled)
             remain = [t for t in remain if (t[0], t[1]) not in filled]
             continue
-        tr, tc, _tv = min(remain, key=lambda t: _win_dist(r0, c0, t[0], t[1]))
-        if tr < r0:
-            arrow('U')
-        elif tr > r0 + 6:
-            arrow('D')
-        elif tc < c0:
-            arrow('L')
-        else:
-            arrow('R')
-    print('  [%s] 扫描结束 %d/%d' % (tag, len(filled), len(cells)), flush=True)
+        tr, tc = min(((t[0], t[1]) for t in remain),
+                     key=lambda t: _win_dist(r0, c0, t[0], t[1]))
+        SC.to(max(0, min(ROWS - WIN, tr)), max(0, min(COLS - WIN, tc)), disk, tag)
+    print('  [%s] 扫描结束 %d/%d（本关按压 %d 次）' %
+          (tag, len(filled), len(cells), SC.n - n0), flush=True)
     return filled
 
 
@@ -547,6 +658,7 @@ def record(k):
     # 直接失败让驱动快速重试（避免拿 20 行答案盘去填 12 行盘面死循环）。
     if not size_ok(ds.shot()):
         return False, '进关盘面尺寸不符(非13×21, 疑似滚动错位进错关)'
+    _LAST_OFF[0] = 0
     q = origin(ds.shot(), disk)
     print('  [%s] 进关状态 off=%s rate=%s' %
           (tag, q[1] if q else None, round(q[3], 3) if q else None), flush=True)
