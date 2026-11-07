@@ -68,7 +68,7 @@ def main():
             disk = b[-(C * R):]
             rows, W, H = render(disk, C, R)
             n = lv - a + 1
-            A('### 第%03d問 rec%d（%d×%d）' % (n, n, W, H))
+            A('**第%03d問 rec%d（%d×%d）**' % (n, n, W, H))
             A('```')
             lines.extend(rows)
             A('```')
