@@ -88,7 +88,7 @@ def main():
             out.append(f'## {diff} · {size}（{len(seg)} 关）')
             out.append('')
             for p in seg:
-                out.append(f'### 第{p["rec"]:02d}問 rec{p["rec"]}（{p["w"]}×{p["h"]}）')
+                out.append(f'**第{p["rec"]:02d}問 rec{p["rec"]}（{p["w"]}×{p["h"]}）**')
                 out.append(render_table(p))
                 out.append('')
 

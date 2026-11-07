@@ -88,7 +88,7 @@ def main():
                 L.append('')
             for rec in seg:
                 w, h, sol = rec['w'], rec['h'], rec['M']
-                L.append(f"### 第{rec['idx']:03d}問（{w}×{h}）")
+                L.append(f"**第{rec['idx']:03d}問（{w}×{h}）**")
                 L.append('```')
                 for r in range(h):
                     line = ''.join((filled if sol[r][c] else circled)(rec['G'][r][c])
