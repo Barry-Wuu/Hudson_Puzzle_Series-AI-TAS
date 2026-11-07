@@ -33,6 +33,7 @@ import ds
 import record_all as R
 import record_yasa as Y
 import record_futsu11 as F
+import scroll_win as SW
 
 # ふつう 11×19 选关层的缩略盘（11×19 白格）占满上屏右侧，_blue_top 降到 ≈0.31，
 # 低于 record_futsu11._on_select_screen_futsu() 的 0.35 硬门槛 —— 明明在选关层
@@ -313,6 +314,10 @@ def to_top(disk):
     return False
 
 
+# 6 窗口扫描用的闭环滚动器（跨关保留速率学习；见 scroll_win / RESEARCH 12.17）
+SC = SW.Scroller(lambda disk: origin(ds.shot(), disk), ROWS, COLS)
+
+
 def fill_view(todo, r0, c0, disk, tag, filled):
     """填当前视口内 todo 格（单遍 fast）+ 点击即记入 filled。
 
@@ -336,69 +341,19 @@ def fill_view(todo, r0, c0, disk, tag, filled):
 
 
 def sweep(cells, disk, tag, filled0=None):
-    """蛇形扫描：纵向单向 ▼ 推进，横向左右往返，省掉每步「把窗口移回最左侧」。
+    """6 窗口蛇形扫描（行 1/8/13 × 列 0/5，5 次换屏；实现见 scroll_win.sweep_windows）。
 
-    偶数纵向步从左(c0=0)向右扫到 c0>=5，奇数步从右(c0>=5)向左扫到 c0==0；
-    切到下一纵向步时只按一次 ▼，横向直接从上一终点按反方向继续，不再 to_c0(0)。
-    视口位置仍由 origin() 实读，故不依赖 ▼/▶ 步长的精确值。
-
-    filled0：补漏轮的初始已填集合（12.14.7）。record() 的「全盘补漏」曾因
-    sweep 内部 filled=set() 重置而把整关重扫一遍 —— 162 格的第 117 問等于
-    重录一次、直接吃满 240s 超时。传入 filled0 后 todo 自动排除已填格，
-    补漏轮只点真正缺失的几格，秒级完成。
+    === 12.18：从「单向 ▼ 逐段 + 横向往返」换成最少窗口（同 13×21）===
+    答案盘 20 行 × 12 列，首行/首列是提示行列，答案格 r=1..19、c=1..11。
+    行窗口从 r=1 起每 7 行一个（1-7 / 8-14 / 13-19，最后钳到 rows-7=13），
+    列窗口 0-6 / 5-11，合起来 6 个窗口 5 次换屏。旧版纵向每次 ▼ 只滚 2 行，
+    要 7~8 段 × 每段 2~3 个横向位置 ≈ 16 个视口。视口位置仍全部实读，
+    不依赖步长精确值；填不完整的格由 record() 的补漏轮兜底。
     """
-    filled = set(filled0) if filled0 else set()
-    prev_r, stalled = -1, 0            # 纵向停滞检测：进错 11×11 档时 ▼ 推不动 r0
-    print('  [%s] 回顶 + 横向归零（仅开始一次）' % tag, flush=True)
-    to_c0(0)
-    to_top(disk)
-    direction = 1                      # 1: ▶ 向右；-1: ◀ 向左
-    for vstep in range(24):
-        q = origin(ds.shot(), disk)
-        if q is None:
-            time.sleep(0.3)
-            continue
-        (r0, c0), off = q[0], q[1]
-        for hstep in range(10):
-            q2 = origin(ds.shot(), disk)
-            if q2 is None:
-                time.sleep(0.3)
-                continue
-            (r0, c0), off = q2[0], q2[1]
-            todo = [(r, c, v) for r, c, v in cells
-                    if r0 <= r <= r0 + 6 and c0 <= c <= c0 + 6
-                    and (r, c) not in filled]
-            if todo:
-                print('  [%s] 视口(%2d,%d)%s off=%d 待填 %d 格 (累计 %d/%d)' %
-                      (tag, r0, c0, '→' if direction > 0 else '←', off,
-                       len(todo), len(filled), len(cells)), flush=True)
-                fill_view(todo, r0, c0, disk, tag, filled)
-            if len(filled) >= len(cells):   # 全盘填满立即返回，不再空跑剩余视口
-                print('  [%s] 全盘 %d/%d 已填满，结束扫描' %
-                      (tag, len(filled), len(cells)), flush=True)
-                return filled
-            if (direction > 0 and c0 >= 5) or (direction < 0 and c0 == 0):
-                break
-            arrow('R' if direction > 0 else 'L')
-        q3 = origin(ds.shot(), disk)
-        r_now = q3[0][0] if q3 else r0
-        print('  [%s] 纵向第%d步 r0=%d 方向%s 累计 %d/%d' %
-              (tag, vstep, r_now, '→' if direction > 0 else '←',
-               len(filled), len(cells)), flush=True)
-        if len(filled) >= len(cells) or r_now >= 13:
-            break
-        # 防死循环：11×11 档（进错关）没有 20 行可滚，▼ 推不动 r0，旧版会
-        # 空转 24 步 + 2 轮补漏 = 7 分钟超时。连续 4 步不动立即快速失败。
-        stalled = stalled + 1 if r_now == prev_r else 0
-        prev_r = r_now
-        if stalled >= 4:
-            raise RuntimeError('视口纵向停滞(r0=%d 连续4步不动, 疑似非11×19盘面)' % r_now)
-        # 只按一次 ▼：步长 2~4 行不固定，但相邻视口间隔始终 <=7，覆盖连续。
-        # 曾试过闭环按到阈值行，结果一次跳 4 行导致 r0 0→8，第 7 行漏填
-        # （137/144、未 CLEAR），已回退，勿再改。
-        arrow('D')
-        direction = -direction
-    return filled
+    return SW.sweep_windows(
+        cells, SC, disk, ROWS, COLS,
+        lambda todo, r0, c0, filled: fill_view(todo, r0, c0, disk, tag, filled),
+        tag, filled0, row_start=0)
 
 
 def record(k):

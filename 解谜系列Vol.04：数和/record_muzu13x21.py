@@ -42,6 +42,7 @@ import ds
 import record_all as R
 import record_yasa as Y
 import record_futsu11 as F
+import scroll_win as SW
 
 # ふつう 11×19 选关层的缩略盘（11×19 白格）占满上屏右侧，_blue_top 降到 ≈0.31，
 # 低于 record_futsu11._on_select_screen_futsu() 的 0.35 硬门槛 —— 明明在选关层
@@ -334,88 +335,12 @@ def real_result(im):
 
 
 # ---------- 视口滚动：按住时长控制 + 自适应速率闭环 ----------
-# === 12.17：用户指出「滚动次数太多」后重测得到的关键事实 ===
-# 方向键不是离散的一次一格，而是【按住期间连续滚动】；旧版固定按住 0.18s
-# 只能滚 2 格，于是 22 行盘面推了 15 个视口（r0∈{0,4,11,13,15}×c0∈{0,5,7}）。
-# 速率随模拟器实时帧率漂移（同 0.38s 一次测到 5 格、另一次 11 格），写死映射
-# 表必翻车，故做成「预测 → 实测 → 修正」，同一次运行内速率稳定后基本一次到位。
-RATE0 = 13.0        # 慢速段初始估计（格/秒）
-BASE0 = 0.10        # 启动延迟（秒）：短于它只滚 1 格
-HOLD_MAX = 0.46     # 单次按压上限：超过 ~0.5s 滚动会二次加速（实测 0.56s
-                    # 滚了 12 格），冲过头再倒回来在视频里很难看，宁可欠一点
-                    # 同向再补一次短按。
-
-
-class Scroller:
-    def __init__(self):
-        self.rate = RATE0
-        self.base = BASE0
-        self.n = 0                       # 累计按压次数（用于日志/优化评估）
-
-    def hold_for(self, delta):
-        """目标滚 delta 格需要的按住时长。delta<=1 用最短按。"""
-        if delta <= 1:
-            return 0.10
-        return max(0.12, min(HOLD_MAX, self.base + (delta - 1) / self.rate))
-
-    def press(self, name, hold, wait=0.42):
-        """按住方向键 hold 秒（ds.click_touch 固定 0.18s，这里要可控）。"""
-        x, y = R.V8_ARROW[name]
-        g = ds.geom()
-        sx = g['x'] + int(x * g['w'] / 256)
-        sy = g['y'] + g['h'] // 2 + int(y * (g['h'] / 2) / 192)
-        subprocess.run(['xdotool', 'mousemove', str(sx), str(sy)], env=ds.ENV)
-        time.sleep(0.04)
-        subprocess.run(['xdotool', 'mousedown', '1'], env=ds.ENV)
-        time.sleep(hold)
-        subprocess.run(['xdotool', 'mouseup', '1'], env=ds.ENV)
-        time.sleep(wait)
-
-    def sync(self, hold, moved, at_edge):
-        """用一次实测样本修正速率估计（饱和到边界/零位移的样本丢弃）。"""
-        if at_edge or moved <= 0:
-            return
-        eff = hold - self.base
-        if eff < 0.05:
-            return
-        obs = moved / eff
-        obs = min(28.0, max(6.0, obs))
-        self.rate = 0.65 * self.rate + 0.35 * obs
-
-    def to(self, tr, tc, disk, tag='', tries=10):
-        """闭环滚到视口起点 (tr,tc)，返回最终实读 (r0,c0)。"""
-        last = (None, None)
-        for _ in range(tries):
-            q = origin(ds.shot(), disk)
-            if q is None:
-                time.sleep(0.25)
-                continue
-            r0, c0 = q[0]
-            last = (r0, c0)
-            if (r0, c0) == (tr, tc):
-                return last
-            dr, dc = tr - r0, tc - c0
-            if abs(dr) >= abs(dc) and dr != 0:      # 幅度大的轴优先
-                name, delta = ('D' if dr > 0 else 'U'), abs(dr)
-            else:
-                name, delta = ('R' if dc > 0 else 'L'), abs(dc)
-            hold = self.hold_for(delta)
-            self.press(name, hold)
-            self.n += 1
-            q2 = origin(ds.shot(), disk)
-            after = q2[0] if q2 else last
-            moved = (abs(after[0] - r0) if name in 'DU' else abs(after[1] - c0))
-            at_edge = (after[0] in (0, ROWS - 7) if name in 'DU'
-                       else after[1] in (0, COLS - 7))
-            self.sync(hold, moved, at_edge)
-            print('    [%s] %s%d hold=%.2f → (%d,%d)' %
-                  (tag, name, delta, hold, after[0], after[1]), flush=True)
-            last = after
-        print('  [%s] !! 滚动未到 (%d,%d)，停在 %s' % (tag, tr, tc, last), flush=True)
-        return last
-
-
-SC = Scroller()
+# === 12.17：方向键是【按住期间连续滚动】，滚多远由按住时长决定 ===
+# 慢速段约 11~15 格/秒 + 0.10s 启动延迟，超过 ~0.5s 二次加速；旧版固定
+# 按住 0.18s 只滚 2 格，22 行盘面才推了 15 个视口。速率还会随模拟器负载
+# 漂移（同 0.38s 一次 5 格、一次 11 格），故用「预测-实测-修正」闭环。
+# 实现已抽到 scroll_win.py（11×19 两档共用同一套），见 RESEARCH.md 12.17。
+SC = SW.Scroller(lambda disk: origin(ds.shot(), disk), ROWS, COLS)
 
 
 # 13×21 档右下键盘（竖排、比 11×19 左移上移）：实测数字笔画中心
@@ -520,90 +445,19 @@ def _win_dist(r0, c0, r, c):
 WIN = 7
 
 
-def plan_windows():
-    """用最少 7×7 窗口覆盖全盘：行 {1,8,15} × 列 {0,7}，蛇形 5 次滚动。
-
-    答案盘 22 行 × 14 列，首行/首列是提示行列（全 0），答案格落在
-    r=1..21 / c=1..13。纵向从 r=1 起每 7 行取一个起点：1-7 / 8-14 / 15-21
-    正好吃下 21 行（起点取 0 则三屏只到 20 行，末行 21 掉队 —— 这就是旧版
-    不得不加第 4 个行窗口的原因）；横向 0-6 / 7-13 两屏吃下 14 列。
-    3×2=6 个窗口、5 次滚动，已是几何下界（ceil(21/7)=3、ceil(14/7)=2）。
-    """
-    starts_r, r = [], 1
-    while r < ROWS:
-        starts_r.append(min(r, ROWS - WIN))
-        r += WIN
-    starts_c = list(range(0, COLS, WIN))
-    order = []
-    for i, r0 in enumerate(starts_r):
-        cs = starts_c if i % 2 == 0 else list(reversed(starts_c))
-        for c0 in cs:
-            order.append((r0, c0))
-    return order
-
-
-def window_cells(remain, r0, c0):
-    return [t for t in remain
-            if r0 <= t[0] <= r0 + WIN - 1 and c0 <= t[1] <= c0 + WIN - 1]
-
-
 def sweep(cells, disk, tag, filled0=None):
-    """按 6 窗口蛇形扫描：一次滚动到一屏，填满再走下一屏。
+    """最少窗口蛇形扫描（行 1/6/11/15 × 列 0/5/7 = 12 窗口；实现见 scroll_win）。
 
-    === 为什么整体换掉旧贪心（12.17）===
-    旧版每步只读 (r0,c0) 再朝最近未填格推【一格】，而一格按压 0.18s 只滚
-    2 格，于是 15 个视口、二十余次按压，视频里视口碎步乱挪。新版先算出
-    6 个能铺满全盘的窗口起点，逐个用 Scroller 一次按住滚到位（欠 1 格就补
-    一次短按），滚完仍按【实读】位置填格 —— 即使微调没完全对上，也只会
-    少填几格交给兜底，不会填错格。
-
-    filled0：补漏轮的初始已填集合，只补真正缺的格。
+    === 12.18 为什么是 12 窗口而非 6（几何下界）===
+    方向键是「按住期间连续滚动」，落点随模拟器负载漂移 1~2 格。若紧贴平铺
+    （6 窗口）会在接缝处漏格（039 实测漏 13~14 行、兜底死锁 320s）。故窗口间
+    留 overlap=2 冗余：每个答案格至少落 2 个窗口，单窗漂移也被邻窗兜住。
+    12 窗口 / 11 次换屏仍远优于旧版 15 视口、二十余次按压。
     """
-    filled = set(filled0) if filled0 else set()
-    remain = [(r, c, v) for r, c, v in cells if (r, c) not in filled]
-    n0 = SC.n
-    print('  [%s] 窗口扫描开始，待填 %d/%d' % (tag, len(remain), len(cells)), flush=True)
-    plan = plan_windows()
-    for i, (tr, tc) in enumerate(plan):
-        if not remain:
-            break
-        if not window_cells(remain, tr, tc):
-            continue
-        r0, c0 = SC.to(tr, tc, disk, tag)
-        todo = window_cells(remain, r0, c0)
-        if not todo:
-            print('  [%s] 窗口(%d,%d) 实到(%d,%d) 内无待填格，跳过' %
-                  (tag, tr, tc, r0, c0), flush=True)
-            continue
-        print('  [%s] 窗口 %d/%d (%d,%d)→(%d,%d) 待填 %2d 格 (累计 %d/%d)' %
-              (tag, i + 1, len(plan), tr, tc, r0, c0, len(todo),
-               len(filled), len(cells)), flush=True)
-        fill_view(todo, r0, c0, disk, tag, filled)
-        remain = [t for t in remain if (t[0], t[1]) not in filled]
-
-    # 兜底：极少数情况（滚动被吞/窗口内实读偏差）会剩几格，按距离一次滚到
-    # 该格所在窗口再填，不做逐格碎步（碎步正是本轮要消灭的东西）。
-    guard = 0
-    while remain:
-        guard += 1
-        if guard > 60:
-            raise RuntimeError('兜底扫描迭代超限(60)，疑似盘面/视口异常')
-        q = origin(ds.shot(), disk)
-        if q is None:
-            time.sleep(0.3)
-            continue
-        (r0, c0) = q[0]
-        todo = window_cells(remain, r0, c0)
-        if todo:
-            fill_view(todo, r0, c0, disk, tag, filled)
-            remain = [t for t in remain if (t[0], t[1]) not in filled]
-            continue
-        tr, tc = min(((t[0], t[1]) for t in remain),
-                     key=lambda t: _win_dist(r0, c0, t[0], t[1]))
-        SC.to(max(0, min(ROWS - WIN, tr)), max(0, min(COLS - WIN, tc)), disk, tag)
-    print('  [%s] 扫描结束 %d/%d（本关按压 %d 次）' %
-          (tag, len(filled), len(cells), SC.n - n0), flush=True)
-    return filled
+    return SW.sweep_windows(
+        cells, SC, disk, ROWS, COLS,
+        lambda todo, r0, c0, filled: fill_view(todo, r0, c0, disk, tag, filled),
+        tag, filled0)
 
 
 def enter_level13(k, tag):
