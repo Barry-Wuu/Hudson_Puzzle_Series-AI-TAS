@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """生成《解谜系列Vol.4：数和》全 310 关 答案.md（格式照 Vol.12 美术馆）。
 
+章节按「难度+尺寸」划分：难度与尺寸都相同的连续关卡为一章。
+
 格子映射（用户指定）：
   * 答案盘 0 = 斜线格 → ⬛（纯斜线格与带提示数字的斜线格统一，不区分）
   * 答案盘 1..9 = 答案格 → 1️⃣~9️⃣
@@ -11,7 +13,6 @@
 """
 import os
 import json
-import collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, 'validation', 'vol4_all.json')
@@ -52,27 +53,30 @@ def main():
     A('> 题目顺序依仓库 `validation/vol4_all.json` 的关卡顺序：入門 → やさしい → ふつう → むずかしい。')
     A('')
     for name, a, z in BANDS:
-        A('## %s' % name)
-        A('')
-        cnt = collections.Counter()
+        # 按「难度+尺寸」分章：难度与尺寸都相同的连续关卡算一章。
+        segs = []
         for lv in range(a, z):
             b = bytes.fromhex(levels[lv]['body_hex'])
-            cnt['%d×%d' % (b[2] - 1, b[3] - 1)] += 1
-        desc = ' / '.join('%s（%d 关）' % (k, v)
-                         for k, v in sorted(cnt.items(), key=lambda x: -x[1]))
-        A('%s（%d 关，%s）' % (name, z - a, desc))
-        A('')
-        for lv in range(a, z):
-            b = bytes.fromhex(levels[lv]['body_hex'])
-            C, R = b[2], b[3]
-            disk = b[-(C * R):]
-            rows, W, H = render(disk, C, R)
-            n = lv - a + 1
-            A('**第%03d問 rec%d（%d×%d）**' % (n, n, W, H))
-            A('```')
-            lines.extend(rows)
-            A('```')
+            size = '%d×%d' % (b[2] - 1, b[3] - 1)  # 裁剪后显示尺寸，与关卡标题一致
+            if segs and segs[-1][0] == size:
+                segs[-1][1].append(lv)
+            else:
+                segs.append((size, [lv]))
+        assert len({s for s, _ in segs}) == len(segs), (name, [s for s, _ in segs])
+        for size, lvs in segs:
+            A('## %s · %s（%d 关）' % (name, size, len(lvs)))
             A('')
+            for lv in lvs:
+                b = bytes.fromhex(levels[lv]['body_hex'])
+                C, R = b[2], b[3]
+                disk = b[-(C * R):]
+                rows, W, H = render(disk, C, R)
+                n = lv - a + 1
+                A('**第%03d問 rec%d（%d×%d）**' % (n, n, W, H))
+                A('```')
+                lines.extend(rows)
+                A('```')
+                A('')
     A('> 全 %d 关。' % len(levels))
     with open(OUT, 'w', encoding='utf-8') as fp:
         fp.write('\n'.join(lines) + '\n')

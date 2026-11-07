@@ -20,12 +20,20 @@ SRC = os.path.join(HERE, 'validation', 'puzzles.json')
 DST = os.path.join(HERE, '答案.md')
 
 DIFFS = ['入門', 'やさしい', 'ふつう', 'むずかしい']
-SUBTITLES = {
-    '入門': '入門（20 关，6×6）',
-    'やさしい': 'やさしい（100 关，10×10 / 18×10）',
-    'ふつう': 'ふつう（100 关，18×10 / 24×14）',
-    'むずかしい': 'むずかしい（80 关，24×14 / 36×20）',
-}
+
+
+def split_by_size(items, size_of):
+    """按尺寸连续分段：[(尺寸, [关卡...]), ...]。
+    难度相同、尺寸也相同的连续关卡归为一章（两者都相同算一章）。"""
+    segs = []
+    for it in items:
+        s = size_of(it)
+        if segs and segs[-1][0] == s:
+            segs[-1][1].append(it)
+        else:
+            segs.append((s, [it]))
+    assert len({s for s, _ in segs}) == len(segs), [s for s, _ in segs]
+    return segs
 
 
 def circled(n):
@@ -74,15 +82,15 @@ def main():
     out.append('')
 
     for diff in DIFFS:
-        out.append(f'## {diff}')
-        out.append('')
-        out.append(f'{SUBTITLES[diff]}')
-        out.append('')
         puzzles = data[diff]
-        for p in puzzles:
-            out.append(f'### 第{p["rec"]:02d}問 rec{p["rec"]}（{p["w"]}×{p["h"]}）')
-            out.append(render_table(p))
+        segs = split_by_size(puzzles, lambda p: '%d×%d' % (p['w'], p['h']))
+        for size, seg in segs:
+            out.append(f'## {diff} · {size}（{len(seg)} 关）')
             out.append('')
+            for p in seg:
+                out.append(f'### 第{p["rec"]:02d}問 rec{p["rec"]}（{p["w"]}×{p["h"]}）')
+                out.append(render_table(p))
+                out.append('')
 
     text = '\n'.join(out).rstrip() + '\n'
     os.makedirs(os.path.dirname(DST), exist_ok=True)

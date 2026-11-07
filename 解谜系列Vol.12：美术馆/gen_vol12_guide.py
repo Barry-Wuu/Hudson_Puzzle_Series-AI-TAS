@@ -20,7 +20,6 @@
 """
 import json
 import os
-from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, 'validation', 'puzzles.json')
@@ -56,11 +55,18 @@ def render(p):
     return '\n'.join(''.join(cell(sol[y * w + x]) for x in range(w)) for y in range(h))
 
 
-def size_note(items):
-    c = Counter('%d×%d' % (p['w'], p['h']) for p in items)
-    if len(c) == 1:
-        return list(c)[0]
-    return ' / '.join(f'{k}（{n} 关）' if n != len(items) else k for k, n in c.items())
+def split_by_size(items, size_of):
+    """按尺寸连续分段：[(尺寸, [关卡...]), ...]。
+    难度相同、尺寸也相同的连续关卡归为一章（两者都相同算一章）。"""
+    segs = []
+    for it in items:
+        s = size_of(it)
+        if segs and segs[-1][0] == s:
+            segs[-1][1].append(it)
+        else:
+            segs.append((s, [it]))
+    assert len({s for s, _ in segs}) == len(segs), [s for s, _ in segs]
+    return segs
 
 
 def main():
@@ -88,16 +94,16 @@ def main():
     for mode in MODES:
         items = data[mode]
         total += len(items)
-        out.append(f'## {TITLES[mode]}')
-        out.append('')
-        out.append(f'{mode}（{len(items)} 关，{size_note(items)}）')
-        out.append('')
-        for p in items:
-            out.append(f'### 第{p["rec"]:03d}問 rec{p["rec"]}（{p["w"]}×{p["h"]}）')
-            out.append('```')
-            out.append(render(p))
-            out.append('```')
+        segs = split_by_size(items, lambda p: '%d×%d' % (p['w'], p['h']))
+        for size, seg in segs:
+            out.append(f'## {TITLES[mode]} · {size}（{len(seg)} 关）')
             out.append('')
+            for p in seg:
+                out.append(f'### 第{p["rec"]:03d}問 rec{p["rec"]}（{p["w"]}×{p["h"]}）')
+                out.append('```')
+                out.append(render(p))
+                out.append('```')
+                out.append('')
 
     out.append(f'> 全 {total} 关。')
     text = '\n'.join(out).rstrip() + '\n'

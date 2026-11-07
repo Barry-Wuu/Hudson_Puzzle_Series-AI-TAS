@@ -4,7 +4,6 @@ import unicodedata
 import json
 
 DIFF = {0: '入門', 1: 'やさしい', 2: 'ふつう', 3: 'むずかしい'}
-CNT = {0: 20, 1: 100, 2: 100, 3: 80}
 
 
 def circled(n):
@@ -26,6 +25,20 @@ def dwidth(s):
 
 def pad(s, width, gap=3):
     return s + ' ' * max(0, width - dwidth(s) + gap)
+
+
+def split_by_size(items, size_of):
+    """按尺寸连续分段：[(尺寸, [关卡...]), ...]。
+    难度相同、尺寸也相同的连续关卡归为一章（两者都相同算一章）。"""
+    segs = []
+    for it in items:
+        s = size_of(it)
+        if segs and segs[-1][0] == s:
+            segs[-1][1].append(it)
+        else:
+            segs.append((s, [it]))
+    assert len({s for s, _ in segs}) == len(segs), [s for s, _ in segs]
+    return segs
 
 
 def compact(recs):
@@ -60,27 +73,29 @@ def main():
     L.append('')
     for diff in (0, 1, 2, 3):
         recs = by[diff]
-        L.append(f'## {DIFF[diff]}（{CNT[diff]} 关）')
-        L.append('')
-        if diff == 0:
-            L.append('> 🗺️ **速览**：入門 20 关压成 20 行，一屏看完。每行 = 一关，`|` 切开即为自上而下的 6 行，每组 6 格即一行。')
+        segs = split_by_size(recs, lambda r: '%d×%d' % (r['w'], r['h']))
+        for si, (size, seg) in enumerate(segs):
+            L.append(f'## {DIFF[diff]} · {size}（{len(seg)} 关）')
             L.append('')
-            L.append('```')
-            L.extend(compact(recs))
-            L.append('```')
-            L.append('')
-            L.append('> 下面是逐关单列版，供手机上放大查看。')
-            L.append('')
-        for rec in recs:
-            w, h, sol = rec['w'], rec['h'], rec['M']
-            L.append(f"### 第{rec['idx']:03d}問（{w}×{h}）")
-            L.append('```')
-            for r in range(h):
-                line = ''.join((filled if sol[r][c] else circled)(rec['G'][r][c])
-                               for c in range(w))
-                L.append(line)
-            L.append('```')
-            L.append('')
+            if diff == 0 and si == 0:
+                L.append('> 🗺️ **速览**：入門 20 关压成 20 行，一屏看完。每行 = 一关，`|` 切开即为自上而下的 6 行，每组 6 格即一行。')
+                L.append('')
+                L.append('```')
+                L.extend(compact(recs))
+                L.append('```')
+                L.append('')
+                L.append('> 下面是逐关单列版，供手机上放大查看。')
+                L.append('')
+            for rec in seg:
+                w, h, sol = rec['w'], rec['h'], rec['M']
+                L.append(f"### 第{rec['idx']:03d}問（{w}×{h}）")
+                L.append('```')
+                for r in range(h):
+                    line = ''.join((filled if sol[r][c] else circled)(rec['G'][r][c])
+                                   for c in range(w))
+                    L.append(line)
+                L.append('```')
+                L.append('')
         L.append('---')
         L.append('')
     out = '/workspace/hudson_tas/解谜系列Vol.10：数壹/答案.md'
