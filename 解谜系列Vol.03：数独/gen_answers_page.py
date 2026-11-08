@@ -18,6 +18,9 @@ def grid_html(sol, w, h):
         row = sol[i * w:(i + 1) * w]
         groups = [row[j:j + 3] for j in range(0, w, 3)]
         rows.append(' '.join(''.join(EMOJI[v] for v in g) for g in groups))
+        # 每 3 行（一个大行）之间空一行
+        if (i + 1) % 3 == 0 and i != h - 1:
+            rows.append('')
     return '\n'.join(rows)
 
 
@@ -93,7 +96,7 @@ h1{font-size:21px;margin:0 0 8px;color:#e8eef7}
 }
 </style></head><body><main>
 <h1>Vol.3 数独 · 全 300 关答案</h1>
-<p class="lead">每格用<b>数字 emoji</b>（1️⃣~9️⃣）表示：<b>同一个 3×3 宫内三格连写、宫内不留空格；宫与宫之间一个空格；每行结束回车换行</b>，9 行读完即完整解。答案来自 ROM 内现成数据表，开录前一次性静态提取，非现场求解。<br>点击难度切换，或用右侧输入框跳到指定关号（1–300）。</p>
+<p class="lead">每格用<b>数字 emoji</b>（1️⃣~9️⃣）表示：<b>同一个 3×3 宫内三格连写、宫内不留空格；宫与宫之间一个空格；每 3 行之间空一行（大行分隔）</b>，9 行读完即完整解。答案来自 ROM 内现成数据表，开录前一次性静态提取，非现场求解。<br>点击难度切换，或用右侧输入框跳到指定关号（1–300）。</p>
 <div class="bar">__TABS__
 <div class="jump"><input id="q" type="number" min="1" max="300" placeholder="关号"><button id="go">跳转</button></div>
 </div>
