@@ -31,7 +31,7 @@
 | 認定問題 | 「めざせ！段位認定！」プラチナ/ゴールド/シルバー/ブロンズ 复用这 300 关，ROM 无独立题库块 |
 
 - `extract_vol3_answers.py`：从 ROM 静态提取，逐关五项自检（题面合法 / 答案合法数独解 / 答案覆盖给定格 / 题面唯一解 / 唯一解与 ROM 答案逐格一致），**300/300 全通过** → `validation/puzzles.json`（178KB，含题面、解、难度、档内编号、空格数）。
-- `gen_vol3_guide.py`：由 `puzzles.json` 产出 `答案.md`——按「难度 + 尺寸」分 3 章（本卷全 9×9），全局编号 `**第001問（9×9）**`…`**第300問（9×9）**`（加粗、不带 `#`），每关代码块给出 9 行 × 9 数字的**完整解**。
+- `gen_vol3_guide.py`：由 `puzzles.json` 产出 `答案.md`——按「难度 + 尺寸」分 3 章（本卷全 9×9），全局编号 `**第001問（9×9）**`…`**第300問（9×9）**`（加粗、不带 `#`），每关代码块给出 9 行 × 9 格的**完整解**，每格是**数字 emoji**（1️⃣~9️⃣，keycap 序列 `数字 + VS16 + U+20E3`），**行内相邻格一个空格、行间回车换行**。
 - やさしい No.001 的题面 `.1.8.4.9.…` 与解 `715834692…` 另与**实机截图读出的题面 / 实机通关解**逐格交叉验证一致。
 
 > 如实边界：难度分段边界（第 71 块起ふつう、第 211 块起むずかしい）依据「选关页实测 70/140/90 总数 + 合计 300 + 题库块连续 + 给定数字数随难度递减」推定，**未逐关进游戏核对**；题库首块与 やさしい No.001 已逐格实机验证。答案内容本身由 ROM 精确提取，不受分段影响。
@@ -168,6 +168,21 @@ Xvfb `:99` → pulse `auto_null` → `desmume-cli --cpu-mode=0`（ALSA）→ 窗
 
 页面顶部统计条下方也有同批直链的折叠区块（`⬇ 全部视频直链`），带「复制全部 8 条链接」按钮。
 
+### 答案与存档
+
+答案盘面统一改成**数字 emoji**（1️⃣~9️⃣）：一行 9 格、**格与格之间一个空格**，**行与行之间回车换行**；9 行读完即完整解。`答案.md` 与在线答案页同源，都由 `gen_vol3_guide.py` / `gen_answers_page.py` 从 `validation/puzzles.json` 生成。
+
+| 项 | 直链 |
+|---|---|
+| 答案页（在线翻，按难度切换、可跳关号） | `https://ac8a1c5bb2ca8017b.app.workbuddy.host/answers.html?sharecode=GCQ2OVAP3X` |
+| `答案.md`（206 KB） | `https://ac8a1c5bb2ca8017b.app.workbuddy.host/files/答案.md?dl=1&sharecode=GCQ2OVAP3X` |
+| `vol3.dsv`（全 300 关通关，8.1 KB） | `https://ac8a1c5bb2ca8017b.app.workbuddy.host/files/vol3.dsv?dl=1&sharecode=GCQ2OVAP3X` |
+| `vol3_all_ranks.dsv`（300 关 + 四段位全认定，8.1 KB） | `https://ac8a1c5bb2ca8017b.app.workbuddy.host/files/vol3_all_ranks.dsv?dl=1&sharecode=GCQ2OVAP3X` |
+
+首页统计条下方另有「📦 存档与答案」区块，四个入口同屏可点。
+
+自检：把 `答案.md` 的 emoji 反解回数字，与 `puzzles.json` 的 `solution` 逐格比对，**300/300 全一致**，且每盘的 9 行 / 9 列 / 9 宫都恰好是 1–9 各一次。
+
 ### 此前「下载不了」的根因与修复
 
 | 现象 | 根因 | 修复 |
@@ -182,7 +197,7 @@ Xvfb `:99` → pulse `auto_null` → `desmume-cli --cpu-mode=0`（ALSA）→ 窗
 
 | 文件 | 说明 |
 |---|---|
-| `答案.md` | 全 300 关完整解（脚本产出，3 章，全局编号） |
+| `答案.md` | 全 300 关完整解（脚本产出，3 章，全局编号；每格数字 emoji，行内单空格 / 行间回车） |
 | `validation/puzzles.json` | ROM 静态提取的 300 关题面 + 解 |
 | `extract_vol3_answers.py` / `gen_vol3_guide.py` | 提取与生成脚本 |
 | `saves/vol3.dsv` | 游戏亲写全通关档（090/090，记录随关递增；四段位未认定） |
