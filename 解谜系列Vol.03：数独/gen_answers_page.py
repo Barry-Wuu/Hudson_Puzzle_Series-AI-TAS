@@ -15,7 +15,9 @@ EMOJI = {i: '%d\ufe0f\u20e3' % i for i in range(1, 10)}
 def grid_html(sol, w, h):
     rows = []
     for i in range(h):
-        rows.append(' '.join(EMOJI[v] for v in sol[i * w:(i + 1) * w]))
+        row = sol[i * w:(i + 1) * w]
+        groups = [row[j:j + 3] for j in range(0, w, 3)]
+        rows.append(' '.join(''.join(EMOJI[v] for v in g) for g in groups))
     return '\n'.join(rows)
 
 
@@ -70,7 +72,7 @@ h1{font-size:21px;margin:0 0 8px;color:#e8eef7}
 .jump input:focus{outline:none;border-color:#3f6fa8}
 .jump button{background:#22303f;border:1px solid #2b394b;color:#b8c6d8;border-radius:7px;padding:6px 11px;font:inherit;font-size:12px;cursor:pointer}
 .gh{font-size:13px;color:#8ab4f8;margin:22px 0 10px;font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:11px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:11px}
 .pz{background:#161b22;border:1px solid #232b36;border-radius:11px;padding:11px 12px}
 .pz.hit{border-color:#f0b429;box-shadow:0 0 0 2px rgba(240,180,41,.18)}
 .pz h2{font-size:12px;color:#8ab4f8;margin:0 0 7px;font-weight:600;font-variant-numeric:tabular-nums}
@@ -91,7 +93,7 @@ h1{font-size:21px;margin:0 0 8px;color:#e8eef7}
 }
 </style></head><body><main>
 <h1>Vol.3 数独 · 全 300 关答案</h1>
-<p class="lead">每格用<b>数字 emoji</b>（1️⃣~9️⃣）表示：<b>同一行内相邻格之间是一个空格，换行就是换行</b>，9 行 × 9 格读完即完整解。答案来自 ROM 内现成数据表，开录前一次性静态提取，非现场求解。<br>点击难度切换，或用右侧输入框跳到指定关号（1–300）。</p>
+<p class="lead">每格用<b>数字 emoji</b>（1️⃣~9️⃣）表示：<b>同一个 3×3 宫内三格连写、宫内不留空格；宫与宫之间一个空格；每行结束回车换行</b>，9 行读完即完整解。答案来自 ROM 内现成数据表，开录前一次性静态提取，非现场求解。<br>点击难度切换，或用右侧输入框跳到指定关号（1–300）。</p>
 <div class="bar">__TABS__
 <div class="jump"><input id="q" type="number" min="1" max="300" placeholder="关号"><button id="go">跳转</button></div>
 </div>
