@@ -59,7 +59,7 @@ runs(col x)      == reversed(A[x])     # 列线索下→上存储
 python3 extract_vol6_answers.py
 ```
 
-输出 `答案.md`（300 题盘面，`■` 直接照填）与 `validation/puzzles.json`（含 `grid` / `clue_rows` / `clue_cols` / `ink` / 答案词）。脚本内置四条自检：索引连续、`ILQT` 长度自洽、`ink` 三重一致、线索逐段双向匹配。
+输出 `答案.md`（300 题盘面，`⬛️` 涂色 / `⬜️` 空白直接照填）与 `validation/puzzles.json`（含 `grid` / `clue_rows` / `clue_cols` / `ink` / 答案词）。脚本内置四条自检：索引连续、`ILQT` 长度自洽、`ink` 三重一致、线索逐段双向匹配。
 
 ## 实机：画面几何与操作路径
 
@@ -125,6 +125,6 @@ python3 extract_vol6_answers.py
 | `README.md` | 本文档 |
 | `extract_vol6_answers.py` | 从 ROM 静态提取 300 题盘面与线索，含四条自检 |
 | `probe_dose.py` | 实机逐格填充 + 剂量标定脚本（`--n/--gap/--hold/--after/--restart`） |
-| `答案.md` | 300 题盘面（`■` 照填） |
+| `答案.md` | 300 题盘面（`⬛️` 涂色 / `⬜️` 空白照填） |
 | `validation/puzzles.json` | 300 题的 `grid` / `clue_rows` / `clue_cols` / `ink` / 答案词 |
 | `validation/dose/*.png` | 剂量证据：各档剂量的通关画面 + 32 ms 失败画面，原生 256×384 |
