@@ -124,6 +124,8 @@ python3 gen_vol9_answers_md.py
 python3 extract_vol9_clear_shots.py
 ```
 
+- `shots_index.json`：410 关的抽帧记录（源视频、选取时刻 t、黄填充值、帧序号、落盘路径），改动判据后可逐关比对。
+
 - 模拟器：DeSmuME CLI + Xvfb `:99`，窗口 `256×384 @ (512,320)`，上屏 y0–191、下屏 y192–383。
 - 录制编码：`libopenh264 -b:v 1200k -r 30 -pix_fmt yuv420p` + AAC 160k 立体声 + `faststart`（本环境 ffmpeg 无 libx264）。
 - 录制脚本与剪辑脚本为临时工具（`/tmp/v9_batch2.py`、`/tmp/v9_trim_v2.py` 等），未入库；方法论已写在脚本注释与 `答案.md` 抬头。
