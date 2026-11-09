@@ -100,13 +100,14 @@ Xvfb `:99` → pulse `auto_null` → `desmume-cli --cpu-mode=0`（ALSA）→ 窗
 
 | 文件夹 | 难度 | 关数 | 内容 |
 |---|---|---|---|
-| `validation/mode2_easy/` | やさしい | 70 | `l001_clear.png` ~ `l070_clear.png` + `README.txt` |
-| `validation/mode3_medium/` | ふつう | 140 | `l001_clear.png` ~ `l140_clear.png` + `README.txt` |
-| `validation/mode4_hard/` | むずかしい | 90 | `l001_clear.png` ~ `l090_clear.png` + `README.txt` + `00_select_090of090.png` |
+| `validation/mode1_easy/` | やさしい | 70 | `l001_clear.png` ~ `l070_clear.png` + `README.txt` |
+| `validation/mode2_medium/` | ふつう | 140 | `l001_clear.png` ~ `l140_clear.png` + `README.txt` |
+| `validation/mode3_hard/` | むずかしい | 90 | `l001_clear.png` ~ `l090_clear.png` + `README.txt` + `00_select_090of090.png` |
 
 - 判定：游戏 UI 五颜六色，颜色统计 / OCR / 模板匹配均不可靠；唯一稳定信号是「正解」大字的黄色填充（`r>200 且 g>170 且 b<90`，区别于奶油色面板 `b≈180`）。逐关「中段粗采样（2 s 步长）+ 片尾 7 s 密集采样（0.3 s 步长，覆盖到真实结尾）」取黄填充最大帧；ffmpeg 用**输入后精确定位**（避免关键帧吸附）。300/300 黄填充均 ≥3400（对局背景恒定 ≈460），`黄填充偏低` 清单为空。
-- `mode4_hard/00_select_090of090.png`：むずかしい 最终関（090）通关后自动跳出的「レベル：むずかしい クリア状況 / クリアしている問題 090/090」全問クリア页。やさしい・ふつう 最终関片尾停在「正解」结算画面、未出现该列表页，故仅むずかしい 提供此全通封面。
-- 顶层此前 6 张散落 `Vol.3_正解_{难度}_{关号}.png` 样张已删除（与三文件夹内逐关正解重复）；認定 / 无星证据与文档拼图保留。
+- `mode3_hard/00_select_090of090.png`：むずかしい 最终関（090）通关后自动跳出的「レベル：むずかしい クリア状況 / クリアしている問題 090/090」全問クリア页。やさしい・ふつう 最终関片尾停在「正解」结算画面、未出现该列表页，故仅むずかしい 提供此全通封面。
+- 目录编号＝**游戏难度菜单序号**：选关页只有 やさしい / ふつう / むずかしい 三档（无入門），故 やさしい=mode1、ふつう=mode2、むずかしい=mode3。此前误按「同系列有 4 档」从 `mode2` 起编（`mode2_easy`/`mode3_medium`/`mode4_hard`），已整体前移修正。
+- 顶层此前 6 张散落 `Vol.3_正解_{难度}_{关号}.png` 样张已删除（与三文件夹内逐关正解重复）；認定 / 无星证据保留。
 - 提取脚本：`extract_vol3_clear_shots.py`（中段 + 片尾密集采样，取黄填充最大帧）。
 
 ## 認定問題（段位認定）录制（✅ 已完成）
@@ -142,7 +143,7 @@ Xvfb `:99` → pulse `auto_null` → `desmume-cli --cpu-mode=0`（ALSA）→ 窗
 
 - 结论：本作**通关演出 = 正解 + クリア时间 + 庆祝定格**，与「关卡名次/星级」体系无关；已录 300 支均从「スタート」到「正解」即止，不漏任何评价画面。
 - 对照：同系列其它卷（如数独以外的 `muzu_star` 系列素材）存在星级结算，本卷确无——不是录制漏裁。
-- 证据：`validation/Vol.3_通关结算_正解与クリア时间.png`、`Vol.3_无星级_40秒定格序列.png`、`Vol.3_选关页_无星标记_070全通.png`。
+- 证据：`validation/Vol.3_通关结算_正解与クリア时间.png`、`Vol.3_选关页_无星标记_070全通.png`（均为单张原生 256×384 截图）。
 
 ## 按难度合并版（B 站投稿用）
 
@@ -217,8 +218,7 @@ Xvfb `:99` → pulse `auto_null` → `desmume-cli --cpu-mode=0`（ALSA）→ 窗
 | `extract_vol3_answers.py` / `gen_vol3_guide.py` / `extract_vol3_clear_shots.py` | 题库提取、答案生成、逐关「正解」帧抽取脚本 |
 | `saves/vol3.dsv` | 游戏亲写全通关档（090/090，记录随关递增；四段位未认定） |
 | `saves/vol3_all_ranks.dsv` | 四段位全认定 + 全 300 关的存档（录制完成后游戏写出） |
-| `validation/Vol.3_正解证据_拼图.png` | 全 300 关「正解」末帧量化拼图（20×15） |
-| `validation/mode2_easy/` `mode3_medium/` `mode4_hard/` | 三难度各 70/140/90 张逐关「正解」帧（`lNNN_clear.png`）+ 各 `README.txt`（むずかしい 另含 `00_select_090of090.png`） |
+| `validation/mode1_easy/` `mode2_medium/` `mode3_hard/` | 三难度各 70/140/90 张逐关「正解」帧（`lNNN_clear.png`）+ 各 `README.txt`（むずかしい 另含 `00_select_090of090.png`） |
 | `validation/Vol.3_認定_{段位}_正解.png` | 4 段位「正解 / 段位認定」结算帧 |
 | `validation/Vol.3_認定_4段位全認定.png` | 四段位全认定后的段位菜单（四枚勋章） |
 | `validation/Vol.3_認定_トータル時間_段位別.png` | 通关结算：总用时 + 段位逐项用时（59:48/49:48/39:48/29:48） |
@@ -229,7 +229,6 @@ Xvfb `:99` → pulse `auto_null` → `desmume-cli --cpu-mode=0`（ALSA）→ 窗
 | `/workspace/Vol.3_合并版/*.mp4` | 三难度按关号顺序无损合并的三支长视频（不入库） |
 | `/workspace/vol3_site/` | 线上浏览站（`index.html` + `videos/` + `thumbs/` 封面 + `serve.py`：Range 拖动、多线程、`?dl=1` 直接存盘） |
 | `validation/Vol.3_通关结算_正解与クリア时间.png` | 无星复测：通关演出截帧（「正解」+「クリア 00時間00分35秒」） |
-| `validation/Vol.3_无星级_40秒定格序列.png` | 无星复测：通关后 0–38 s 每 2 s 一帧，全程定格无新画面 |
 | `validation/Vol.3_选关页_无星标记_070全通.png` | 无星复测：选关页 070/070 全通，关号列表无星标 |
 
 ## 备注 / 边界

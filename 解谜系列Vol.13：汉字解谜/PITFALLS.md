@@ -3727,8 +3727,8 @@ rec260/rec270 旧判据蒙对。
 
 - **rec252–259（模式2 ひりどり 認定题库四对变体）全部实机通关**，按 §S37 口径截「正解!」证据图 →
   `validation/mode2_4_certification/<level>_clear_r<rec>.png`（8 张）+ 首通 `_certificate_r<rec>.png`。
-- 四级认定**同会话达成**：bronze/silver/gold/platinum 上屏均转为 **認定済み**（`<level>_certified_state.png` +
-  `all4_certified_overview.png` 为证）。
+- 四级认定**同会话达成**：bronze/silver/gold/platinum 上屏均转为 **認定済み**（`<level>_certified_state.png` ×4
+  为证；四屏合成总览拼图已删除，只留原始单帧）。
 
 ### 58.2 ★ 解锁链（实机分段实测）
 

@@ -465,7 +465,8 @@ python3 ai-tas/scripts/run.py --mode 3 --diff yasashii --from 1 --to 15
     - `<level>_clear_r<rec>.png`（8 张「正解!」正解证据，256 色量化）；
     - 认定画面：`<level>_certificate_r<rec>.png` 白卡 ×3（bronze r252 / silver r254 / gold r256）
       + `platinum_cert_complete.png`（プラチナ 是黑底「認定完了！」屏、非白卡，见 §S58.8）；
-    - `<level>_certified_state.png` ×4 + `all4_certified_overview.png`（四级「認定済み」总览）。
+    - `<level>_certified_state.png` ×4（四级「認定済み」各一张原生 256×384 截图）。
+      此前的 `all4_certified_overview.png`（四屏合成总览）与 `kentei_menu_4levels.png`（2×2 菜单拼图）已删除，只留原始单帧。
     工具：`run.py --mode 2 --kentei <级别>`（统一入口，委派 `run_mode2_cert.py` 四级 runner）。
   * ⚠️ **归属澄清**：**rec265–269 属模式3 むずかしい No.56–60**（口の数 337–341，见 §S29 / `kanji_common.rec_for`），
     **不是**模式2 認定；模式2 認定题库即上方 8 条 rec252–259。

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.11
 # 从 300 支通关录播视频中，为每一关抽取一张「正解」画面帧，
-# 按难度分文件夹存放（mode2_easy / mode3_medium / mode4_hard），
+# 按难度分文件夹存放（mode1_easy / mode2_medium / mode3_hard，编号＝游戏难度菜单序号），
 # 文件名沿用其他卷约定：lNNN_clear.png（NNN 为该难度内连续编号 001..N）。
 #
 # 识别方法：游戏 UI 五颜六色，颜色统计 / OCR / 模板匹配均不可靠；
@@ -14,7 +14,7 @@ from PIL import Image
 
 SRC = '/workspace/Vol.3_全关录播'
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'validation')
-DIFF_MAP = {'やさしい': 'mode2_easy', 'ふつう': 'mode3_medium', 'むずかしい': 'mode4_hard'}
+DIFF_MAP = {'やさしい': 'mode1_easy', 'ふつう': 'mode2_medium', 'むずかしい': 'mode3_hard'}
 STEP = 2.0   # 中段粗采样步长（秒）
 TAIL = 7.0    # 尾部密集采样覆盖长度（秒）——正解必在片尾出现，必须覆盖到真实结尾
 TAIL_STEP = 0.3  # 尾部密集采样步长（秒）
