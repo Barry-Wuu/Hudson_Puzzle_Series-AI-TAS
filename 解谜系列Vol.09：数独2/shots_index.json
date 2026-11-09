@@ -1,0 +1,3282 @@
+[
+ {
+  "video": "Vol.9_数独2_ふつう_001_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4954,
+  "t": 17.95,
+  "frame": 101,
+  "out": "mode3_medium/l001_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_002_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4955,
+  "t": 17.3,
+  "frame": 112,
+  "out": "mode3_medium/l002_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_003_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4958,
+  "t": 18.95,
+  "frame": 103,
+  "out": "mode3_medium/l003_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_004_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4959,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode3_medium/l004_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_005_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4935,
+  "t": 16.65,
+  "frame": 111,
+  "out": "mode3_medium/l005_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_006_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4962,
+  "t": 19.0,
+  "frame": 114,
+  "out": "mode3_medium/l006_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_007_通关实况_256x384.mp4",
+  "yellow": 4939,
+  "ymax": 4964,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l007_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_008_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4947,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode3_medium/l008_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_009_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4940,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode3_medium/l009_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_010_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4946,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l010_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_011_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4954,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode3_medium/l011_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_012_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4954,
+  "t": 18.05,
+  "frame": 101,
+  "out": "mode3_medium/l012_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_013_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4972,
+  "t": 17.45,
+  "frame": 105,
+  "out": "mode3_medium/l013_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_014_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4956,
+  "t": 17.6,
+  "frame": 108,
+  "out": "mode3_medium/l014_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_015_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4950,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode3_medium/l015_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_016_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4972,
+  "t": 16.9,
+  "frame": 110,
+  "out": "mode3_medium/l016_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_017_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4953,
+  "t": 18.0,
+  "frame": 102,
+  "out": "mode3_medium/l017_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_018_通关实况_256x384.mp4",
+  "yellow": 4940,
+  "ymax": 4956,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode3_medium/l018_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_019_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4944,
+  "t": 18.7,
+  "frame": 102,
+  "out": "mode3_medium/l019_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_020_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4951,
+  "t": 18.1,
+  "frame": 102,
+  "out": "mode3_medium/l020_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_021_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4968,
+  "t": 16.9,
+  "frame": 112,
+  "out": "mode3_medium/l021_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_022_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4962,
+  "t": 18.0,
+  "frame": 102,
+  "out": "mode3_medium/l022_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_023_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4946,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l023_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_024_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4972,
+  "t": 17.15,
+  "frame": 103,
+  "out": "mode3_medium/l024_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_025_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4962,
+  "t": 18.75,
+  "frame": 111,
+  "out": "mode3_medium/l025_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_026_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4973,
+  "t": 18.5,
+  "frame": 110,
+  "out": "mode3_medium/l026_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_027_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4949,
+  "t": 17.85,
+  "frame": 105,
+  "out": "mode3_medium/l027_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_028_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4962,
+  "t": 17.45,
+  "frame": 109,
+  "out": "mode3_medium/l028_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_029_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4958,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l029_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_030_通关实况_256x384.mp4",
+  "yellow": 4932,
+  "ymax": 4941,
+  "t": 18.75,
+  "frame": 111,
+  "out": "mode3_medium/l030_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_031_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4951,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l031_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_032_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4979,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l032_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_033_通关实况_256x384.mp4",
+  "yellow": 4917,
+  "ymax": 4959,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l033_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_034_通关实况_256x384.mp4",
+  "yellow": 4916,
+  "ymax": 4970,
+  "t": 18.25,
+  "frame": 101,
+  "out": "mode3_medium/l034_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_035_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4958,
+  "t": 17.4,
+  "frame": 102,
+  "out": "mode3_medium/l035_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_036_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4953,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l036_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_037_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4970,
+  "t": 17.15,
+  "frame": 111,
+  "out": "mode3_medium/l037_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_038_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4968,
+  "t": 19.0,
+  "frame": 110,
+  "out": "mode3_medium/l038_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_039_通关实况_256x384.mp4",
+  "yellow": 4917,
+  "ymax": 4943,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l039_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_040_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4941,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l040_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_041_通关实况_256x384.mp4",
+  "yellow": 4917,
+  "ymax": 4944,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode3_medium/l041_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_042_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4946,
+  "t": 18.15,
+  "frame": 111,
+  "out": "mode3_medium/l042_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_043_通关实况_256x384.mp4",
+  "yellow": 4937,
+  "ymax": 4950,
+  "t": 18.05,
+  "frame": 111,
+  "out": "mode3_medium/l043_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_044_通关实况_256x384.mp4",
+  "yellow": 4936,
+  "ymax": 4944,
+  "t": 17.15,
+  "frame": 111,
+  "out": "mode3_medium/l044_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_045_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4949,
+  "t": 18.5,
+  "frame": 110,
+  "out": "mode3_medium/l045_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_046_通关实况_256x384.mp4",
+  "yellow": 4944,
+  "ymax": 4945,
+  "t": 18.45,
+  "frame": 111,
+  "out": "mode3_medium/l046_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_047_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4969,
+  "t": 18.15,
+  "frame": 111,
+  "out": "mode3_medium/l047_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_048_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4973,
+  "t": 18.7,
+  "frame": 106,
+  "out": "mode3_medium/l048_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_049_通关实况_256x384.mp4",
+  "yellow": 4917,
+  "ymax": 4959,
+  "t": 17.85,
+  "frame": 103,
+  "out": "mode3_medium/l049_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_050_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4958,
+  "t": 18.85,
+  "frame": 111,
+  "out": "mode3_medium/l050_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_051_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4943,
+  "t": 17.55,
+  "frame": 111,
+  "out": "mode3_medium/l051_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_052_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4945,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l052_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_053_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4959,
+  "t": 17.9,
+  "frame": 110,
+  "out": "mode3_medium/l053_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_054_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4946,
+  "t": 17.75,
+  "frame": 103,
+  "out": "mode3_medium/l054_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_055_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4972,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode3_medium/l055_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_056_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4938,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode3_medium/l056_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_057_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4956,
+  "t": 17.55,
+  "frame": 101,
+  "out": "mode3_medium/l057_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_058_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4952,
+  "t": 18.85,
+  "frame": 111,
+  "out": "mode3_medium/l058_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_059_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4966,
+  "t": 17.65,
+  "frame": 107,
+  "out": "mode3_medium/l059_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_060_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4935,
+  "t": 17.8,
+  "frame": 102,
+  "out": "mode3_medium/l060_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_061_通关实况_256x384.mp4",
+  "yellow": 4915,
+  "ymax": 4949,
+  "t": 17.85,
+  "frame": 105,
+  "out": "mode3_medium/l061_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_062_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4961,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode3_medium/l062_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_063_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4950,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode3_medium/l063_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_064_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4952,
+  "t": 19.05,
+  "frame": 111,
+  "out": "mode3_medium/l064_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_065_通关实况_256x384.mp4",
+  "yellow": 4911,
+  "ymax": 4950,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l065_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_066_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4957,
+  "t": 17.55,
+  "frame": 111,
+  "out": "mode3_medium/l066_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_067_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4950,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l067_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_068_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4952,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l068_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_069_通关实况_256x384.mp4",
+  "yellow": 4943,
+  "ymax": 4949,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode3_medium/l069_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_070_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4951,
+  "t": 17.6,
+  "frame": 98,
+  "out": "mode3_medium/l070_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_071_通关实况_256x384.mp4",
+  "yellow": 4934,
+  "ymax": 4983,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode3_medium/l071_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_072_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4948,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode3_medium/l072_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_073_通关实况_256x384.mp4",
+  "yellow": 4299,
+  "ymax": 4964,
+  "t": 17.45,
+  "frame": 101,
+  "out": "mode3_medium/l073_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_074_通关实况_256x384.mp4",
+  "yellow": 4294,
+  "ymax": 4963,
+  "t": 17.55,
+  "frame": 103,
+  "out": "mode3_medium/l074_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_075_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4976,
+  "t": 19.05,
+  "frame": 111,
+  "out": "mode3_medium/l075_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_076_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4948,
+  "t": 17.55,
+  "frame": 109,
+  "out": "mode3_medium/l076_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_077_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4979,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode3_medium/l077_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_078_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4979,
+  "t": 19.0,
+  "frame": 110,
+  "out": "mode3_medium/l078_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_079_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4970,
+  "t": 19.05,
+  "frame": 111,
+  "out": "mode3_medium/l079_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_080_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4967,
+  "t": 18.8,
+  "frame": 110,
+  "out": "mode3_medium/l080_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_081_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4971,
+  "t": 17.9,
+  "frame": 112,
+  "out": "mode3_medium/l081_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_082_通关实况_256x384.mp4",
+  "yellow": 4909,
+  "ymax": 4967,
+  "t": 18.6,
+  "frame": 102,
+  "out": "mode3_medium/l082_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_083_通关实况_256x384.mp4",
+  "yellow": 4932,
+  "ymax": 4944,
+  "t": 18.75,
+  "frame": 107,
+  "out": "mode3_medium/l083_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_084_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4966,
+  "t": 17.55,
+  "frame": 105,
+  "out": "mode3_medium/l084_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_085_通关实况_256x384.mp4",
+  "yellow": 4293,
+  "ymax": 4954,
+  "t": 17.55,
+  "frame": 101,
+  "out": "mode3_medium/l085_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_086_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4941,
+  "t": 17.8,
+  "frame": 102,
+  "out": "mode3_medium/l086_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_087_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4948,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l087_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_088_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4958,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode3_medium/l088_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_089_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4963,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode3_medium/l089_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_090_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4972,
+  "t": 17.65,
+  "frame": 107,
+  "out": "mode3_medium/l090_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_091_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4941,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l091_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_092_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4949,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode3_medium/l092_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_093_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4945,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode3_medium/l093_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_094_通关实况_256x384.mp4",
+  "yellow": 4915,
+  "ymax": 4965,
+  "t": 17.55,
+  "frame": 101,
+  "out": "mode3_medium/l094_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_095_通关实况_256x384.mp4",
+  "yellow": 4909,
+  "ymax": 4959,
+  "t": 17.5,
+  "frame": 102,
+  "out": "mode3_medium/l095_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_096_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4960,
+  "t": 17.65,
+  "frame": 105,
+  "out": "mode3_medium/l096_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_097_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4973,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode3_medium/l097_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_098_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4966,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode3_medium/l098_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_099_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4966,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode3_medium/l099_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_100_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4948,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode3_medium/l100_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_101_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4935,
+  "t": 18.55,
+  "frame": 111,
+  "out": "mode3_medium/l101_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_102_通关实况_256x384.mp4",
+  "yellow": 4934,
+  "ymax": 4959,
+  "t": 18.55,
+  "frame": 107,
+  "out": "mode3_medium/l102_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_103_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4942,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode3_medium/l103_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_104_通关实况_256x384.mp4",
+  "yellow": 4944,
+  "ymax": 4944,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l104_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_105_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4958,
+  "t": 17.65,
+  "frame": 107,
+  "out": "mode3_medium/l105_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_106_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4978,
+  "t": 17.7,
+  "frame": 104,
+  "out": "mode3_medium/l106_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_107_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4940,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode3_medium/l107_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_108_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4948,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode3_medium/l108_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_109_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4948,
+  "t": 19.05,
+  "frame": 111,
+  "out": "mode3_medium/l109_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_110_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4979,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode3_medium/l110_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_111_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4977,
+  "t": 18.5,
+  "frame": 110,
+  "out": "mode3_medium/l111_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_112_通关实况_256x384.mp4",
+  "yellow": 4915,
+  "ymax": 4967,
+  "t": 17.45,
+  "frame": 103,
+  "out": "mode3_medium/l112_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_113_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4948,
+  "t": 17.55,
+  "frame": 105,
+  "out": "mode3_medium/l113_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_114_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4975,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode3_medium/l114_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_115_通关实况_256x384.mp4",
+  "yellow": 4662,
+  "ymax": 4937,
+  "t": 17.45,
+  "frame": 103,
+  "out": "mode3_medium/l115_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_116_通关实况_256x384.mp4",
+  "yellow": 4663,
+  "ymax": 4963,
+  "t": 17.55,
+  "frame": 107,
+  "out": "mode3_medium/l116_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_117_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4973,
+  "t": 17.55,
+  "frame": 101,
+  "out": "mode3_medium/l117_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_118_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4955,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode3_medium/l118_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_119_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4946,
+  "t": 17.9,
+  "frame": 110,
+  "out": "mode3_medium/l119_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_120_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4957,
+  "t": 19.0,
+  "frame": 112,
+  "out": "mode3_medium/l120_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_121_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4973,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l121_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_122_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4967,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l122_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_123_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4957,
+  "t": 18.05,
+  "frame": 111,
+  "out": "mode3_medium/l123_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_124_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4945,
+  "t": 17.9,
+  "frame": 112,
+  "out": "mode3_medium/l124_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_125_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4954,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode3_medium/l125_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_126_通关实况_256x384.mp4",
+  "yellow": 4908,
+  "ymax": 4966,
+  "t": 17.5,
+  "frame": 102,
+  "out": "mode3_medium/l126_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_127_通关实况_256x384.mp4",
+  "yellow": 4934,
+  "ymax": 4961,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode3_medium/l127_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_128_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4963,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode3_medium/l128_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_129_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4954,
+  "t": 18.55,
+  "frame": 107,
+  "out": "mode3_medium/l129_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_ふつう_130_通关实况_256x384.mp4",
+  "yellow": 4944,
+  "ymax": 4958,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode3_medium/l130_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_001_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4954,
+  "t": 17.15,
+  "frame": 101,
+  "out": "mode4_hard/l001_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_002_通关实况_256x384.mp4",
+  "yellow": 4287,
+  "ymax": 4975,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode4_hard/l002_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_003_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4951,
+  "t": 17.85,
+  "frame": 101,
+  "out": "mode4_hard/l003_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_004_通关实况_256x384.mp4",
+  "yellow": 4941,
+  "ymax": 4947,
+  "t": 18.3,
+  "frame": 110,
+  "out": "mode4_hard/l004_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_005_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4936,
+  "t": 18.35,
+  "frame": 111,
+  "out": "mode4_hard/l005_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_006_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4966,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode4_hard/l006_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_007_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4963,
+  "t": 17.7,
+  "frame": 102,
+  "out": "mode4_hard/l007_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_008_通关实况_256x384.mp4",
+  "yellow": 4951,
+  "ymax": 4966,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode4_hard/l008_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_009_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4975,
+  "t": 17.05,
+  "frame": 103,
+  "out": "mode4_hard/l009_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_010_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4958,
+  "t": 16.45,
+  "frame": 105,
+  "out": "mode4_hard/l010_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_011_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4948,
+  "t": 18.8,
+  "frame": 112,
+  "out": "mode4_hard/l011_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_012_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4939,
+  "t": 17.3,
+  "frame": 110,
+  "out": "mode4_hard/l012_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_013_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4949,
+  "t": 18.4,
+  "frame": 112,
+  "out": "mode4_hard/l013_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_014_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4952,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode4_hard/l014_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_015_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4948,
+  "t": 18.75,
+  "frame": 103,
+  "out": "mode4_hard/l015_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_016_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4962,
+  "t": 17.55,
+  "frame": 101,
+  "out": "mode4_hard/l016_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_017_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4982,
+  "t": 17.3,
+  "frame": 112,
+  "out": "mode4_hard/l017_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_018_通关实况_256x384.mp4",
+  "yellow": 4932,
+  "ymax": 4964,
+  "t": 17.8,
+  "frame": 112,
+  "out": "mode4_hard/l018_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_019_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4943,
+  "t": 17.6,
+  "frame": 112,
+  "out": "mode4_hard/l019_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_020_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4966,
+  "t": 18.65,
+  "frame": 111,
+  "out": "mode4_hard/l020_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_021_通关实况_256x384.mp4",
+  "yellow": 4932,
+  "ymax": 4965,
+  "t": 18.7,
+  "frame": 112,
+  "out": "mode4_hard/l021_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_022_通关实况_256x384.mp4",
+  "yellow": 4936,
+  "ymax": 4959,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l022_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_023_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4949,
+  "t": 16.7,
+  "frame": 112,
+  "out": "mode4_hard/l023_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_024_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4968,
+  "t": 17.75,
+  "frame": 103,
+  "out": "mode4_hard/l024_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_025_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4973,
+  "t": 18.45,
+  "frame": 111,
+  "out": "mode4_hard/l025_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_026_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4957,
+  "t": 17.55,
+  "frame": 101,
+  "out": "mode4_hard/l026_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_027_通关实况_256x384.mp4",
+  "yellow": 4913,
+  "ymax": 4973,
+  "t": 18.55,
+  "frame": 111,
+  "out": "mode4_hard/l027_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_028_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4941,
+  "t": 17.55,
+  "frame": 103,
+  "out": "mode4_hard/l028_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_029_通关实况_256x384.mp4",
+  "yellow": 4953,
+  "ymax": 4960,
+  "t": 18.65,
+  "frame": 101,
+  "out": "mode4_hard/l029_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_030_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4959,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode4_hard/l030_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_031_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4948,
+  "t": 17.95,
+  "frame": 111,
+  "out": "mode4_hard/l031_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_032_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4958,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode4_hard/l032_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_033_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4971,
+  "t": 18.15,
+  "frame": 111,
+  "out": "mode4_hard/l033_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_034_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4945,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode4_hard/l034_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_035_通关实况_256x384.mp4",
+  "yellow": 4939,
+  "ymax": 4939,
+  "t": 17.75,
+  "frame": 103,
+  "out": "mode4_hard/l035_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_036_通关实况_256x384.mp4",
+  "yellow": 4663,
+  "ymax": 4949,
+  "t": 17.25,
+  "frame": 101,
+  "out": "mode4_hard/l036_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_037_通关实况_256x384.mp4",
+  "yellow": 4296,
+  "ymax": 4957,
+  "t": 17.45,
+  "frame": 101,
+  "out": "mode4_hard/l037_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_038_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4950,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l038_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_039_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4975,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l039_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_040_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4951,
+  "t": 17.45,
+  "frame": 101,
+  "out": "mode4_hard/l040_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_041_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4944,
+  "t": 17.9,
+  "frame": 110,
+  "out": "mode4_hard/l041_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_042_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4957,
+  "t": 18.65,
+  "frame": 109,
+  "out": "mode4_hard/l042_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_043_通关实况_256x384.mp4",
+  "yellow": 4662,
+  "ymax": 4960,
+  "t": 17.35,
+  "frame": 101,
+  "out": "mode4_hard/l043_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_044_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4956,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode4_hard/l044_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_045_通关实况_256x384.mp4",
+  "yellow": 4916,
+  "ymax": 4968,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode4_hard/l045_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_046_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4943,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode4_hard/l046_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_047_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4951,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l047_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_048_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4953,
+  "t": 17.85,
+  "frame": 103,
+  "out": "mode4_hard/l048_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_049_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4951,
+  "t": 17.35,
+  "frame": 101,
+  "out": "mode4_hard/l049_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_050_通关实况_256x384.mp4",
+  "yellow": 4934,
+  "ymax": 4960,
+  "t": 17.8,
+  "frame": 102,
+  "out": "mode4_hard/l050_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_051_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4956,
+  "t": 17.8,
+  "frame": 112,
+  "out": "mode4_hard/l051_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_052_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4950,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l052_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_053_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4949,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l053_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_054_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4962,
+  "t": 17.8,
+  "frame": 112,
+  "out": "mode4_hard/l054_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_055_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4955,
+  "t": 17.8,
+  "frame": 112,
+  "out": "mode4_hard/l055_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_056_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4968,
+  "t": 17.55,
+  "frame": 103,
+  "out": "mode4_hard/l056_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_057_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4975,
+  "t": 17.75,
+  "frame": 103,
+  "out": "mode4_hard/l057_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_058_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4955,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l058_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_059_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4957,
+  "t": 17.55,
+  "frame": 111,
+  "out": "mode4_hard/l059_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_060_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4949,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l060_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_061_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4974,
+  "t": 17.3,
+  "frame": 102,
+  "out": "mode4_hard/l061_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_062_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4956,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l062_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_063_通关实况_256x384.mp4",
+  "yellow": 4936,
+  "ymax": 4951,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode4_hard/l063_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_064_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4933,
+  "t": 23.05,
+  "frame": 129,
+  "out": "mode4_hard/l064_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_065_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4966,
+  "t": 17.7,
+  "frame": 102,
+  "out": "mode4_hard/l065_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_066_通关实况_256x384.mp4",
+  "yellow": 4913,
+  "ymax": 4939,
+  "t": 17.3,
+  "frame": 102,
+  "out": "mode4_hard/l066_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_067_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4968,
+  "t": 17.35,
+  "frame": 103,
+  "out": "mode4_hard/l067_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_068_通关实况_256x384.mp4",
+  "yellow": 4939,
+  "ymax": 4952,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode4_hard/l068_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_069_通关实况_256x384.mp4",
+  "yellow": 4909,
+  "ymax": 4954,
+  "t": 17.25,
+  "frame": 101,
+  "out": "mode4_hard/l069_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_070_通关实况_256x384.mp4",
+  "yellow": 4298,
+  "ymax": 4959,
+  "t": 17.2,
+  "frame": 102,
+  "out": "mode4_hard/l070_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_071_通关实况_256x384.mp4",
+  "yellow": 4292,
+  "ymax": 4973,
+  "t": 17.35,
+  "frame": 101,
+  "out": "mode4_hard/l071_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_072_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4968,
+  "t": 17.85,
+  "frame": 103,
+  "out": "mode4_hard/l072_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_073_通关实况_256x384.mp4",
+  "yellow": 4916,
+  "ymax": 4972,
+  "t": 17.95,
+  "frame": 103,
+  "out": "mode4_hard/l073_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_074_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4951,
+  "t": 17.45,
+  "frame": 101,
+  "out": "mode4_hard/l074_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_075_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4964,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l075_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_076_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4958,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode4_hard/l076_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_077_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4971,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode4_hard/l077_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_078_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4937,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode4_hard/l078_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_079_通关实况_256x384.mp4",
+  "yellow": 4912,
+  "ymax": 4963,
+  "t": 17.55,
+  "frame": 111,
+  "out": "mode4_hard/l079_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_080_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4950,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l080_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_081_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4968,
+  "t": 18.6,
+  "frame": 102,
+  "out": "mode4_hard/l081_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_082_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4942,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode4_hard/l082_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_083_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4951,
+  "t": 17.4,
+  "frame": 102,
+  "out": "mode4_hard/l083_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_084_通关实况_256x384.mp4",
+  "yellow": 4916,
+  "ymax": 4970,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode4_hard/l084_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_085_通关实况_256x384.mp4",
+  "yellow": 4941,
+  "ymax": 4962,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l085_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_086_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4951,
+  "t": 18.05,
+  "frame": 103,
+  "out": "mode4_hard/l086_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_087_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4970,
+  "t": 17.95,
+  "frame": 103,
+  "out": "mode4_hard/l087_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_088_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4962,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode4_hard/l088_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_089_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4975,
+  "t": 17.95,
+  "frame": 103,
+  "out": "mode4_hard/l089_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_090_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4947,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l090_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_091_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4946,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode4_hard/l091_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_092_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4952,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l092_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_093_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4955,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode4_hard/l093_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_094_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4951,
+  "t": 17.25,
+  "frame": 101,
+  "out": "mode4_hard/l094_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_095_通关实况_256x384.mp4",
+  "yellow": 4911,
+  "ymax": 4959,
+  "t": 17.85,
+  "frame": 103,
+  "out": "mode4_hard/l095_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_096_通关实况_256x384.mp4",
+  "yellow": 4936,
+  "ymax": 4954,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l096_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_097_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4951,
+  "t": 17.3,
+  "frame": 110,
+  "out": "mode4_hard/l097_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_098_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4974,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode4_hard/l098_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_099_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4947,
+  "t": 17.4,
+  "frame": 110,
+  "out": "mode4_hard/l099_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_100_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4952,
+  "t": 18.25,
+  "frame": 101,
+  "out": "mode4_hard/l100_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_101_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4947,
+  "t": 17.15,
+  "frame": 111,
+  "out": "mode4_hard/l101_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_102_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4950,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l102_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_103_通关实况_256x384.mp4",
+  "yellow": 4303,
+  "ymax": 4961,
+  "t": 17.05,
+  "frame": 101,
+  "out": "mode4_hard/l103_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_104_通关实况_256x384.mp4",
+  "yellow": 4661,
+  "ymax": 4974,
+  "t": 16.95,
+  "frame": 101,
+  "out": "mode4_hard/l104_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_105_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4968,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode4_hard/l105_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_106_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4958,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode4_hard/l106_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_107_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4973,
+  "t": 17.55,
+  "frame": 109,
+  "out": "mode4_hard/l107_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_108_通关实况_256x384.mp4",
+  "yellow": 4934,
+  "ymax": 4940,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode4_hard/l108_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_109_通关实况_256x384.mp4",
+  "yellow": 4311,
+  "ymax": 4964,
+  "t": 17.05,
+  "frame": 99,
+  "out": "mode4_hard/l109_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_110_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4931,
+  "t": 17.8,
+  "frame": 108,
+  "out": "mode4_hard/l110_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_111_通关实况_256x384.mp4",
+  "yellow": 4932,
+  "ymax": 4947,
+  "t": 17.35,
+  "frame": 103,
+  "out": "mode4_hard/l111_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_112_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4947,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l112_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_113_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4968,
+  "t": 17.25,
+  "frame": 103,
+  "out": "mode4_hard/l113_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_114_通关实况_256x384.mp4",
+  "yellow": 4937,
+  "ymax": 4967,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode4_hard/l114_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_115_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4968,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode4_hard/l115_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_116_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4964,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode4_hard/l116_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_117_通关实况_256x384.mp4",
+  "yellow": 4917,
+  "ymax": 4947,
+  "t": 18.5,
+  "frame": 102,
+  "out": "mode4_hard/l117_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_118_通关实况_256x384.mp4",
+  "yellow": 4944,
+  "ymax": 4954,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l118_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_119_通关实况_256x384.mp4",
+  "yellow": 4912,
+  "ymax": 4951,
+  "t": 17.2,
+  "frame": 102,
+  "out": "mode4_hard/l119_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_120_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4951,
+  "t": 17.2,
+  "frame": 102,
+  "out": "mode4_hard/l120_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_121_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4953,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l121_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_122_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4948,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l122_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_123_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4968,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode4_hard/l123_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_124_通关实况_256x384.mp4",
+  "yellow": 4290,
+  "ymax": 4939,
+  "t": 18.25,
+  "frame": 101,
+  "out": "mode4_hard/l124_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_125_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4947,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode4_hard/l125_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_126_通关实况_256x384.mp4",
+  "yellow": 4291,
+  "ymax": 4951,
+  "t": 17.25,
+  "frame": 101,
+  "out": "mode4_hard/l126_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_127_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4964,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l127_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_128_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4968,
+  "t": 17.7,
+  "frame": 102,
+  "out": "mode4_hard/l128_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_129_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4951,
+  "t": 18.95,
+  "frame": 101,
+  "out": "mode4_hard/l129_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_130_通关实况_256x384.mp4",
+  "yellow": 4667,
+  "ymax": 4962,
+  "t": 17.2,
+  "frame": 102,
+  "out": "mode4_hard/l130_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_131_通关实况_256x384.mp4",
+  "yellow": 4912,
+  "ymax": 4958,
+  "t": 17.5,
+  "frame": 102,
+  "out": "mode4_hard/l131_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_132_通关实况_256x384.mp4",
+  "yellow": 4936,
+  "ymax": 4955,
+  "t": 17.7,
+  "frame": 108,
+  "out": "mode4_hard/l132_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_133_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4947,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode4_hard/l133_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_134_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4954,
+  "t": 17.8,
+  "frame": 112,
+  "out": "mode4_hard/l134_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_135_通关实况_256x384.mp4",
+  "yellow": 4939,
+  "ymax": 4958,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode4_hard/l135_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_136_通关实况_256x384.mp4",
+  "yellow": 4946,
+  "ymax": 4968,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode4_hard/l136_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_137_通关实况_256x384.mp4",
+  "yellow": 4939,
+  "ymax": 4954,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l137_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_138_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4947,
+  "t": 17.95,
+  "frame": 111,
+  "out": "mode4_hard/l138_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_139_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4968,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode4_hard/l139_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_140_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4955,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode4_hard/l140_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_141_通关实况_256x384.mp4",
+  "yellow": 4943,
+  "ymax": 4968,
+  "t": 17.7,
+  "frame": 102,
+  "out": "mode4_hard/l141_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_142_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4947,
+  "t": 17.35,
+  "frame": 111,
+  "out": "mode4_hard/l142_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_143_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4957,
+  "t": 17.6,
+  "frame": 112,
+  "out": "mode4_hard/l143_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_144_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4968,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode4_hard/l144_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_145_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4964,
+  "t": 18.75,
+  "frame": 109,
+  "out": "mode4_hard/l145_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_146_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4959,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode4_hard/l146_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_147_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4968,
+  "t": 17.95,
+  "frame": 103,
+  "out": "mode4_hard/l147_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_148_通关实况_256x384.mp4",
+  "yellow": 4937,
+  "ymax": 4968,
+  "t": 17.8,
+  "frame": 102,
+  "out": "mode4_hard/l148_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_149_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4964,
+  "t": 17.7,
+  "frame": 102,
+  "out": "mode4_hard/l149_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_150_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4945,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode4_hard/l150_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_151_通关实况_256x384.mp4",
+  "yellow": 4941,
+  "ymax": 4951,
+  "t": 17.3,
+  "frame": 102,
+  "out": "mode4_hard/l151_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_152_通关实况_256x384.mp4",
+  "yellow": 4937,
+  "ymax": 4979,
+  "t": 17.8,
+  "frame": 108,
+  "out": "mode4_hard/l152_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_153_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4965,
+  "t": 17.3,
+  "frame": 102,
+  "out": "mode4_hard/l153_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_154_通关实况_256x384.mp4",
+  "yellow": 4939,
+  "ymax": 4967,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode4_hard/l154_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_155_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4946,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode4_hard/l155_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_156_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4947,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode4_hard/l156_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_157_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4943,
+  "t": 17.35,
+  "frame": 103,
+  "out": "mode4_hard/l157_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_158_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4950,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l158_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_159_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4955,
+  "t": 17.6,
+  "frame": 112,
+  "out": "mode4_hard/l159_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_160_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4946,
+  "t": 17.5,
+  "frame": 110,
+  "out": "mode4_hard/l160_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_161_通关实况_256x384.mp4",
+  "yellow": 4945,
+  "ymax": 4952,
+  "t": 17.15,
+  "frame": 111,
+  "out": "mode4_hard/l161_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_162_通关实况_256x384.mp4",
+  "yellow": 4911,
+  "ymax": 4956,
+  "t": 17.2,
+  "frame": 102,
+  "out": "mode4_hard/l162_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_163_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4968,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode4_hard/l163_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_164_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4950,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l164_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_165_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4958,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l165_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_166_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4944,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l166_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_167_通关实况_256x384.mp4",
+  "yellow": 4921,
+  "ymax": 4957,
+  "t": 17.55,
+  "frame": 111,
+  "out": "mode4_hard/l167_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_168_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4955,
+  "t": 17.45,
+  "frame": 111,
+  "out": "mode4_hard/l168_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_169_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4955,
+  "t": 17.55,
+  "frame": 109,
+  "out": "mode4_hard/l169_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_170_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4947,
+  "t": 17.55,
+  "frame": 111,
+  "out": "mode4_hard/l170_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_171_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4968,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode4_hard/l171_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_172_通关实况_256x384.mp4",
+  "yellow": 4920,
+  "ymax": 4947,
+  "t": 18.65,
+  "frame": 103,
+  "out": "mode4_hard/l172_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_173_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4951,
+  "t": 17.8,
+  "frame": 112,
+  "out": "mode4_hard/l173_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_174_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4947,
+  "t": 17.35,
+  "frame": 111,
+  "out": "mode4_hard/l174_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_175_通关实况_256x384.mp4",
+  "yellow": 4938,
+  "ymax": 4947,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode4_hard/l175_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_176_通关实况_256x384.mp4",
+  "yellow": 4291,
+  "ymax": 4951,
+  "t": 17.0,
+  "frame": 100,
+  "out": "mode4_hard/l176_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_177_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4955,
+  "t": 17.85,
+  "frame": 109,
+  "out": "mode4_hard/l177_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_178_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4960,
+  "t": 17.85,
+  "frame": 101,
+  "out": "mode4_hard/l178_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_179_通关实况_256x384.mp4",
+  "yellow": 4937,
+  "ymax": 4947,
+  "t": 17.35,
+  "frame": 111,
+  "out": "mode4_hard/l179_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_180_通关实况_256x384.mp4",
+  "yellow": 4936,
+  "ymax": 4960,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l180_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_181_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4968,
+  "t": 17.45,
+  "frame": 111,
+  "out": "mode4_hard/l181_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_182_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4968,
+  "t": 17.85,
+  "frame": 101,
+  "out": "mode4_hard/l182_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_183_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4968,
+  "t": 17.35,
+  "frame": 111,
+  "out": "mode4_hard/l183_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_184_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4950,
+  "t": 18.65,
+  "frame": 103,
+  "out": "mode4_hard/l184_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_185_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4968,
+  "t": 18.55,
+  "frame": 101,
+  "out": "mode4_hard/l185_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_186_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4941,
+  "t": 17.45,
+  "frame": 111,
+  "out": "mode4_hard/l186_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_187_通关实况_256x384.mp4",
+  "yellow": 4916,
+  "ymax": 4951,
+  "t": 17.55,
+  "frame": 103,
+  "out": "mode4_hard/l187_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_188_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4950,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode4_hard/l188_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_189_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4947,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode4_hard/l189_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_190_通关实况_256x384.mp4",
+  "yellow": 4298,
+  "ymax": 4944,
+  "t": 17.55,
+  "frame": 105,
+  "out": "mode4_hard/l190_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_191_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4968,
+  "t": 17.05,
+  "frame": 99,
+  "out": "mode4_hard/l191_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_192_通关实况_256x384.mp4",
+  "yellow": 4932,
+  "ymax": 4941,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l192_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_193_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4940,
+  "t": 18.95,
+  "frame": 111,
+  "out": "mode4_hard/l193_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_194_通关实况_256x384.mp4",
+  "yellow": 4937,
+  "ymax": 4955,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l194_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_195_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4940,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode4_hard/l195_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_196_通关实况_256x384.mp4",
+  "yellow": 4917,
+  "ymax": 4959,
+  "t": 17.95,
+  "frame": 103,
+  "out": "mode4_hard/l196_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_197_通关实况_256x384.mp4",
+  "yellow": 4944,
+  "ymax": 4950,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l197_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_198_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4950,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l198_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_199_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4968,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode4_hard/l199_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_200_通关实况_256x384.mp4",
+  "yellow": 4911,
+  "ymax": 4966,
+  "t": 17.3,
+  "frame": 100,
+  "out": "mode4_hard/l200_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_201_通关实况_256x384.mp4",
+  "yellow": 4307,
+  "ymax": 4955,
+  "t": 16.95,
+  "frame": 101,
+  "out": "mode4_hard/l201_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_202_通关实况_256x384.mp4",
+  "yellow": 4936,
+  "ymax": 4966,
+  "t": 17.7,
+  "frame": 102,
+  "out": "mode4_hard/l202_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_203_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4966,
+  "t": 17.7,
+  "frame": 102,
+  "out": "mode4_hard/l203_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_204_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4955,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode4_hard/l204_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_205_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4957,
+  "t": 17.75,
+  "frame": 111,
+  "out": "mode4_hard/l205_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_206_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4947,
+  "t": 17.55,
+  "frame": 111,
+  "out": "mode4_hard/l206_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_207_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4952,
+  "t": 17.45,
+  "frame": 111,
+  "out": "mode4_hard/l207_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_208_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4952,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l208_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_209_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4966,
+  "t": 17.25,
+  "frame": 103,
+  "out": "mode4_hard/l209_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_210_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4975,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l210_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_211_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4962,
+  "t": 17.95,
+  "frame": 111,
+  "out": "mode4_hard/l211_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_212_通关实况_256x384.mp4",
+  "yellow": 4950,
+  "ymax": 4950,
+  "t": 17.7,
+  "frame": 102,
+  "out": "mode4_hard/l212_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_213_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4958,
+  "t": 17.55,
+  "frame": 111,
+  "out": "mode4_hard/l213_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_214_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4943,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l214_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_215_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4963,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode4_hard/l215_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_216_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4945,
+  "t": 17.35,
+  "frame": 111,
+  "out": "mode4_hard/l216_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_217_通关实况_256x384.mp4",
+  "yellow": 4940,
+  "ymax": 4966,
+  "t": 17.75,
+  "frame": 101,
+  "out": "mode4_hard/l217_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_218_通关实况_256x384.mp4",
+  "yellow": 4937,
+  "ymax": 4938,
+  "t": 17.15,
+  "frame": 109,
+  "out": "mode4_hard/l218_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_219_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4953,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l219_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_220_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4950,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode4_hard/l220_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_221_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4962,
+  "t": 17.95,
+  "frame": 101,
+  "out": "mode4_hard/l221_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_222_通关实况_256x384.mp4",
+  "yellow": 4658,
+  "ymax": 4963,
+  "t": 16.9,
+  "frame": 102,
+  "out": "mode4_hard/l222_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_223_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4945,
+  "t": 17.25,
+  "frame": 111,
+  "out": "mode4_hard/l223_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_224_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4959,
+  "t": 17.7,
+  "frame": 110,
+  "out": "mode4_hard/l224_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_225_通关实况_256x384.mp4",
+  "yellow": 4942,
+  "ymax": 4950,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode4_hard/l225_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_226_通关实况_256x384.mp4",
+  "yellow": 4935,
+  "ymax": 4950,
+  "t": 17.8,
+  "frame": 112,
+  "out": "mode4_hard/l226_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_227_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4966,
+  "t": 17.35,
+  "frame": 103,
+  "out": "mode4_hard/l227_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_228_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4966,
+  "t": 18.65,
+  "frame": 103,
+  "out": "mode4_hard/l228_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_229_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4970,
+  "t": 17.65,
+  "frame": 111,
+  "out": "mode4_hard/l229_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_むずかしい_230_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4966,
+  "t": 17.5,
+  "frame": 102,
+  "out": "mode4_hard/l230_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_001_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4955,
+  "t": 16.85,
+  "frame": 111,
+  "out": "mode2_easy/l001_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_002_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4958,
+  "t": 16.65,
+  "frame": 111,
+  "out": "mode2_easy/l002_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_003_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4956,
+  "t": 16.8,
+  "frame": 110,
+  "out": "mode2_easy/l003_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_004_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4961,
+  "t": 16.65,
+  "frame": 111,
+  "out": "mode2_easy/l004_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_005_通关实况_256x384.mp4",
+  "yellow": 4937,
+  "ymax": 4972,
+  "t": 16.75,
+  "frame": 101,
+  "out": "mode2_easy/l005_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_006_通关实况_256x384.mp4",
+  "yellow": 4668,
+  "ymax": 4975,
+  "t": 16.15,
+  "frame": 101,
+  "out": "mode2_easy/l006_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_007_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4942,
+  "t": 16.75,
+  "frame": 111,
+  "out": "mode2_easy/l007_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_008_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4966,
+  "t": 16.25,
+  "frame": 101,
+  "out": "mode2_easy/l008_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_009_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4937,
+  "t": 16.85,
+  "frame": 111,
+  "out": "mode2_easy/l009_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_010_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4935,
+  "t": 16.65,
+  "frame": 111,
+  "out": "mode2_easy/l010_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_011_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4941,
+  "t": 17.55,
+  "frame": 101,
+  "out": "mode2_easy/l011_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_012_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4941,
+  "t": 17.85,
+  "frame": 111,
+  "out": "mode2_easy/l012_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_013_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4959,
+  "t": 17.7,
+  "frame": 112,
+  "out": "mode2_easy/l013_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_014_通关实况_256x384.mp4",
+  "yellow": 4911,
+  "ymax": 4969,
+  "t": 17.5,
+  "frame": 102,
+  "out": "mode2_easy/l014_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_015_通关实况_256x384.mp4",
+  "yellow": 4928,
+  "ymax": 4954,
+  "t": 17.55,
+  "frame": 109,
+  "out": "mode2_easy/l015_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_016_通关实况_256x384.mp4",
+  "yellow": 4951,
+  "ymax": 4951,
+  "t": 17.8,
+  "frame": 112,
+  "out": "mode2_easy/l016_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_017_通关实况_256x384.mp4",
+  "yellow": 4918,
+  "ymax": 4951,
+  "t": 17.55,
+  "frame": 105,
+  "out": "mode2_easy/l017_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_018_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4957,
+  "t": 17.65,
+  "frame": 109,
+  "out": "mode2_easy/l018_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_019_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4940,
+  "t": 17.6,
+  "frame": 112,
+  "out": "mode2_easy/l019_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_やさしい_020_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4959,
+  "t": 17.8,
+  "frame": 110,
+  "out": "mode2_easy/l020_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_001_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4961,
+  "t": 2.55,
+  "frame": 31,
+  "out": "mode1_practice/l001_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_002_通关实况_256x384.mp4",
+  "yellow": 4932,
+  "ymax": 4963,
+  "t": 2.65,
+  "frame": 33,
+  "out": "mode1_practice/l002_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_003_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4967,
+  "t": 2.95,
+  "frame": 39,
+  "out": "mode1_practice/l003_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_004_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4964,
+  "t": 2.9,
+  "frame": 38,
+  "out": "mode1_practice/l004_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_005_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4960,
+  "t": 3.65,
+  "frame": 53,
+  "out": "mode1_practice/l005_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_006_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4947,
+  "t": 4.15,
+  "frame": 63,
+  "out": "mode1_practice/l006_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_007_通关实况_256x384.mp4",
+  "yellow": 4916,
+  "ymax": 4953,
+  "t": 3.65,
+  "frame": 53,
+  "out": "mode1_practice/l007_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_008_通关实况_256x384.mp4",
+  "yellow": 4658,
+  "ymax": 4956,
+  "t": 4.3,
+  "frame": 66,
+  "out": "mode1_practice/l008_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_009_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4966,
+  "t": 5.05,
+  "frame": 81,
+  "out": "mode1_practice/l009_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_010_通关实况_256x384.mp4",
+  "yellow": 4924,
+  "ymax": 4962,
+  "t": 4.75,
+  "frame": 75,
+  "out": "mode1_practice/l010_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_011_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4974,
+  "t": 16.85,
+  "frame": 101,
+  "out": "mode1_practice/l011_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_012_通关实况_256x384.mp4",
+  "yellow": 4916,
+  "ymax": 4981,
+  "t": 15.65,
+  "frame": 103,
+  "out": "mode1_practice/l012_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_013_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4951,
+  "t": 15.75,
+  "frame": 111,
+  "out": "mode1_practice/l013_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_014_通关实况_256x384.mp4",
+  "yellow": 4934,
+  "ymax": 4980,
+  "t": 16.85,
+  "frame": 103,
+  "out": "mode1_practice/l014_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_015_通关实况_256x384.mp4",
+  "yellow": 4930,
+  "ymax": 4946,
+  "t": 16.65,
+  "frame": 111,
+  "out": "mode1_practice/l015_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_016_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4945,
+  "t": 17.15,
+  "frame": 105,
+  "out": "mode1_practice/l016_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_017_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4950,
+  "t": 15.75,
+  "frame": 111,
+  "out": "mode1_practice/l017_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_018_通关实况_256x384.mp4",
+  "yellow": 4933,
+  "ymax": 4950,
+  "t": 17.05,
+  "frame": 111,
+  "out": "mode1_practice/l018_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_019_通关实况_256x384.mp4",
+  "yellow": 4934,
+  "ymax": 4960,
+  "t": 15.7,
+  "frame": 102,
+  "out": "mode1_practice/l019_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_練習問題_020_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4951,
+  "t": 16.8,
+  "frame": 110,
+  "out": "mode1_practice/l020_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_001_通关实况_256x384.mp4",
+  "yellow": 4925,
+  "ymax": 4972,
+  "t": 17.6,
+  "frame": 102,
+  "out": "mode5_extreme/l001_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_002_通关实况_256x384.mp4",
+  "yellow": 4926,
+  "ymax": 4950,
+  "t": 17.95,
+  "frame": 111,
+  "out": "mode5_extreme/l002_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_003_通关实况_256x384.mp4",
+  "yellow": 4919,
+  "ymax": 4944,
+  "t": 18.0,
+  "frame": 110,
+  "out": "mode5_extreme/l003_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_004_通关实况_256x384.mp4",
+  "yellow": 4929,
+  "ymax": 4943,
+  "t": 17.65,
+  "frame": 103,
+  "out": "mode5_extreme/l004_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_005_通关实况_256x384.mp4",
+  "yellow": 4931,
+  "ymax": 4963,
+  "t": 17.65,
+  "frame": 105,
+  "out": "mode5_extreme/l005_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_006_通关实况_256x384.mp4",
+  "yellow": 4927,
+  "ymax": 4954,
+  "t": 17.95,
+  "frame": 111,
+  "out": "mode5_extreme/l006_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_007_通关实况_256x384.mp4",
+  "yellow": 4923,
+  "ymax": 4966,
+  "t": 17.65,
+  "frame": 101,
+  "out": "mode5_extreme/l007_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_008_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4966,
+  "t": 17.8,
+  "frame": 104,
+  "out": "mode5_extreme/l008_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_009_通关实况_256x384.mp4",
+  "yellow": 4922,
+  "ymax": 4941,
+  "t": 17.75,
+  "frame": 109,
+  "out": "mode5_extreme/l009_clear.png"
+ },
+ {
+  "video": "Vol.9_数独2_超難問_010_通关实况_256x384.mp4",
+  "yellow": 4939,
+  "ymax": 4966,
+  "t": 17.8,
+  "frame": 102,
+  "out": "mode5_extreme/l010_clear.png"
+ }
+]
