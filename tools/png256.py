@@ -88,8 +88,11 @@ def main():
     t0 = sum(r['size0'] for r in conv)
     t1 = sum(r['size1'] for r in conv)
     print('\nPNG 总数 %d：压缩 %d 张，跳过（已是 P/L）%d 张' % (len(rows), len(conv), len(rows) - len(conv)))
-    print('压缩子集：%.1f MB → %.1f MB（%.1f%%，%.2f×）' % (t0 / 1048576, t1 / 1048576,
-                                                      100.0 * t1 / t0, t0 / max(t1, 1)))
+    if not conv:
+        print('无可压缩对象（全仓已是 8-bit 索引/灰度）')
+    else:
+        print('压缩子集：%.1f MB → %.1f MB（%.1f%%，%.2f×）' % (t0 / 1048576, t1 / 1048576,
+                                                          100.0 * t1 / t0, t0 / max(t1, 1)))
     if conv:
         ps = np.array([r['psnr'] for r in conv])
         lossless = [r for r in conv if r['psnr'] > 900]
