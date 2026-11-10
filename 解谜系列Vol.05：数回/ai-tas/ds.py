@@ -67,10 +67,18 @@ def grab(name="tmp"):
 
 
 def press(key, wait=0.55, hold=0.14):
+    """按一次键。
+
+    本轮实测（2026-11-10）：
+      - desmume-cli 默认键盘映射里 **A 按钮 = Return（回车）**；发 'A'/'a' 会被 SDL 吞掉。
+      - `xdotool keydown/keyup` 的链式写法不送达；必须用单条
+        `xdotool key --window <id> <key>`（完整按下+释放）。
+      - 方向键 Down 可送达；上屏的「進む R」是肩键提示，NDS 上屏不是触摸屏，
+        用负 y 触摸无效。
+    """
     w = ensure_window()
-    subprocess.run(["xdotool", "keydown", key], env=ENV)
-    time.sleep(hold)
-    subprocess.run(["xdotool", "keyup", key], env=ENV)
+    k = {"A": "Return", "a": "Return"}.get(key, key)
+    subprocess.run(["xdotool", "key", "--window", w, k], env=ENV)
     time.sleep(wait)
 
 
