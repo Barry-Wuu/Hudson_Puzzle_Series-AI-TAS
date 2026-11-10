@@ -118,7 +118,11 @@ def read_board(fr, n, s, x0, y0, grid):
         m = ~ink[i]
         if m.sum():
             med[i] = np.median(p[i][m], axis=0)
-    paper = (med[:, 0] >= 200) & ((med[:, 0] - med[:, 2]) >= 0)
+    # 空格仍是米白系：够亮、暖调（R−B 正）、且「黄」得不多（R−G 小）。
+    # 只看 R−B 会被「图案主色是暖色」的题骗过（15×15 No.004 的狮子：橘色鬃毛 R−G≈80、
+    # 绿底 R 只有 100，中位色落在橘色上，R−B 照样是正的）。
+    paper = ((med[:, 0] >= 200) & (med[:, 1] >= 150) & (med[:, 2] >= 110)
+             & ((med[:, 0] - med[:, 2]) >= 10) & ((med[:, 0] - med[:, 1]) <= 22))
     return ag, miss, extra, med, paper
 
 
@@ -140,7 +144,7 @@ def runs_of(mask, gap=3):
     return out
 
 
-def pick_index(ag, paper, gap=3):
+def pick_index(ag, paper, med=None, gap=3):
     """在「整盘全对」的连续段里挑一帧：从后往前找第一个含「纸色未浸染」帧的段，
     取该段内第一帧 paper 成立的帧（= 最后一格落笔、浸染还没动到空格的瞬间）。
 
@@ -152,6 +156,15 @@ def pick_index(ag, paper, gap=3):
         cand = [i for i in range(a, b + 1) if paper[i]]
         if cand:
             return cand[0]
+    # 退化：这些片子里「整盘全对」的第一帧就已经带上了浸染的暖色（图案主色本身偏黄，
+    # 底色中位色被拉走），此时只能退而取「离纯米白 (250,243,215) 最近」的那一帧。
+    if med is not None:
+        idx = np.where(ag >= AGREE_OK)[0]
+        if len(idx) == 0:
+            return None
+        d = (np.abs(med[idx, 0] - 250) + np.abs(med[idx, 1] - 243)
+             + np.abs(med[idx, 2] - 215))
+        return int(idx[int(np.argmin(d))])
     return None
 
 
@@ -191,7 +204,7 @@ def process(job):
     if len(fr) == 0:
         return dict(tag, ok=False, why='解码失败')
     ag, miss, extra, med, paper = read_board(fr, n, s, x0, y0, grid)
-    kc = pick_index(ag, paper)
+    kc = pick_index(ag, paper, med)
     if kc is None:
         k = int(np.argmax(ag))
         return dict(tag, ok=False,
@@ -205,7 +218,7 @@ def process(job):
     best, mode = None, 'coarse'
     if len(fine):
         fag, fmiss, fextra, fmed, fpaper = read_board(fine, n, s, x0, y0, grid)
-        k = pick_index(fag, fpaper)
+        k = pick_index(fag, fpaper, fmed)
         if k is not None:
             best = dict(frame=fine[k], t=ss + k / float(FINE_FPS), ag=float(fag[k]),
                         miss=int(fmiss[k]), extra=int(fextra[k]),
