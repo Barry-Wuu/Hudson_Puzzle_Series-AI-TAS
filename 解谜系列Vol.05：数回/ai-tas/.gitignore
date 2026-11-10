@@ -1,0 +1,5 @@
+# 实机调试产物（不入版本库）
+*.png
+_raw.png
+__pycache__/
+*.pyc
