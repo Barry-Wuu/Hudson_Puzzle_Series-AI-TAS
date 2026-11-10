@@ -11,7 +11,8 @@
 | 实机层 | **300/300 全通关录播**（`recordings/`，10×10 50 支 / 15×15 100 / 20×20 100 / 25×25 50） |
 | 截图层 | 每关一张「黑格刚涂满、尚未上色」的 `lNNN_clear.png`，**300/300 逐格回读与答案盘全等** |
 | 認定层 | ブロンズ / シルバー / ゴールド / プラチナ 四段位「正解」+ 全段位制覇的選段位菜单与收尾演出 |
-| 待办 | 大盘面（20×20 / 25×25）**不需要滚动**，但 25×25 的第 25 行贴着底部按钮栏上缘（`y=364`），再往下就是 `中断/設定` |
+| 存档层 | `saves/v6_300clear_before_nintei.dsv`（300 关全通、認定前）、`saves/v6_platinum_clear.dsv`（プラチナ合格后），载入即可复现终点状态 |
+| 边界 | 大盘面（20×20 / 25×25）**不需要滚动**，但 25×25 的第 25 行贴着底部按钮栏上缘（`y=364`），再往下就是 `中断/設定`，坐标越界会弹出菜单 |
 
 ## 数据层规格
 
@@ -193,7 +194,17 @@ python3 extract_vol6_nintei_shots.py       # 素材在仓库外 /workspace/Vol.6
 
 与 Vol.9 数独2 同一口径：先砍回 **RGB565**（R/B 取 `>>3<<3`、G 取 `>>2<<2`，抹掉 H.264 yuv420p
 色度子采样带进来的上万色噪声），再中位切压成 **256 色索引 PNG**（`optimize=True, compress_level=9`）。
-全部 256×384、`P` 模式，单张 42–84 KB。
+全部 256×384、`P` 模式，单张 40–59 KB（中位 48.7 KB）。
+
+## 收尾核对
+
+| 项 | 结果 |
+|---|---|
+| 各关 clear 图 | 300 张（10×10 50 / 15×15 100 / 20×20 100 / 25×25 50），`check_clear_shots.py` 重跑 **异常 0** |
+| 認定图 | 6 张（四段位正解 + 選段位 + 收尾演出） |
+| 规格统一 | 306 张全部 256×384、`P` 模式 256 色索引，单张 40.5–59.3 KB |
+| 中间产物 | `validation/dose/` 9 张探针调试图已剔除并加入 `.gitignore`；`__pycache__` 不入库 |
+| 复现顺序 | `extract_vol6_answers.py` → 实机录播 → `extract_vol6_clear_shots.py` → `check_clear_shots.py` → `extract_vol6_nintei_shots.py` |
 
 ## 目录内容
 
@@ -213,4 +224,6 @@ python3 extract_vol6_nintei_shots.py       # 素材在仓库外 /workspace/Vol.6
 | `validation/mode3_20x20/…` | 20×20 一百关 `l001–l100_clear.png` |
 | `validation/mode4_25x25/…` | 25×25 五十关 `l001–l050_clear.png` |
 | `validation/Vol.6_認定_*.png` | 四段位正解 + 選段位 + 收尾演出（6 张） |
-| `validation/dose/*.png` | 剂量证据：各档剂量的通关画面 + 32 ms 失败画面，原生 256×384 |
+| `validation/.gitignore` | 放行验收 PNG、排除 `dose/` 调试图 |
+| `saves/*.dsv` | 两个 DeSmuME 存档点 |
+| `recordings/` | 300 支通关录播与 BGM 素材，**本地目录、不入库**（根 `.gitignore` 拦 `*.mp4`） |
