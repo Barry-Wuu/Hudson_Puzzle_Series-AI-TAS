@@ -109,6 +109,10 @@ DISPLAY=:99 XDG_RUNTIME_DIR=/tmp/xdg-pulse SDL_AUDIODRIVER=pulse SDL_VIDEODRIVER
 `puzzles.json` 里 `answer_mask` 是原始掩码，`edges_h` / `edges_v` 是换算好的边集，
 `answer_grid` 是掩码的字符形式，`题库与答案.md` 里每题都画了环路字符画。
 
+> 全 **306 关**的**答案格字符矩阵**见 [`答案.md`](答案.md)：`□` 环外 / `█` 环内，
+> `⓪①②③` 环外线索、`⓿❶❷❸` 环内线索（黑底反白）。生成脚本 `gen_vol5_answers_md.py`，
+> 版式对齐 Vol.11 数墙的 `答案.md`；2 条空白占位记录单列附录，不渲染误导性的全 `□` 盘面。
+
 交叉旁证：`validation/slither_solve.py` 是老的手写 DFS（受搜索能力限制，对大题不可靠）；
 本轮改用 z3 建模（顶点度数 ∈{0,2} + 线索方程 + 连通性迭代），脚本为
 `validation/verify_answers.py`：
