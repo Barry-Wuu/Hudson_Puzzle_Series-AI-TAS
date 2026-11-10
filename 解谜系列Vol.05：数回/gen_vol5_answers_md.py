@@ -6,17 +6,17 @@
 放在代码块里用等宽字体渲染，行列对齐。
 
 字符约定（每格恰好 1 个字符，**只表示答案格，不单独表示边**）：
-    □            回路外格、无线索
-    █            回路内格、无线索
+    ○            回路外格、无线索
+    ●            回路内格、无线索
     ⓪ ① ② ③     回路【外】的线索数字 0/1/2/3（白底带圈）
     ⓿ ❶ ❷ ❸     回路【内】的线索数字 0/1/2/3（黑底反白带圈 = 黑色版）
 
-`█` 与 `□` 的分界线即官方环路。数据来自 validation/puzzles.json：
+`●` 与 `○` 的分界线即官方环路。数据来自 validation/puzzles.json：
   clue_grid    -> 题面线索（'.'=空格，0-3=数字）
   answer_mask  -> 每格环内=1 / 环外=0
 
 共 306 道正式题有答案盘面；idx1400 / idx1401 是空白占位记录，
-ROM 答案层全 0（idx1401 是教程练习盘），文末附录单列，不渲染误导性的全 □ 矩阵。
+ROM 答案层全 0（idx1401 是教程练习盘），文末附录单列，不渲染误导性的全 ○ 矩阵。
 """
 import json
 import os
@@ -28,15 +28,17 @@ DST = os.path.join(HERE, '答案.md')
 # 回路外 / 回路内的带圈数字（索引 0..3 对应线索数字 0..3）
 OUTER = ['⓪', '①', '②', '③']   # U+24EA / U+2460..2462
 INNER = ['⓿', '❶', '❷', '❸']   # U+24FF / U+2776..2778（黑底反白 = 黑色版）
-BLANK_OUT = '□'                 # U+25A1 回路外空格
-BLANK_IN = '█'                  # U+2588 回路内空格
+BLANK_OUT = '○'                 # U+25CB WHITE CIRCLE（回路外空格）
+BLANK_IN = '●'                  # U+25CF BLACK CIRCLE（回路内空格）
+# 两者 EAW=A，中文等宽字体下满宽 1ch，与 ①/❶ 的圆圈同大小；
+# 方块 □(U+25A1)/█(U+2588) 混在圆里视觉突兀，已弃用。
 
 SIZE_ORDER = [(6, 6), (10, 10), (18, 10), (24, 14), (36, 20)]
 VALID = set(OUTER + INNER + [BLANK_OUT, BLANK_IN])
 
 
 def cell_text(clue_ch, mask):
-    """单格字符：有线索用带圈数字（按内外分黑白版），无线索用 □/█。"""
+    """单格字符：有线索用带圈数字（按内外分黑白版），无线索用 ○/●。"""
     if clue_ch in '0123':
         return (INNER if mask == 1 else OUTER)[int(clue_ch)]
     return BLANK_IN if mask == 1 else BLANK_OUT
@@ -75,7 +77,7 @@ def self_check(data, text):
             row = ''.join(cell_text(clue[r][c], mask[r * w + c]) for c in range(w))
             assert len(row) == w
             assert set(row) <= VALID
-            # 反解：黑底圈/█ -> mask=1；白底圈/□ -> mask=0
+            # 反解：黑底圈/● -> mask=1；白底圈/○ -> mask=0
             for c, ch in enumerate(row):
                 m = 1 if (ch == BLANK_IN or ch in INNER) else 0
                 assert m == mask[r * w + c], (p['idx'], r, c, ch)
@@ -111,12 +113,16 @@ def main():
     out.append('>')
     out.append('> | 字符 | 含义 |')
     out.append('> |---|---|')
-    out.append('> | `□` | 回路**外**格（无线索） |')
-    out.append('> | `█` | 回路**内**格（无线索） |')
+    out.append('> | `○` | 回路**外**格（无线索） |')
+    out.append('> | `●` | 回路**内**格（无线索） |')
     out.append('> | `⓪` `①` `②` `③` | 回路**外**的线索数字 0/1/2/3（白底带圈） |')
     out.append('> | `⓿` `❶` `❷` `❸` | 回路**内**的线索数字 0/1/2/3（黑底反白＝黑色版） |')
     out.append('>')
-    out.append('> **`█` 与 `□` 的分界线就是官方环路**：掩码里环内=1、环外=0，')
+    out.append('> `○`(U+25CB) / `●`(U+25CF) 与带圈数字同为 **EAW=A**，中文等宽字体下正好')
+    out.append('> **满宽 1ch**，圆圈大小与 `①` / `❶` 一致，整盘统一为圆形语汇；')
+    out.append('> 方块 `□`(U+25A1) / `█`(U+2588) 混在圆里视觉突兀，已弃用。')
+    out.append('>')
+    out.append('> **`●` 与 `○` 的分界线就是官方环路**：掩码里环内=1、环外=0，')
     out.append('> 水平边 `H[r][c] ⟺ mask[r-1][c]≠mask[r][c]`、垂直边 `V[r][c] ⟺ mask[r][c-1]≠mask[r][c]`。')
     out.append('> 答案盘面直接取自 ROM 记录的 `[2+w·h : 2+2·w·h]` 段，逐题已通过')
     out.append('> 「线索逐格满足 + 格点度数 ∈{0,2} + 恰好一个连通环」三重校验（**306/306**）。')
@@ -137,7 +143,7 @@ def main():
 
     out.append('## 附录：2 条空白占位记录（ROM 无答案盘面，不渲染矩阵）')
     out.append('')
-    out.append('> 这两条不是正式关卡，答案层全 0，若渲染成全 `□` 会误导成「整盘都在环外」，')
+    out.append('> 这两条不是正式关卡，答案层全 0，若渲染成全 `○` 会误导成「整盘都在环外」，')
     out.append('> 因此只登记不画盘面。')
     out.append('')
     out.append('| pack idx | 尺寸 | 情况 |')
