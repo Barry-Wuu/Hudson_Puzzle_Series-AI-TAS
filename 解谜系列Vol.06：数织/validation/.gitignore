@@ -1,0 +1,7 @@
+# 根目录 .gitignore 全禁 *.png（防误提交调试截图）
+# 本目录是逐关通关证据，必须入库，故在此放行
+!*.png
+!mode1_10x10/*.png
+!mode2_15x15/*.png
+!mode3_20x20/*.png
+!mode4_25x25/*.png
