@@ -67,17 +67,25 @@ def grab(name="tmp"):
 
 
 def press(key, wait=0.55, hold=0.14):
-    """按一次键。
+    """按一次键（单条 xdotool key，完整按下+释放）。
 
-    本轮实测（2026-11-10）：
-      - desmume-cli 默认键盘映射里 **A 按钮 = Return（回车）**；发 'A'/'a' 会被 SDL 吞掉。
-      - `xdotool keydown/keyup` 的链式写法不送达；必须用单条
-        `xdotool key --window <id> <key>`（完整按下+释放）。
-      - 方向键 Down 可送达；上屏的「進む R」是肩键提示，NDS 上屏不是触摸屏，
-        用负 y 触摸无效。
+    键位以 2026-11-10 通关实测为准，**与 ~/.config/desmume/config 里的
+    KeypadA=X / KeypadR=E / KeypadStart=Return 不完全一致**：
+
+      - `x`      -> A 按钮（推进完成页 / 结算，游戏在这里才写 battery 存档）
+      - `Return` -> Start / オプション，**不是 A**（上一轮误记成 A，已纠正）
+      - `w`      -> R 肩键，教程 / MANUAL「進む」翻页；须用
+                    `xdotool keydown/keyup w` 链式（单条 key w 不送达）
+      - `q`      -> L 肩键 / 戻る
+      - `E`/`e`/`r` -> 对教程 R 无效
+      - `BackSpace`/`B` -> 从 MANUAL 返回会白屏卡死；`Escape` 直接退出 DeSmuME，勿用
+
+    `xdotool keydown/keyup` 链式写法对多数键不送达；单条
+    `xdotool key --window <id> <key>` 才稳定。方向键 Down 可送达；
+    上屏「進む R」是肩键提示，NDS 上屏不是触摸屏，负 y 触摸无效。
     """
     w = ensure_window()
-    k = {"A": "Return", "a": "Return"}.get(key, key)
+    k = {"A": "x", "a": "x"}.get(key, key)
     subprocess.run(["xdotool", "key", "--window", w, k], env=ENV)
     time.sleep(wait)
 
