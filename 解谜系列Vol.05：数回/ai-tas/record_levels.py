@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Vol.5 数回 入門逐关录制（BGM / デザイン = ランダム，始终）。
+"""Vol.5 数回 逐关录制（BGM / デザイン = ランダム，始终），支持 6x6 / 10x10 两档。
 
 段首一次性把 BGM 与 デザイン 都设成「ランダム」(RANDOM)；该设置随 SRAM
 持久化，实测 pkill 落盘重启后仍生效（关卡内主题色每关随机变化即为证据）。
@@ -9,12 +9,22 @@
 驱动照 puzzles.json 的 edges_h/edges_v 一次连续拖动画出官方单环。
 
 用法:
-    bash ai-tas/boot_audio.sh                       # 先起带音频环境
-    python3 ai-tas/record_levels.py --lo 2 --hi 4  # 录入門第 2..4 問
+    bash ai-tas/boot_audio.sh                                  # 先起带音频环境
+    python3 ai-tas/record_levels.py --lo 2 --hi 4              # 入門6x6 第 2..4 問（默认档）
+    python3 ai-tas/record_levels.py --preset yasashii10 --lo 1 --hi 10
+                                                               # やさしい10x10 第 1..10 問
 
-剂量定案（2026-11-10 实机标定，34 边环 / 第1問重玩）:
-    step=13 gap=0.016 turn=0.015  -> 2.30s / 34 边 = 67.6 ms/边，稳定通关
-    gap=0.010 会因 <1 帧(16.7ms) 被合并丢线段，环不闭合 -> 无 Completion!!
+档位差异（均为实机标定）:
+    入門 nyuumon    6x6   x0=50 y0=8  pitch=26  step=13 gap=0.016 turn=0.015
+                    idx = 1402 + 关号（第1..20 关 = idx1403..1422）
+    やさしい yasashii10
+                    10x10 x0=47 y0=6  pitch=16  step=8  gap=0.016 turn=0.015
+                    idx = 1422 + 关号（第1..92 关 = idx1423..1514）
+                    10x10 盘面 x[47..207] y[6..166] 完整落在下屏内，无需滚动；
+                    92~104 边长环一次拖动约 5.0~5.6s 即可 Completion!!，无需分段。
+
+剂量硬下限 gap>=0.016（≈ DeSmuME 60fps 1 帧）；step 按 pitch 等比缩放（每边 2 个插值点），
+10x10 的 pitch=16 必须 step=8，step>=13 会因插值过疏丢线段、环不闭合。
 """
 import argparse
 import hashlib
@@ -38,8 +48,32 @@ DSV = "/root/.config/desmume/解谜系列Vol.05：数回.dsv"
 REC_ENV = dict(os.environ, DISPLAY=":99", XDG_RUNTIME_DIR="/tmp",
                PULSE_SERVER="unix:/tmp/pulse_native")
 
-# ---- 剂量定案 ----
-DOSE = dict(step=13, gap=0.016, turn=0.015)
+# ---- 尺寸档位配置 ----
+# 剂量按格点 pitch 缩放：pitch 26 -> step 13，pitch 16 -> step 8（每边 2 个插值点）。
+# gap>=0.016 是 DeSmuME 60fps 1 帧硬下限（与尺寸无关）；turn=0.015 为拐角停顿。
+# 6x6 入門默认；10x10 やさしい 是 2026-11-11 实测推广（idx1423..1514，共 92 题）。
+PRESETS = {
+    "nyuumon": dict(
+        name="入門", size="6x6", layout="nyuumon",
+        x0=50, y0=8, pitch=26,
+        dose=dict(step=13, gap=0.016, turn=0.015),
+        idx_base=1402, lo=1, hi=20,
+        outdir="/workspace/vol5_recordings",
+        filepat="数回_入門_第{lvl:02d}問.mp4",
+        evi=("18_random_before.png", "19_random_after.png", "20_random_rows_6x.png"),
+    ),
+    "yasashii10": dict(
+        name="やさしい 10x10", size="10x10", layout="yasashii10",
+        x0=47, y0=6, pitch=16,
+        dose=dict(step=8, gap=0.016, turn=0.015),
+        idx_base=1422, lo=1, hi=50,
+        outdir="/workspace/vol5_recordings_10x10",
+        filepat="数回_やさしい10x10_第{lvl:02d}問.mp4",
+        evi=("24_y10_random_before.png", "25_y10_random_after.png", "26_y10_random_rows_6x.png"),
+    ),
+}
+CFG = PRESETS["nyuumon"]     # main() 按 --preset 覆盖
+DOSE = PRESETS["nyuumon"]["dose"]   # 兼容旧引用
 
 # ---- 状态判据（颜色无关；DESIGN=RANDOM 只换关卡内盘面配色）----
 GREEN_SELECT = 15000
@@ -99,13 +133,27 @@ def random_set(b):
 
 
 def level_xy(lvl):
-    row = 0 if lvl <= 10 else 1
+    """选关页关卡格子中心（下屏局部坐标）。
+
+    nyuumon(入門 20 关)：2 行 x 10 列，起始 (18,48)，间距 24。
+    yasashii10(やさしい 100 关)：每页 5 行 x 10 列，起始 (20,44)，间距 24；
+      第 51~100 关需翻页，本档 hi 暂限 50（第 1 页，均为 10x10）。
+    """
+    if CFG["layout"] == "nyuumon":
+        row = 0 if lvl <= 10 else 1
+        col = (lvl - 1) % 10
+        return 18 + 24 * col, (48 if row == 0 else 72)
+    # yasashii10
     col = (lvl - 1) % 10
-    return 18 + 24 * col, (48 if row == 0 else 72)
+    row = ((lvl - 1) % 50) // 10
+    return 20 + 24 * col, 44 + 24 * row
 
 
 # ---- 画线 ----
-def ring_path(idx, x0=50, y0=8, pitch=26):
+def ring_path(idx, x0=None, y0=None, pitch=None):
+    x0 = CFG["x0"] if x0 is None else x0
+    y0 = CFG["y0"] if y0 is None else y0
+    pitch = CFG["pitch"] if pitch is None else pitch
     data = json.load(open(PJ, encoding="utf-8"))
     p = next(x for x in data if x["idx"] == idx)
     adj, n = {}, 0
@@ -220,8 +268,9 @@ def setup_random(lvl, evidence_dir):
             break
     else:
         raise RuntimeError("setup_random: オプション面板未打开")
+    e_before, e_after, e_rows = CFG["evi"]
     if evidence_dir:
-        b.save(os.path.join(evidence_dir, "18_random_before.png"))
+        b.save(os.path.join(evidence_dir, e_before))
 
     ok_rand, vals = random_set(b)
     if not ok_rand:
@@ -230,9 +279,9 @@ def setup_random(lvl, evidence_dir):
         b = bot()
         ok_rand, vals = random_set(b)
     if evidence_dir:
-        b.save(os.path.join(evidence_dir, "19_random_after.png"))
+        b.save(os.path.join(evidence_dir, e_after))
         b.crop((100, 52, 256, 104)).resize((156 * 6, 52 * 6)).save(
-            os.path.join(evidence_dir, "20_random_rows_6x.png"))
+            os.path.join(evidence_dir, e_rows))
     print(f"  RANDOM 红底像素 BGM/デザイン={vals} 已持久化={ok_rand}", flush=True)
     if not ok_rand:
         raise RuntimeError(f"RANDOM 设置校验失败 {vals}")
@@ -267,30 +316,48 @@ def rec_stop(p):
 
 
 def main():
+    global CFG
     ap = argparse.ArgumentParser()
-    ap.add_argument("--lo", type=int, default=2, help="起始关（入門第 N 問）")
-    ap.add_argument("--hi", type=int, default=4, help="结束关")
-    ap.add_argument("--outdir", default="/workspace/vol5_recordings")
+    ap.add_argument("--preset", choices=list(PRESETS), default="nyuumon",
+                    help="尺寸档位：nyuumon=入門6x6(默认)，yasashii10=やさしい10x10")
+    ap.add_argument("--lo", type=int, default=None, help="起始关（默认取档位 lo）")
+    ap.add_argument("--hi", type=int, default=None, help="结束关（默认取档位 hi）")
+    ap.add_argument("--outdir", default=None, help="成品目录（默认取档位 outdir）")
     ap.add_argument("--evidence", default=os.path.join(HERE, "evidence"))
     ap.add_argument("--no-setup", action="store_true", help="跳过段首 RANDOM 设置")
-    ap.add_argument("--step", type=int, default=DOSE["step"])
-    ap.add_argument("--gap", type=float, default=DOSE["gap"])
-    ap.add_argument("--turn", type=float, default=DOSE["turn"])
+    ap.add_argument("--step", type=int, default=None, help="覆盖档位剂量 step")
+    ap.add_argument("--gap", type=float, default=None, help="覆盖档位剂量 gap")
+    ap.add_argument("--turn", type=float, default=None, help="覆盖档位剂量 turn")
     args = ap.parse_args()
 
-    os.makedirs(args.outdir, exist_ok=True)
-    dose = dict(step=args.step, gap=args.gap, turn=args.turn)
+    # 默认值延迟到 parse 之后按档位取，避免 argparse 定义时锁死 6x6 参数
+    CFG = PRESETS[args.preset]
+    lo = CFG["lo"] if args.lo is None else args.lo
+    hi = CFG["hi"] if args.hi is None else args.hi
+    outdir = CFG["outdir"] if args.outdir is None else args.outdir
+    dose = dict(CFG["dose"])
+    if args.step is not None:
+        dose["step"] = args.step
+    if args.gap is not None:
+        dose["gap"] = args.gap
+    if args.turn is not None:
+        dose["turn"] = args.turn
+
+    os.makedirs(outdir, exist_ok=True)
     ds.ensure_window()
+    print(f"档位 {args.preset} / {CFG['name']} ({CFG['size']}) "
+          f"几何 x0={CFG['x0']} y0={CFG['y0']} pitch={CFG['pitch']} "
+          f"idx_base={CFG['idx_base']} 区间 {lo}..{hi}", flush=True)
     print("起点状态", state(), "剂量", dose, flush=True)
 
     setup_ok = False
     if not args.no_setup:
-        setup_ok = setup_random(args.lo, args.evidence)
+        setup_ok = setup_random(lo, args.evidence)
         print("setup_random ->", setup_ok, flush=True)
 
     # 读取既有日志并按关号合并：分批 --lo/--hi 录制不再互相覆盖。
     # （早期版本每次运行都重写，导致多批录制后只剩最后一批，已修正。）
-    logpath = os.path.join(args.outdir, "record_log.json")
+    logpath = os.path.join(outdir, "record_log.json")
     merged = {}
     if os.path.exists(logpath):
         try:
@@ -298,14 +365,14 @@ def main():
                 merged[r["lvl"]] = r
         except (ValueError, OSError):
             pass
-    for lvl in range(args.lo, args.hi + 1):
-        idx = 1402 + lvl
-        out = os.path.join(args.outdir, f"数回_入門_第{lvl:02d}問.mp4")
+    for lvl in range(lo, hi + 1):
+        idx = CFG["idx_base"] + lvl
+        out = os.path.join(outdir, CFG["filepat"].format(lvl=lvl))
         if os.path.exists(out) and os.path.getsize(out) > 20000:
             print(f"第{lvl}問 已存在，跳过", flush=True)
             continue
         # 第一关若已完成 setup 则已在盘面；其余关需从选关页进入
-        if not (setup_ok and lvl == args.lo):
+        if not (setup_ok and lvl == lo):
             ok_sel, n = ensure_select()
             if not ok_sel:
                 print(f"第{lvl}問 ensure_select 失败，中止", flush=True)
@@ -325,7 +392,8 @@ def main():
             back, nk = False, -1
         rc = rec_stop(rec)
         size = os.path.getsize(out) if os.path.exists(out) else 0
-        row = dict(lvl=lvl, idx=idx, verts=len(pts), drag=round(wall, 2),
+        row = dict(lvl=lvl, idx=idx, preset=args.preset, board=CFG["size"],
+                   verts=len(pts), drag=round(wall, 2),
                    completion=ok, waited=round(waited, 1), back=back,
                    ff_rc=rc, size=size, dose=dose)
         merged[lvl] = row
