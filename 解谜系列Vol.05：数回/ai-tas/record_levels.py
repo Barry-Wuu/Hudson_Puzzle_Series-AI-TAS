@@ -13,6 +13,8 @@
     python3 ai-tas/record_levels.py --lo 2 --hi 4              # 入門6x6 第 2..4 問（默认档）
     python3 ai-tas/record_levels.py --preset yasashii10 --lo 1 --hi 10
                                                                # やさしい10x10 第 1..10 問
+    python3 ai-tas/record_levels.py --preset yasashii10 --lo 51 --hi 92
+                                                               # 滚动窗口第 51..92 問（10x10）
 
 档位差异（均为实机标定）:
     入門 nyuumon    6x6   x0=50 y0=8  pitch=26  step=13 gap=0.016 turn=0.015
@@ -21,7 +23,10 @@
                     10x10 x0=47 y0=6  pitch=16  step=8  gap=0.016 turn=0.015
                     idx = 1422 + 关号（第1..92 关 = idx1423..1514）
                     10x10 盘面 x[47..207] y[6..166] 完整落在下屏内，无需滚动；
-                    92~104 边长环一次拖动约 5.0~5.6s 即可 Completion!!，无需分段。
+                    82~112 边长环一次拖动约 4.6~6.1s 即可 Completion!!，无需分段。
+    选关页是**按行滚动窗口**（非固定两页）：底部▼/顶部▲ 每次滚 10 关，
+    通关后光标恒在第 5 行；第 51..92 关按 (20+24*((lvl-51)%10), 140) 取格子，
+    详见 level_xy() 的说明。第 93..100 关是 18x10，几何未标定、hi 封在 92。
 
 剂量硬下限 gap>=0.016（≈ DeSmuME 60fps 1 帧）；step 按 pitch 等比缩放（每边 2 个插值点），
 10x10 的 pitch=16 必须 step=8，step>=13 会因插值过疏丢线段、环不闭合。
@@ -66,7 +71,7 @@ PRESETS = {
         name="やさしい 10x10", size="10x10", layout="yasashii10",
         x0=47, y0=6, pitch=16,
         dose=dict(step=8, gap=0.016, turn=0.015),
-        idx_base=1422, lo=1, hi=50,
+        idx_base=1422, lo=1, hi=92,
         outdir="/workspace/vol5_recordings_10x10",
         filepat="数回_やさしい10x10_第{lvl:02d}問.mp4",
         evi=("24_y10_random_before.png", "25_y10_random_after.png", "26_y10_random_rows_6x.png"),
@@ -83,6 +88,16 @@ TR_SELECT_LO, TR_SELECT_HI = 1200, 2100
 
 def bot():
     return ds.grab(None).convert("RGB").crop((0, 192, 256, 384))
+
+
+def save_evi(img, path):
+    """证据图统一存 P 模式 256 色索引 PNG（与其它 Vol / 既有证据一致）。
+
+    setup_random() 每次带 setup 的批次都会重抓 RANDOM 三张证据，直接 b.save() 会写
+    成 RGB、覆盖已统一为 P 的既有证据；统一走这里可避免模式反复被破坏。
+    """
+    img.convert("RGB").quantize(colors=256, method=Image.MEDIANCUT).save(
+        path, optimize=True, compress_level=9)
 
 
 def feats(b):
@@ -136,14 +151,28 @@ def level_xy(lvl):
     """选关页关卡格子中心（下屏局部坐标）。
 
     nyuumon(入門 20 关)：2 行 x 10 列，起始 (18,48)，间距 24。
-    yasashii10(やさしい 100 关)：每页 5 行 x 10 列，起始 (20,44)，间距 24；
-      第 51~100 关需翻页，本档 hi 暂限 50（第 1 页，均为 10x10）。
+
+    yasashii10(やさしい 100 关)：5 行 x 10 列 = 每屏 50 关，起始 (20,44)，间距 24，
+    但这是**按行滚动的窗口**而非固定两页：
+      - 底部 ▼ / 顶部 ▲ 三角按钮每次滚动一行(10 关)，窗口 S=1+10k 显示 S..S+49；
+        实机：11~60 --▼--> 21~70 --▲--> 11~60，滚动后光标落第 5 行首列。
+      - 通关后光标自动移到「下一关」，只有当下一关超出窗口时才下滚一行，
+        因此光标**恒在第 5 行(row=4)**（实测：通关 50 后窗口 1~50→11~60 光标 51；
+        通关 51 后窗口仍 11~60、光标 52）。
+      - 第 1..50 关：窗口 S=1，row=(lvl-1)//10、col=(lvl-1)%10。
+      - 第 51..92 关：窗口 S=11+10*((lvl-51)//10)，光标恒 row=4、
+        col=(lvl-51)%10；等价于坐标 (20+24*((lvl-51)%10), 140)。
+      - 第 93..100 关是 18x10，几何未标定，本档 hi 封在 92。
     """
     if CFG["layout"] == "nyuumon":
         row = 0 if lvl <= 10 else 1
         col = (lvl - 1) % 10
         return 18 + 24 * col, (48 if row == 0 else 72)
     # yasashii10
+    if lvl >= 51:
+        # 滚动窗口：通关后光标恒在第 5 行，每 10 关窗口下滚一行、col 归零
+        col = (lvl - 51) % 10
+        return 20 + 24 * col, 44 + 24 * 4
     col = (lvl - 1) % 10
     row = ((lvl - 1) % 50) // 10
     return 20 + 24 * col, 44 + 24 * row
@@ -270,7 +299,7 @@ def setup_random(lvl, evidence_dir):
         raise RuntimeError("setup_random: オプション面板未打开")
     e_before, e_after, e_rows = CFG["evi"]
     if evidence_dir:
-        b.save(os.path.join(evidence_dir, e_before))
+        save_evi(b, os.path.join(evidence_dir, e_before))
 
     ok_rand, vals = random_set(b)
     if not ok_rand:
@@ -279,9 +308,9 @@ def setup_random(lvl, evidence_dir):
         b = bot()
         ok_rand, vals = random_set(b)
     if evidence_dir:
-        b.save(os.path.join(evidence_dir, e_after))
-        b.crop((100, 52, 256, 104)).resize((156 * 6, 52 * 6)).save(
-            os.path.join(evidence_dir, e_rows))
+        save_evi(b, os.path.join(evidence_dir, e_after))
+        save_evi(b.crop((100, 52, 256, 104)).resize((156 * 6, 52 * 6)),
+                 os.path.join(evidence_dir, e_rows))
     print(f"  RANDOM 红底像素 BGM/デザイン={vals} 已持久化={ok_rand}", flush=True)
     if not ok_rand:
         raise RuntimeError(f"RANDOM 设置校验失败 {vals}")
