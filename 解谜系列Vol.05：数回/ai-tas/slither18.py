@@ -27,6 +27,11 @@ SLIDER_Y = (60, 136)
 TAP_RIGHT = (250, 86)
 TAP_LEFT = (4, 86)
 
+# 由录制器注入：每次切档点击前询问「是否已经判定完成」。
+# 否则 go() 内部连续几下 tap 会在 Completion!! 的 "Please touch!" 上乱点，
+# 把结算页误操作回标题（第11問 实测 t=106 Completion!! → t=112 标题）。
+STOP_HOOK = None
+
 
 def bot_rgb():
     return np.asarray(ds.grab(None).convert("RGB").crop((0, 192, 256, 384))).astype(int)
@@ -39,8 +44,16 @@ def pink_ratio(a):
 
 
 def is_select_ui(a=None):
+    """选关页判据：右上「クリア数:NNN/100」标签的深色字占比。
+
+    实测：选关页 0.39~0.41（四个难度都一样，格子底色粉/蓝不影响）；
+    盘面 0.00~0.10；难度选择/主菜单 0.82。早期用粉色格子判据，遇到
+    ふつう的蓝色格子会失效，故改为这条。
+    """
     a = bot_rgb() if a is None else a
-    return pink_ratio(a) > 0.08
+    r = a[10:30, 150:252]
+    dark = float((r.sum(axis=2) < 260).mean())
+    return 0.30 <= dark <= 0.62
 
 
 def slider_side(a=None):
@@ -130,6 +143,8 @@ def shot():
 def toggle(cur, tries=4, after=0.9):
     """按当前档点对应侧的滑条，并用「画面是否变化」确认切换成功。"""
     for _ in range(tries):
+        if STOP_HOOK is not None and STOP_HOOK():
+            return cur, False
         before = shot()
         xy = TAP_RIGHT if cur == "A" else TAP_LEFT
         ds.tap(xy[0], xy[1], hold=0.18, after=after)
@@ -159,18 +174,29 @@ def which_view(cur_img, base):
     return ("A" if ea < eb else "B"), ea, eb
 
 
-def go(view, cur, base=None, tries=4):
-    """切到指定档；给 base 时用单元格对齐度做二次确认。"""
+def go(view, cur, base=None, tries=6):
+    """切到指定档。
+
+    给 base 时以「单元格中心对齐度」判定**实际**档位并闭环点击，
+    不再用 toggle() 的「整屏均差 > 4」——某些主题下 55px 位移的整屏均差
+    不足 4，会明明切成功却报失败（第10/11問 反复「切 B 档失败」即此）。
+    格心 5×5 小块不含格边线条，画线后依然可判。
+    """
     for _ in range(tries):
-        if cur == view:
-            if base is None:
-                return cur, True
-            got, ea, eb = which_view(shot(), base)
-            if got == view:
-                return cur, True
-            cur = got                       # 记录与实际不符，纠正后继续
-            continue
-        cur, ok = toggle(cur)
-        if not ok:
+        if STOP_HOOK is not None and STOP_HOOK():
             return cur, False
-    return cur, (cur == view)
+        if base is not None:
+            got, _, _ = which_view(shot(), base)
+            if got == view:
+                return got, True
+            cur = got
+        elif cur == view:
+            return cur, True
+        ds.tap(*(TAP_RIGHT if cur == "A" else TAP_LEFT), hold=0.18, after=0.9)
+    # 收尾再判一次
+    if base is not None:
+        got, _, _ = which_view(shot(), base)
+        return got, got == view
+    # 没 base 时用滑块兜底
+    set_view(view)
+    return (view_now() or cur), (view_now() == view)

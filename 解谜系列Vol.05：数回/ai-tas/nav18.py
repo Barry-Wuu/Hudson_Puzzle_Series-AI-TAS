@@ -98,14 +98,52 @@ TAP_UP = (127, 23)      # 顶部▲：滚到最上窗口（1~50）
 TAP_DOWN = (127, 162)   # 底部▼：每次下滚一行（10 关）
 
 
+def _yellow_at(x0, x1, y0, y1):
+    import numpy as np
+    a = s18.bot_rgb()
+    r = a[y0:y1, x0:x1]
+    m = (r[:, :, 0] > 190) & (r[:, :, 1] > 140) & (r[:, :, 2] < 110)
+    return int(m.sum()) > 20
+
+
+def wait_select_ready(timeout=6.0):
+    """等选关页画完（三角按钮出现），否则存在性判据会把「还没画出来」当成「已在顶端」。"""
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        if _yellow_at(118, 140, 14, 30) or _yellow_at(118, 140, 152, 172):
+            return True
+        time.sleep(0.35)
+    return False
+
+
+def scroll_top(max_try=10):
+    """点顶部▲直到它消失（动画期间点击会被吞，所以按存在性闭环）。"""
+    wait_select_ready()
+    for _ in range(max_try):
+        if not _yellow_at(118, 140, 14, 30):
+            return True
+        ds.tap(*TAP_UP, hold=0.12, after=0.9)
+    return not _yellow_at(118, 140, 14, 30)
+
+
+def scroll_down(n, max_try=14):
+    """点底部▼ n 次，每次确认▼仍在（用尽/到底则停）。"""
+    wait_select_ready()
+    done = 0
+    for _ in range(n):
+        if not _yellow_at(118, 140, 152, 172):
+            break
+        ds.tap(*TAP_DOWN, hold=0.12, after=0.95)
+        done += 1
+    return done
+
+
 def goto_window(start):
     """把选关窗口确定地滚到以 start 为首关的那一屏（先▲到底再▼下滚）。
 
     实机：▲ 12 次必停在上限（1~50），此后 ▼ 每按一次窗口下移 10 关，
     5 次正好到 51~100。这样就不必猜当前窗口位置。
     """
-    for _ in range(12):
-        ds.tap(*TAP_UP, hold=0.12, after=0.55)
-    for _ in range(max(0, (start - 1) // 10)):
-        ds.tap(*TAP_DOWN, hold=0.12, after=0.55)
+    scroll_top()
+    scroll_down(max(0, (start - 1) // 10))
     return start
