@@ -1,0 +1,1694 @@
+[
+  {
+    "lvl": 65,
+    "idx": 1587,
+    "board": "24x14",
+    "edges": 280,
+    "diff": "futsuu",
+    "draw": 194.4,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 9.5,
+    "ff_rc": 255,
+    "size": 5505905,
+    "attempt": 3
+  },
+  {
+    "lvl": 66,
+    "idx": 1588,
+    "board": "24x14",
+    "edges": 300,
+    "diff": "futsuu",
+    "draw": 207.2,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5853797,
+    "attempt": 2
+  },
+  {
+    "lvl": 67,
+    "idx": 1589,
+    "board": "24x14",
+    "edges": 272,
+    "diff": "futsuu",
+    "draw": 189.0,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5499982,
+    "attempt": 1
+  },
+  {
+    "lvl": 68,
+    "idx": 1590,
+    "board": "24x14",
+    "edges": 318,
+    "diff": "futsuu",
+    "draw": 223.0,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6353507,
+    "attempt": 1
+  },
+  {
+    "lvl": 69,
+    "idx": 1591,
+    "board": "24x14",
+    "edges": 322,
+    "diff": "futsuu",
+    "draw": 221.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6454854,
+    "attempt": 1
+  },
+  {
+    "lvl": 70,
+    "idx": 1592,
+    "board": "24x14",
+    "edges": 308,
+    "diff": "futsuu",
+    "draw": 213.1,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5923277,
+    "attempt": 3
+  },
+  {
+    "lvl": 71,
+    "idx": 1593,
+    "board": "24x14",
+    "edges": 306,
+    "diff": "futsuu",
+    "draw": 210.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6132510,
+    "attempt": 3
+  },
+  {
+    "lvl": 72,
+    "idx": 1594,
+    "board": "24x14",
+    "edges": 322,
+    "diff": "futsuu",
+    "draw": 221.6,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6541353,
+    "attempt": 2
+  },
+  {
+    "lvl": 73,
+    "idx": 1595,
+    "board": "24x14",
+    "edges": 284,
+    "diff": "futsuu",
+    "draw": 198.1,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5710037,
+    "attempt": 1
+  },
+  {
+    "lvl": 74,
+    "idx": 1596,
+    "board": "24x14",
+    "edges": 292,
+    "diff": "futsuu",
+    "draw": 201.7,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5673291,
+    "attempt": 1
+  },
+  {
+    "lvl": 75,
+    "idx": 1597,
+    "board": "24x14",
+    "edges": 270,
+    "diff": "futsuu",
+    "draw": 192.0,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5582146,
+    "attempt": 1
+  },
+  {
+    "lvl": 76,
+    "idx": 1598,
+    "board": "24x14",
+    "edges": 302,
+    "diff": "futsuu",
+    "draw": 208.2,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5929581,
+    "attempt": 1
+  },
+  {
+    "lvl": 77,
+    "idx": 1599,
+    "board": "24x14",
+    "edges": 336,
+    "diff": "futsuu",
+    "draw": 231.8,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6735422,
+    "attempt": 1
+  },
+  {
+    "lvl": 78,
+    "idx": 1600,
+    "board": "24x14",
+    "edges": 304,
+    "diff": "futsuu",
+    "draw": 211.0,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6102997,
+    "attempt": 1
+  },
+  {
+    "lvl": 79,
+    "idx": 1601,
+    "board": "24x14",
+    "edges": 314,
+    "diff": "futsuu",
+    "draw": 218.8,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6199331,
+    "attempt": 2
+  },
+  {
+    "lvl": 80,
+    "idx": 1602,
+    "board": "24x14",
+    "edges": 306,
+    "diff": "futsuu",
+    "draw": 212.0,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5985689,
+    "attempt": 1
+  },
+  {
+    "lvl": 81,
+    "idx": 1603,
+    "board": "24x14",
+    "edges": 320,
+    "diff": "futsuu",
+    "draw": 221.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6326698,
+    "attempt": 1
+  },
+  {
+    "lvl": 82,
+    "idx": 1604,
+    "board": "24x14",
+    "edges": 336,
+    "diff": "futsuu",
+    "draw": 232.1,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6460596,
+    "attempt": 1
+  },
+  {
+    "lvl": 83,
+    "idx": 1605,
+    "board": "24x14",
+    "edges": 316,
+    "diff": "futsuu",
+    "draw": 221.5,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6222325,
+    "attempt": 1
+  },
+  {
+    "lvl": 84,
+    "idx": 1606,
+    "board": "24x14",
+    "edges": 314,
+    "diff": "futsuu",
+    "draw": 217.4,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6300839,
+    "attempt": 1
+  },
+  {
+    "lvl": 85,
+    "idx": 1607,
+    "board": "24x14",
+    "edges": 294,
+    "diff": "futsuu",
+    "draw": 203.7,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5979051,
+    "attempt": 1
+  },
+  {
+    "lvl": 86,
+    "idx": 1608,
+    "board": "24x14",
+    "edges": 268,
+    "diff": "futsuu",
+    "draw": 188.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5494804,
+    "attempt": 1
+  },
+  {
+    "lvl": 87,
+    "idx": 1609,
+    "board": "24x14",
+    "edges": 314,
+    "diff": "futsuu",
+    "draw": 217.6,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6387324,
+    "attempt": 2
+  },
+  {
+    "lvl": 88,
+    "idx": 1610,
+    "board": "24x14",
+    "edges": 304,
+    "diff": "futsuu",
+    "draw": 212.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5949409,
+    "attempt": 1
+  },
+  {
+    "lvl": 89,
+    "idx": 1611,
+    "board": "24x14",
+    "edges": 312,
+    "diff": "futsuu",
+    "draw": 215.5,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6303408,
+    "attempt": 1
+  },
+  {
+    "lvl": 90,
+    "idx": 1612,
+    "board": "24x14",
+    "edges": 300,
+    "diff": "futsuu",
+    "draw": 208.6,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.2,
+    "ff_rc": 255,
+    "size": 5944402,
+    "attempt": 1
+  },
+  {
+    "lvl": 91,
+    "idx": 1613,
+    "board": "24x14",
+    "edges": 330,
+    "diff": "futsuu",
+    "draw": 227.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6646873,
+    "attempt": 2
+  },
+  {
+    "lvl": 92,
+    "idx": 1614,
+    "board": "24x14",
+    "edges": 302,
+    "diff": "futsuu",
+    "draw": 211.7,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6028514,
+    "attempt": 1
+  },
+  {
+    "lvl": 93,
+    "idx": 1615,
+    "board": "24x14",
+    "edges": 312,
+    "diff": "futsuu",
+    "draw": 215.6,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6060142,
+    "attempt": 3
+  },
+  {
+    "lvl": 94,
+    "idx": 1616,
+    "board": "24x14",
+    "edges": 302,
+    "diff": "futsuu",
+    "draw": 208.4,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5884838,
+    "attempt": 1
+  },
+  {
+    "lvl": 95,
+    "idx": 1617,
+    "board": "24x14",
+    "edges": 320,
+    "diff": "futsuu",
+    "draw": 221.5,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6397790,
+    "attempt": 2
+  },
+  {
+    "lvl": 96,
+    "idx": 1618,
+    "board": "24x14",
+    "edges": 302,
+    "diff": "futsuu",
+    "draw": 209.4,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6086209,
+    "attempt": 2
+  },
+  {
+    "lvl": 97,
+    "idx": 1619,
+    "board": "24x14",
+    "edges": 314,
+    "diff": "futsuu",
+    "draw": 218.1,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.2,
+    "ff_rc": 255,
+    "size": 6260785,
+    "attempt": 1
+  },
+  {
+    "lvl": 98,
+    "idx": 1620,
+    "board": "24x14",
+    "edges": 332,
+    "diff": "futsuu",
+    "draw": 229.5,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6727056,
+    "attempt": 1
+  },
+  {
+    "lvl": 99,
+    "idx": 1621,
+    "board": "24x14",
+    "edges": 310,
+    "diff": "futsuu",
+    "draw": 214.4,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6167917,
+    "attempt": 1
+  },
+  {
+    "lvl": 100,
+    "idx": 1622,
+    "board": "24x14",
+    "edges": 314,
+    "diff": "futsuu",
+    "draw": 218.1,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6388400,
+    "attempt": 1
+  }
+]
