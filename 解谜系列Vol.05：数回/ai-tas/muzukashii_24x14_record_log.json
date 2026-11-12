@@ -1,0 +1,801 @@
+[
+  {
+    "lvl": 1,
+    "idx": 1623,
+    "board": "24x14",
+    "edges": 322,
+    "diff": "muzukashii",
+    "draw": 222.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6393445,
+    "attempt": 1
+  },
+  {
+    "lvl": 2,
+    "idx": 1624,
+    "board": "24x14",
+    "edges": 314,
+    "diff": "muzukashii",
+    "draw": 217.3,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6113639,
+    "attempt": 4
+  },
+  {
+    "lvl": 3,
+    "idx": 1625,
+    "board": "24x14",
+    "edges": 310,
+    "diff": "muzukashii",
+    "draw": 215.1,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6311939,
+    "attempt": 1
+  },
+  {
+    "lvl": 4,
+    "idx": 1626,
+    "board": "24x14",
+    "edges": 312,
+    "diff": "muzukashii",
+    "draw": 216.2,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6218832,
+    "attempt": 1
+  },
+  {
+    "lvl": 5,
+    "idx": 1627,
+    "board": "24x14",
+    "edges": 314,
+    "diff": "muzukashii",
+    "draw": 218.2,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6173095,
+    "attempt": 1
+  },
+  {
+    "lvl": 6,
+    "idx": 1628,
+    "board": "24x14",
+    "edges": 322,
+    "diff": "muzukashii",
+    "draw": 221.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6276205,
+    "attempt": 2
+  },
+  {
+    "lvl": 7,
+    "idx": 1629,
+    "board": "24x14",
+    "edges": 310,
+    "diff": "muzukashii",
+    "draw": 213.4,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6095080,
+    "attempt": 1
+  },
+  {
+    "lvl": 8,
+    "idx": 1630,
+    "board": "24x14",
+    "edges": 300,
+    "diff": "muzukashii",
+    "draw": 208.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5853071,
+    "attempt": 1
+  },
+  {
+    "lvl": 9,
+    "idx": 1631,
+    "board": "24x14",
+    "edges": 302,
+    "diff": "muzukashii",
+    "draw": 210.8,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5984108,
+    "attempt": 1
+  },
+  {
+    "lvl": 10,
+    "idx": 1632,
+    "board": "24x14",
+    "edges": 296,
+    "diff": "muzukashii",
+    "draw": 210.0,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6090107,
+    "attempt": 1
+  },
+  {
+    "lvl": 11,
+    "idx": 1633,
+    "board": "24x14",
+    "edges": 308,
+    "diff": "muzukashii",
+    "draw": 214.3,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6368696,
+    "attempt": 1
+  },
+  {
+    "lvl": 12,
+    "idx": 1634,
+    "board": "24x14",
+    "edges": 312,
+    "diff": "muzukashii",
+    "draw": 217.3,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6302101,
+    "attempt": 2
+  },
+  {
+    "lvl": 13,
+    "idx": 1635,
+    "board": "24x14",
+    "edges": 306,
+    "diff": "muzukashii",
+    "draw": 214.9,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6280606,
+    "attempt": 1
+  },
+  {
+    "lvl": 14,
+    "idx": 1636,
+    "board": "24x14",
+    "edges": 304,
+    "diff": "muzukashii",
+    "draw": 211.3,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5972723,
+    "attempt": 1
+  },
+  {
+    "lvl": 15,
+    "idx": 1637,
+    "board": "24x14",
+    "edges": 316,
+    "diff": "muzukashii",
+    "draw": 221.0,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6333899,
+    "attempt": 1
+  },
+  {
+    "lvl": 16,
+    "idx": 1638,
+    "board": "24x14",
+    "edges": 286,
+    "diff": "muzukashii",
+    "draw": 202.7,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 5731195,
+    "attempt": 1
+  },
+  {
+    "lvl": 17,
+    "idx": 1639,
+    "board": "24x14",
+    "edges": 316,
+    "diff": "muzukashii",
+    "draw": 219.4,
+    "uncovered": 0,
+    "missing": 0,
+    "stopped": false,
+    "views": [
+      [
+        0,
+        0,
+        11,
+        9,
+        -1
+      ],
+      [
+        0,
+        10,
+        20,
+        9,
+        -1
+      ],
+      [
+        5,
+        10,
+        20,
+        18,
+        -1
+      ],
+      [
+        5,
+        0,
+        11,
+        18,
+        -1
+      ]
+    ],
+    "cleared": true,
+    "result": "completion",
+    "judge_s": 8.1,
+    "ff_rc": 255,
+    "size": 6260303,
+    "attempt": 1
+  }
+]
