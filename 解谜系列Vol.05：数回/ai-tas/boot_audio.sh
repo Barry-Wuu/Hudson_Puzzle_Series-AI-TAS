@@ -17,6 +17,18 @@ if ! pgrep -x Xvfb >/dev/null; then
   sleep 2
 fi
 
+# 1.5) 确保使用「已过教程」的存档，避免冷启动卡在チュートリアル（教程页）。
+#  DeSmuME 按 ROM 名自动加载 /root/.config/desmume/<rom名>.dsv；该文件若处于
+#  「教程未过」状态，每次冷启动都会先弹教程页，导致 boot_to_select / RANDOM
+#  设置错位。提交存档 v5_snapshot_1112.dsv（本会话录制 1~19 問时所用、已过教程、
+#  冷启动直进标题）为基线，每次启动前强制覆盖，保证稳定进标题。
+SAV_SRC="/workspace/hudson_tas/解谜系列Vol.05：数回/saves/v5_snapshot_1112.dsv"
+SAV_DST="/root/.config/desmume/解谜系列Vol.05：数回.dsv"
+mkdir -p /root/.config/desmume
+if [ -f "$SAV_SRC" ]; then
+  cp -f "$SAV_SRC" "$SAV_DST"
+fi
+
 # 2) pulseaudio 空 sink（native socket /tmp/pulse_native + desmume_out）
 if [ ! -f /tmp/pulse_cfg.pa ]; then
   cat > /tmp/pulse_cfg.pa <<'EOF'

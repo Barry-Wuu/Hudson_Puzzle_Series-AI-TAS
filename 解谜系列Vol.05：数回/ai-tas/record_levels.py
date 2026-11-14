@@ -321,8 +321,8 @@ def setup_random(lvl, evidence_dir):
 
 # ---- 录制 ----
 def rec_start(out):
-    cmd = ["ffmpeg", "-y", "-loglevel", "error",
-           "-f", "x11grab", "-draw_mouse", "0", "-framerate", "30",
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-threads", "1",
+           "-f", "x11grab", "-draw_mouse", "0", "-framerate", "6",
            "-video_size", "256x384", "-i", ":99+384,192",
            "-f", "pulse", "-i", "desmume_out.monitor",
            "-c:v", "libopenh264", "-pix_fmt", "yuv420p", "-b:v", "2500k", "-r", "30",
@@ -330,7 +330,8 @@ def rec_start(out):
            out]
     p = subprocess.Popen(cmd, env=REC_ENV,
                          stdout=open("/tmp/v5_ff.log", "a"),
-                         stderr=subprocess.STDOUT)
+                         stderr=subprocess.STDOUT,
+                         preexec_fn=lambda: os.nice(15))
     time.sleep(1.2)
     return p
 

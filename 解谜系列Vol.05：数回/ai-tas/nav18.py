@@ -61,23 +61,95 @@ if __name__ == "__main__":
     print("state select?", s18.is_select_ui(), "view", s18.view_now())
 
 
-def boot_to_select(max_wait=60):
-    """冷启动 -> やさしい 选关页。"""
+PLAYER_SLOT = (65, 55)      # プレイヤー選択：左槽中心（下屏 NDS 坐标）
+START_BTN   = (188, 64)     # メインメニュー：スタート（下屏 NDS 坐标）
+
+
+def _screen_kind():
+    """粗分当前画面：select / board / title / menu（用选关页判据的暗色占比）。
+
+      - select：むずかしい/入門 选关页（0.30~0.62，含右上「クリア数」标签）
+      - board ：盘内（<0.30）
+      - title ：标题 splash（>0.82）
+      - menu  ：メインメニュー（0.62~0.82）
+    其它（教程页/对话框/面板）按暗色占比落入最接近的桶，由调用方兜底。
+    """
+    import numpy as np
+    a = np.asarray(ds.grab(None).convert("RGB")).astype(int)
+    bot = a[192:384]
+    r = bot[10:30, 150:252]
+    dark = float((r.sum(axis=2) < 260).mean())
+    if 0.30 <= dark <= 0.62:
+        return "select"
+    if dark < 0.30:
+        return "board"
+    if dark > 0.82:
+        return "title"
+    return "menu"
+
+
+def _to_main_menu():
+    """冷启动标题 -> プレイヤー選択 -> メインメニュー（难度入口）。
+
+    实测流程（2026-11-13 重新标定）：
+      标题 splash（"触摸或 A 继续"）-> 点触中心进 プレイヤー選択 ->
+      选左槽 + A 确认 -> 标题(已选玩家) -> A -> メインメニュー。
+    """
     ds.ensure_window()
-    for _ in range(max_wait):
-        ds.press("x", wait=1.5)
-        if s18.is_select_ui():
-            return True
-        break
-    # 玩家选择
-    ds.tap(60, 42, hold=0.15, after=3.0)
-    for _ in range(4):
-        ds.tap(200, 75, hold=0.15, after=2.2)     # スタート
-        for _ in range(3):
-            ds.tap(200, 95, hold=0.15, after=2.2)  # やさしい
+    ds.tap(128, 96, hold=0.15, after=2.0)            # 标题 -> プレイヤー選択
+    ds.tap(*PLAYER_SLOT, hold=0.15, after=1.5)        # 选左槽
+    ds.press("x", wait=1.5)                           # A 确认 -> 标题(已选玩家)
+    ds.press("x", wait=2.0)                           # 标题 -> メインメニュー
+    return _screen_kind() == "menu"
+
+
+def goto_muzukashii_select():
+    """任意状态 -> むずかしい 选关页（5x10，第 1~50 問同屏）。
+
+    ★ 2026-11-13 重写：原 boot_to_select 假设「从标题按 A 直接进选关页」，
+      但 Vol.05 实际流程是 标题->玩家选择->メインメニュー->スタート(恢复
+      むずかしい)->盘->退关。且スタート 直接恢复「上次开始」的 むずかしい
+      第18問盘，而非难度选择页；选关页内也无 やさしい/ふつう 切换按钮。
+      故改为按真实流程把冷启动收敛到 むずかしい 选关页，全程不依赖已废弃的
+      教程退出逻辑（改用 v5_snapshot_1112.dsv 已过教程存档，boot_audio.sh
+      每次启动前强制覆盖，彻底消除教程弹窗）。
+    """
+    ds.ensure_window()
+    kind = _screen_kind()
+    if kind == "select":
+        return True
+    if kind == "board":
+        for _ in range(4):
             if s18.is_select_ui():
                 return True
+            leave_level()
+            time.sleep(0.8)
+        if s18.is_select_ui():
+            return True
+        kind = _screen_kind()
+    if kind == "menu":
+        # メインメニュー -> スタート -> むずかしい 盘 -> 退关 -> 选关页
+        ds.tap(*START_BTN, hold=0.15, after=2.5)
+        for _ in range(4):
+            if s18.is_select_ui():
+                return True
+            leave_level()
+            time.sleep(0.8)
+        return s18.is_select_ui()
+    # title / 未知：走完整冷启动流程
+    _to_main_menu()
+    ds.tap(*START_BTN, hold=0.15, after=2.5)
+    for _ in range(4):
+        if s18.is_select_ui():
+            return True
+        leave_level()
+        time.sleep(0.8)
     return s18.is_select_ui()
+
+
+def boot_to_select(max_wait=60):
+    """冷启动 -> むずかしい 选关页（兼容旧调用名）。"""
+    return goto_muzukashii_select()
 
 
 def wait_start_anim(timeout=8.0):

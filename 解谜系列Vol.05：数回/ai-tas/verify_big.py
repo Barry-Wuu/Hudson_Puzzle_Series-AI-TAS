@@ -59,7 +59,13 @@ def tail_png(path, out="/tmp/_vb_tail.png"):
 
 
 def real_result(a):
-    """与 record18_v4.real_result 一致，但数据源是视频末帧而非实机截图。"""
+    """与 record18_v4.real_result 一致，但数据源是视频末帧而非实机截图。
+
+    ★ 2026-11-13：去掉「中部蓝色横幅」要求。BGM / デザイン = RANDOM 会换主题，
+      第19問实测结算页是**纯绿底成绩板**（上屏绿 0.615）且完全没有蓝色横幅，
+      旧判据 blue>0.18 永远不满足 -> 真过关也判失败。
+      绿色占比本身区分度足够：盘面/Completion 页上屏绿 = 0.000。
+    """
     t, b = a[0:192], a[192:384]
     R, G, B = t[:, :, 0], t[:, :, 1], t[:, :, 2]
     green = float(((G > R + 25) & (G > B + 25) & (G > 80)).mean())
@@ -68,7 +74,12 @@ def real_result(a):
     blue = float(((Bm > Rm + 25) & (Bm > Gm + 5) & (Bm > 90)).mean())
     Rb, Gb, Bb = b[:, :, 0], b[:, :, 1], b[:, :, 2]
     orange = int(((Rb > 150) & (Gb > 60) & (Gb < 175) & (Bb < 110)).sum())
-    return (green > 0.45 and blue > 0.18 and orange < 300), (round(green, 3), round(blue, 3), orange)
+    # ★ 2026-11-13 去掉「下屏橙 < 300」要求：デザイン=RANDOM 主题色每关随机，
+    #   暖色(米黄)主题的下屏盘面本身就是橙色，第20問末帧 orange=2244 被误判
+    #   为失败（该帧实为真结算页：クリアタイム 00:06:07 / ★★★★★ / 得点 1068）。
+    #   上屏绿底成绩板 (green>0.45) 已足够：盘面/Completion 页上屏绿≈0.000。
+    #   orange 仍随诊断元组返回，仅作参考、不参与判定。
+    return (green > 0.45), (round(green, 3), round(blue, 3), orange)
 
 
 def main():
