@@ -1,2 +1,10 @@
 # ROM 提取的题库容器原始字节（含版权素材，不入库；由 extract_vol5_answers.py 从 ROM 重生）
 vol5_pack.bin
+
+# 根 .gitignore 全禁 *.png（防误提交调试截图）
+# 本目录是逐关通关证据，必须入库，故在此放行（仿 Vol.10）
+!*.png
+!mode1_tutorial/*.png
+!mode2_easy/*.png
+!mode3_medium/*.png
+!mode4_hard/*.png
