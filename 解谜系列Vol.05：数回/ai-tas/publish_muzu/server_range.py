@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """支持 Range 的静态文件服务（大视频在线播放/断点续传），监听 PORT、绑定 0.0.0.0。"""
 import os, re, sys
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -53,4 +53,4 @@ class RangeHandler(SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT') or (sys.argv[1] if len(sys.argv) > 1 else 3000))
-    HTTPServer(('0.0.0.0', port), RangeHandler).serve_forever()
+    ThreadingHTTPServer(('0.0.0.0', port), RangeHandler).serve_forever()
