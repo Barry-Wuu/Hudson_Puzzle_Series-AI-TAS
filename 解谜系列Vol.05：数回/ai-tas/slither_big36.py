@@ -326,6 +326,85 @@ def draw_line(kind, r, c, M):
              head=0.12, down=0.10, tail=0.10, settle=0.12)
 
 
+# ---------- 连拖（可选优化，默认关闭；SB36_CHAIN=1 启用）----------
+# 目标：把「同向连续的多条边」并成一次拖拽，省掉每条边各自的
+#   head/down/tail/settle 固定开销。实验B（2026-11-14 dry）铁证：
+#   5 边 run 连拖 0.96s vs 逐边 2.69s（省 64%），8 边 run 1.28s vs
+#   4.31s（省 70%），两者均 100% 画上、零缺失、零连带相邻边。
+# 本分支只在 SB36_CHAIN=1 时生效，默认逐边 draw_line 与历史行为
+# 完全一致；生产基线零影响、可随时回退。
+def _group_runs(group):
+    """把同视口一批边按「共线且连续」拆成 runs。
+
+    每项 = (edges, kind, fixed, start, n)：kind=h 时 fixed=行、start=起始列；
+    kind=v 时 fixed=列、start=起始行；n 为连续边数。group 已经过 visible()
+    过滤，故每条 run 的两端顶点都在可画区内，中间顶点落在两端之间的同
+    一直线上也必然在区内（不会碰右滑块 / 底部工具栏死区）。
+    """
+    by_h, by_v = {}, {}
+    for (k, r, c) in group:
+        if k == "h":
+            by_h.setdefault(r, []).append(c)
+        else:
+            by_v.setdefault(c, []).append(r)
+    out = []
+    for k, by in (("h", by_h), ("v", by_v)):
+        for fixed in sorted(by):
+            vals = sorted(by[fixed])
+            run = []
+            for v in vals + [None]:           # None 作哨兵，收尾 flush 末段
+                if v is not None and (not run or v == run[-1] + 1):
+                    run.append(v)
+                else:
+                    if run:
+                        edges = ([(k, fixed, x) for x in run] if k == "h"
+                                 else [(k, x, fixed) for x in run])
+                        out.append((edges, k, fixed, run[0], len(run)))
+                    run = [] if v is None else [v]
+    return out
+
+
+def _chain_drag(kind, fixed, start, n, M, INSET):
+    """一次拖拽画 n 条共线连续边：起/止落在首末格线段内部（避开顶点连带）。
+
+    n>=2 时中间会途经若干顶点，但拖拽只在 mousedown/mouseup 判定起止格线，
+    移动经过顶点不触发相邻边；实验B 已实测 8 边 run 零连带。
+    """
+    if kind == "h":
+        x1, y1, _, _ = edge_px("h", fixed, start, M)
+        _, _, x2, y2 = edge_px("h", fixed, start + n - 1, M)
+        p0, p1 = (x1 + INSET, y1), (x2 - INSET, y2)
+    else:
+        x1, y1, _, _ = edge_px("v", start, fixed, M)
+        _, _, x2, y2 = edge_px("v", start + n - 1, fixed, M)
+        p0, p1 = (x1, y1 + INSET), (x2, y2 - INSET)
+    r18.drag([p0, p1], step=3, gap=0.02,
+             head=0.12, down=0.10, tail=0.10, settle=0.12)
+
+
+def paint_group(group, M):
+    """绘制一批边。默认逐边 draw_line（与历史行为完全一致）；
+    SB36_CHAIN=1 时改为「同向连续 run 一次拖拽 + 孤边逐边」以压缩每边
+    固定开销。SB36_CHAIN_INSET 控制连拖端点内缩（默认 2，与 h 边一致）。
+    """
+    if os.environ.get("SB36_CHAIN", "0") != "1":
+        for e in group:
+            draw_line(*e, M)
+        return
+    INSET = int(os.environ.get("SB36_CHAIN_INSET", "2"))
+    n_chain = n_single = 0
+    for (edges, k, fixed, start, n) in _group_runs(group):
+        if n >= 2:
+            _chain_drag(k, fixed, start, n, M, INSET)
+            n_chain += 1
+        else:
+            draw_line(*edges[0], M)
+            n_single += 1
+    if os.environ.get("SB36_CHAIN_STAT"):
+        print(f"    [chain] 长run={n_chain} 孤边={n_single} "
+              f"拖拽={n_chain + n_single}（逐边需 {len(group)}）", flush=True)
+
+
 def score_edges(base, cur, edges, M):
     """★ 红线命中率判据（替代「画前 base vs 画后 cur」RGB 差分）。
 
@@ -682,10 +761,10 @@ def draw_all(idx, settled=None, verbose=True, audit_dir=None):
                           f"X0={M['X0']} Y0={M['Y0']}（已擦掉错位线重画）", flush=True)
             elif not pok and verbose:
                 print(f"  视口#{step} 探测边未上屏（可能拖拽丢失），按原 M 继续", flush=True)
-        for e in group:
-            if e == probe:
-                continue
-            draw_line(*e, M)
+        # SB36_CHAIN=1 走「同向连续 run 连拖」，默认逐边（行为与历史一致）。
+        _topaint = [e for e in group if e != probe]
+        paint_group(_topaint, M)
+        for e in _topaint:
             pending.discard(e)
         # settled() 内部会抓 1280x1024 全屏（completion_anim/real_result 各一次）。
         # 逐边检查 = 600 次全屏抓屏，与 ffmpeg x11grab 争抢 X 服务器，
