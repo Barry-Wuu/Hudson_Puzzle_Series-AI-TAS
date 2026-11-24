@@ -3,7 +3,8 @@
 
 修复原 extract_vol8_answers.py 的缺陷:
   1) 映射写死 16 项 -> 改为动态长度(= 盘面最大密码值),覆盖 252 个 >16 的关卡;
-  2) 音表补索引 72 = 片假名促音「ッ」(磁盘标注 "ッ?", 键盘坐标待实机标定)。
+  2) 索引 72 = 墙(黑格),不是假名——实机词条验证: 当「ッ」时满屏乱码,
+     当墙时横竖词条全部成词(セクハラ/ネクタイ/コオロギ...)。mapping 中记为 "█"。
 
 每关字段:
   rec / difficulty_field / w / h
@@ -21,7 +22,7 @@ OUT = "/workspace/hudson_tas/解谜系列Vol.08：假名字谜3/answers_full.jso
 GOJ = ["あいうえお", "かきくけこ", "さしすせそ", "たちつてと", "なにぬねの",
        "はひふへほ", "まみむめも", "やゆよ", "らりるれろ", "わをん",
        "がぎぐげござじずぜぞ", "だぢづでど", "ばびぶべぼ", "ぱぴぷぺぽ"]
-KANA = [c for row in GOJ for c in row] + ["ー", "ッ?"]  # 71=ー, 72=ッ(待标定)
+KANA = [c for row in GOJ for c in row] + ["ー", "█"]  # 71=长音ー, 72=墙█(非假名; 词条验证坐实)
 
 
 def extract():
@@ -66,4 +67,4 @@ if __name__ == "__main__":
     print("导出:", OUT)
     print("关卡数:", len(pz))
     print("映射长度分布:", dict(sorted(Counter(len(p["mapping"]) for p in pz).items())))
-    print("含索引72(ッ)的关:", sum(1 for p in pz if 72 in p["kana_idx"]))
+    print("含索引72(墙█)的关:", sum(1 for p in pz if 72 in p["kana_idx"]))
