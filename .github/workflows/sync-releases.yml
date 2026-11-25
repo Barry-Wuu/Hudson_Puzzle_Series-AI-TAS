@@ -17,49 +17,42 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITCODE_TOKEN: ${{ secrets.GITCODE_TOKEN }}
         run: |
-          python3 - <<'PY'
-          import json, os, urllib.request, urllib.parse, subprocess
-          from pathlib import Path
-
+          python3 - <<'PY' > /tmp/assets.tsv
+          import json, os, urllib.request, urllib.parse
           API = 'https://api.gitcode.com/api/v5/repos/Barry_Wu_/Hudson_Puzzle_Series-AI-TAS/releases'
           H = {'User-Agent':'Mozilla/5.0', 'Authorization':'Bearer '+os.environ['GITCODE_TOKEN']}
           rels = json.load(urllib.request.urlopen(urllib.request.Request(API, headers=H), timeout=60))
-          print('GitCode releases:', len(rels))
-          tmp = Path('release_assets'); tmp.mkdir(exist_ok=True)
-
           for rel in rels:
-              tag = rel['tag_name']
-              title = rel.get('name') or tag
-              body = rel.get('body') or ''
-              # Release 不存在则创建（--target 用仓库当前 HEAD，tag 内容由源码镜像保证）
-              existing = subprocess.run(['gh','release','view',tag,'--repo',os.environ['GITHUB_REPOSITORY']],
-                                        capture_output=True, text=True)
-              if existing.returncode != 0:
-                  subprocess.run(['gh','release','create',tag,'--repo',os.environ['GITHUB_REPOSITORY'],
-                                  '--title',title,'--notes',body,'--target','main'], check=True)
-                  print('created release', tag)
-              else:
-                  print('release exists', tag)
-
               for a in rel.get('assets', []):
-                  name = a['name']
-                  url = a['browser_download_url']
-                  dest = tmp / ('%s__%s' % (tag, name))
-                  if dest.exists() and dest.stat().st_size > 0:
-                      print('cached', name); continue
-                  # 源码归档 URL 含中文未编码，urllib 需转义路径
-                  url = urllib.parse.quote(url, safe=':/%?=&')
-                  print('downloading', name)
-                  with urllib.request.urlopen(urllib.request.Request(url, headers=H), timeout=600) as r, open(dest,'wb') as f:
-                      while True:
-                          chunk = r.read(1048576)
-                          if not chunk: break
-                          f.write(chunk)
-                  print('  size', dest.stat().st_size)
-                  subprocess.run(['gh','release','upload',tag,str(dest),'--repo',
-                                  os.environ['GITHUB_REPOSITORY'],'--clobber'], check=True)
-                  dest.unlink()
-                  print('  uploaded', name)
-
-          subprocess.run(['gh','release','list','--repo',os.environ['GITHUB_REPOSITORY']], check=True)
+                  u = urllib.parse.quote(a['browser_download_url'], safe=':/%?=&')
+                  print('%s\t%s\t%s' % (rel['tag_name'], a['name'], u))
           PY
+          cat /tmp/assets.tsv
+
+          # 创建 Release（已存在则跳过）
+          TAG="解谜系列"
+          if ! gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" \
+              --title "解谜系列" --notes "《Hudson解谜系列》游戏原文件" --target main
+          fi
+
+          # 逐个下载并上传；curl 与已跑通的 GooBall 工作流同款，不跟 urllib 抢
+          mkdir -p release_assets
+          while IFS=$'\t' read -r tag name url; do
+            dest="release_assets/${name}"
+            echo "### $name"
+            ok=0
+            for attempt in 1 2 3; do
+              curl -fL --retry 2 --retry-delay 5 --connect-timeout 30 \
+                -H "PRIVATE-TOKEN: ${GITCODE_TOKEN}" -H "User-Agent: Mozilla/5.0" \
+                -o "$dest" "$url" && test -s "$dest" && { ok=1; break; }
+              sleep 10
+            done
+            if [ "$ok" = 0 ]; then echo "DOWNLOAD FAILED: $name"; continue; fi
+            echo "size $(stat -c%s "$dest")"
+            gh release upload "$TAG" "$dest" --repo "$GITHUB_REPOSITORY" --clobber
+            rm -f "$dest"
+          done < /tmp/assets.tsv
+
+          gh release list --repo "$GITHUB_REPOSITORY"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY"
