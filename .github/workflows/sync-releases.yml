@@ -1,0 +1,65 @@
+name: SyncReleasesFromGitCode
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 */6 * * *"
+permissions:
+  contents: write
+jobs:
+  sync-releases:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 从 GitCode 同步 Release 与资产
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITCODE_TOKEN: ${{ secrets.GITCODE_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.parse, subprocess
+          from pathlib import Path
+
+          API = 'https://api.gitcode.com/api/v5/repos/Barry_Wu_/Hudson_Puzzle_Series-AI-TAS/releases'
+          H = {'User-Agent':'Mozilla/5.0', 'Authorization':'Bearer '+os.environ['GITCODE_TOKEN']}
+          rels = json.load(urllib.request.urlopen(urllib.request.Request(API, headers=H), timeout=60))
+          print('GitCode releases:', len(rels))
+          tmp = Path('release_assets'); tmp.mkdir(exist_ok=True)
+
+          for rel in rels:
+              tag = rel['tag_name']
+              title = rel.get('name') or tag
+              body = rel.get('body') or ''
+              # Release 不存在则创建（--target 用仓库当前 HEAD，tag 内容由源码镜像保证）
+              existing = subprocess.run(['gh','release','view',tag,'--repo',os.environ['GITHUB_REPOSITORY']],
+                                        capture_output=True, text=True)
+              if existing.returncode != 0:
+                  subprocess.run(['gh','release','create',tag,'--repo',os.environ['GITHUB_REPOSITORY'],
+                                  '--title',title,'--notes',body,'--target','main'], check=True)
+                  print('created release', tag)
+              else:
+                  print('release exists', tag)
+
+              for a in rel.get('assets', []):
+                  name = a['name']
+                  url = a['browser_download_url']
+                  dest = tmp / ('%s__%s' % (tag, name))
+                  if dest.exists() and dest.stat().st_size > 0:
+                      print('cached', name); continue
+                  # 源码归档 URL 含中文未编码，urllib 需转义路径
+                  url = urllib.parse.quote(url, safe=':/%?=&')
+                  print('downloading', name)
+                  with urllib.request.urlopen(urllib.request.Request(url, headers=H), timeout=600) as r, open(dest,'wb') as f:
+                      while True:
+                          chunk = r.read(1048576)
+                          if not chunk: break
+                          f.write(chunk)
+                  print('  size', dest.stat().st_size)
+                  subprocess.run(['gh','release','upload',tag,str(dest),'--repo',
+                                  os.environ['GITHUB_REPOSITORY'],'--clobber'], check=True)
+                  dest.unlink()
+                  print('  uploaded', name)
+
+          subprocess.run(['gh','release','list','--repo',os.environ['GITHUB_REPOSITORY']], check=True)
+          PY
